@@ -1,17 +1,22 @@
 ---
-import { looks } from '../data/looks';
-const first = looks[0];
+import { grade } from '../data/grade';
+const stages = grade.stages.filter((s) => s.src);
+const [base, ...layers] = stages;
+const last = stages.length - 1;
 ---
 <div class="craft" id="grade">
   <div class="chead"><h3>Color Grading</h3></div>
-  <div class="wipe" id="wipe" style={`--grade:${first.grade}`}>
-    <video class="log" muted loop playsinline autoplay src={first.video}></video>
-    <video class="graded" muted loop playsinline autoplay src={first.video}></video>
-    <div class="handle"></div>
-    <span class="lab l">Camera original</span><span class="lab r">Final grade</span>
+  <div class="grader" id="grader" data-start={grade.start} style={`--p:${grade.start * 100}%;--s:100%`}>
+    <div class="wipe">
+      <video class="base" muted loop playsinline autoplay preload="metadata" src={base.src}></video>
+      {layers.map((s, i) => <video class="layer" data-k={i + 1} muted loop playsinline autoplay preload="metadata" src={s.src}></video>)}
+      <div class="seam"></div>
+      {stages.map((s, i) => <span class="band" data-k={i}>{s.name}</span>)}
+    </div>
+    <div class="rail" tabindex="0" role="slider" aria-label="Grading stage" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(grade.start * 100)}>
+      <span class="fill"></span>
+      {stages.map((s, i) => <span class={'stop' + (i === 0 ? ' first' : i === last ? ' last' : '')} style={`--at:${(i / last) * 100}%`}>{s.name}</span>)}
+      <span class="handle"></span>
+    </div>
   </div>
-  <div class="xgrid" id="look-list">
-    {looks.map((l, i) => <button class={i === 0 ? 'on' : ''}>{l.name}</button>)}
-  </div>
-  <script type="application/json" id="looks-json" set:html={JSON.stringify(looks)} />
 </div>

@@ -27,7 +27,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Right-hand text in two-column headers is right-aligned, not floating.
 - Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky glass bar (translucent, blurred, saturated, hairline highlight) from the first section after the hero onward (the script reads the hero's next sibling, so reordering sections is safe). Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
 - The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the grey r lifted to off-white, the tan h untouched). The original two-tone file is `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
-- Square zero-gap grids for button groups (social icons, hero play/mute, grading toggle).
+- Square zero-gap grids for button groups (social icons, hero play/mute).
 - No footer. About is the last thing on the page.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the audio panel.
 
@@ -36,13 +36,18 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is `public/media/video/hero.mp4` (Ryan's 4K export) with `hero-720.mp4` for small screens, chosen by an inline script before fetch.
 - Work grid: hover plays the film on devices with a pointer, click opens the case study overlay.
 - Case study: title, meta, film with a scrubber and amber note markers, notes on the right that seek the film and highlight as it plays. Back button, Escape, arrow keys between projects.
-- Color Grading: drag wipe between camera original and final grade. Two examples, each a different clip and grade.
+- Color Grading: one slider, no toggles. The same 14 s of the teaser exported at every stage (S-Log3,
+  Rec.709, final grade) stacked as synced 1080p videos. The rail under the frame is the control and its
+  stops are the stages left to right. At a stop the whole frame is that stage; between two stops the later
+  stage sweeps in from the right edge, so the earlier stage is always on the left and the frame reads in
+  the same order as the rail. Drag on the frame or the rail, arrow keys on the rail. Stage names and order
+  live in `src/data/grade.ts`; a stage with an empty src is skipped.
 - Sound Design: Web Audio crossfade between a simulated raw and a processed mix, a synthesized score bed with ducking, live spectrum and EQ curve. Everything here is placeholder until raw + mix files exist.
 - Photography: six-column grid, lightbox with arrows and keyboard.
 
 ## Placeholders still in place
 
-Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video and its timeline are real. Replace via `src/data/` and `public/media/`.
+Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video, its timeline and the three grading clips are real. Replace via `src/data/` and `public/media/`.
 
 ## Working conventions
 

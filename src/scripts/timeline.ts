@@ -102,7 +102,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
   }
 
   // ---------- tracks (static layer) ----------
-  function drawClip(c: HTMLCanvasRenderingContext2D, clip: Clip, y: number, th: number) {
+  function drawClip(c: CanvasRenderingContext2D, clip: Clip, y: number, th: number) {
     const x0 = L + clip.in * pps - scrollX, x1 = L + clip.out * pps - scrollX;
     if (x1 < L || x0 > width) return;
     const col = COL[clip.kind]; const vx0 = Math.max(L, x0), vx1 = Math.min(width, x1); const w = vx1 - vx0; if (w < 1) return;

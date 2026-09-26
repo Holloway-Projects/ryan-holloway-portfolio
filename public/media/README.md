@@ -3,7 +3,7 @@
 Everything the site plays or shows. Keep files web-sized: total media should stay in the low hundreds of MB.
 
 ```
-video/   hero.mp4, hero-720.mp4, hero-poster.jpg, <project>.mp4, <project>-poster.jpg, grade-1.mp4, grade-2.mp4
+video/   hero.mp4, hero-720.mp4, hero-poster.jpg, grade-log.mp4, grade-709.mp4, grade-final.mp4, <project>.mp4, <project>-poster.jpg
 audio/   dialogue-raw.wav|.mp3, dialogue-mix.wav|.mp3, score.mp3
 images/  headshot.jpg, photo-01.jpg …
 ```
@@ -29,6 +29,17 @@ ffmpeg -i Main-Edit.mp4 -map 0:v:0 -map 0:a:0 -vf "scale=1280:720:flags=lanczos"
 ```
 
 Poster: `ffmpeg -ss 1.5 -i hero.mp4 -frames:v 1 -q:v 3 hero-poster.jpg`.
+
+## Grading clips
+
+Same 14.08 s excerpt exported three times from Resolve (S-Log3, Rec.709, final grade), 1080p, no audio, so the
+three layers stay in sync and decode cheaply. Frame counts must match.
+
+```
+ffmpeg -i Main-Edit-Raw.mp4 -t 14.08 -vf "scale=1920:1080:flags=lanczos" -c:v libx264 -preset slow -crf 19 \
+  -maxrate 6M -bufsize 12M -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 \
+  -color_range tv -an -write_tmcd 0 -movflags +faststart grade-log.mp4
+```
 
 ## Encoding recipe for everything else (ffmpeg)
 

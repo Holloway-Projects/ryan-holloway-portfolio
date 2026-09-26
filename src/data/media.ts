@@ -8,6 +8,10 @@ export const video = {
   hero: '/media/video/hero.mp4',
   hero720: '/media/video/hero-720.mp4',
   heroPoster: '/media/video/hero-poster.jpg',
+  /** Grading slider: the same 14 s excerpt of the teaser exported at each stage. */
+  gradeLog: '/media/video/grade-log.mp4',
+  grade709: '/media/video/grade-709.mp4',
+  gradeFinal: '/media/video/grade-final.mp4',
   swiss: C + 'c/c4/Timelapse_of_Swiss_mountains.webm/Timelapse_of_Swiss_mountains.webm.480p.vp9.webm',
   fish: C + '3/3c/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm.480p.vp9.webm',
   times: C + 'c/cd/WP25_Times_Square_billboard.webm/WP25_Times_Square_billboard.webm.480p.vp9.webm',
