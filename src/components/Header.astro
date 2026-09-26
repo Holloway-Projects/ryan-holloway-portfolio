@@ -2,9 +2,8 @@
 import { site } from '../data/site';
 ---
 <header class="site" data-state="intro">
-  <a class="brand" href="#reel">
+  <a class="brand" href="#reel" aria-label={site.name}>
     <img class="logo" src="/logo.png" alt="" width="920" height="759" />
-    <span>{site.name}</span>
   </a>
   <nav>{site.nav.map((n) => <a href={n.href}>{n.label}</a>)}</nav>
 </header>

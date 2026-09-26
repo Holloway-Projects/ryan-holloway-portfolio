@@ -26,7 +26,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to headings unless Ryan asks. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
 - Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky blurred bar from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
-- The header is Ryan's "rh" monogram plus the name. `public/logo.png` is the dark-background version (the grey r lifted to off-white, the tan h untouched). The original two-tone file is `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
+- The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the grey r lifted to off-white, the tan h untouched). The original two-tone file is `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
 - Square zero-gap grids for button groups (social icons, hero play/mute, grading toggle).
 - No footer. About is the last thing on the page.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the audio panel.
