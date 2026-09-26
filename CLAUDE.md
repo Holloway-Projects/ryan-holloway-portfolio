@@ -33,7 +33,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 
 ## Section behaviour
 
-- Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is `public/media/video/hero.mp4` (1080p) with `hero-720.mp4` for small screens, chosen by an inline script before fetch.
+- Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is `public/media/video/hero.mp4` (Ryan's 4K export) with `hero-720.mp4` for small screens, chosen by an inline script before fetch.
 - Work grid: hover plays the film on devices with a pointer, click opens the case study overlay.
 - Case study: title, meta, film with a scrubber and amber note markers, notes on the right that seek the film and highlight as it plays. Back button, Escape, arrow keys between projects.
 - Color Grading: drag wipe between camera original and final grade. Two examples, each a different clip and grade.
@@ -70,13 +70,15 @@ Decisions made in review that are not obvious from the code:
   horizontal pan, drag to scrub. A hover-only hint sits bottom-right of the strip; can be removed.
 - Video lives in the repo on purpose (Vercel Hobby, 100 GB/month static transfer). Vercel Blob was
   rejected (10 GB/month cap). Plan B if bandwidth bites: Vimeo embeds for case-study films only.
-- Hero target size 25–40 MB at 1080p. Current encode (28.6 MB) showed a colour shift because the
-  master lacks colour primaries/matrix tags. Ryan is re-exporting from Resolve with Rec.709 tags,
-  6,000 Kb/s 1080p and a 2,500 Kb/s 720p; when the files land in ~/Downloads, replace
-  `public/media/video/hero.mp4` and `hero-720.mp4`, re-cut `hero-poster.jpg` (ffmpeg is installed
-  via Homebrew), rebuild, verify, commit. `git config http.postBuffer` is already raised for pushes.
-- Hero timeline data is transcribed from Ryan's Resolve screenshots (±0.15 s). Open questions for
-  Ryan: the sequence runs to ~60 s but the export is 49.4 s (trimmed render?); an FCP XML export
+- Hero video is Ryan's own Resolve export, served untouched at 4K (33 MB, 41.9 s). Ryan signed off on
+  the colour of his file, so do not re-encode it. The earlier colour shift was the missing Rec.709
+  primaries/matrix flags; they are rewritten in the bitstream with an ffmpeg bitstream filter (recipe in
+  `public/media/README.md`). `hero-720.mp4` is a downscale for phones only. To swap in a new export:
+  remux with the filter, re-encode the 720, re-cut `hero-poster.jpg`, rebuild, verify, commit.
+  `git config http.postBuffer` is already raised for pushes.
+- Hero timeline data is transcribed from Ryan's Resolve screenshots (±0.15 s). The 2026-09-25 export trimmed
+  the last 7.5 s (49.4 s to 41.9 s); frame alignment confirmed everything before that is unchanged, so the
+  transcription still syncs. Open questions for Ryan: the sequence runs to ~60 s but the export is 41.9 s; an FCP XML export
   would give frame accuracy. Real filmstrip frames from the video are the next timeline step and
   need nothing from Ryan; real per-track waveforms need audio stems.
 - Verification habit: use the Chrome DevTools MCP against `npx astro preview` on port 4321, check
