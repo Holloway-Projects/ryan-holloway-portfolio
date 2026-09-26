@@ -5,8 +5,9 @@
 const C = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/';
 
 export const video = {
-  hero: C + 'c/cb/Tears_of_Steel_1080p.webm/Tears_of_Steel_1080p.webm.480p.vp9.webm',
-  heroPoster: 'https://picsum.photos/seed/rh-reel/1600/900',
+  hero: '/media/video/hero.mp4',
+  hero720: '/media/video/hero-720.mp4',
+  heroPoster: '/media/video/hero-poster.jpg',
   swiss: C + 'c/c4/Timelapse_of_Swiss_mountains.webm/Timelapse_of_Swiss_mountains.webm.480p.vp9.webm',
   fish: C + '3/3c/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm.480p.vp9.webm',
   times: C + 'c/cd/WP25_Times_Square_billboard.webm/WP25_Times_Square_billboard.webm.480p.vp9.webm',

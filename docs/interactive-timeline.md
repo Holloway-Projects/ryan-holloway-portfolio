@@ -1,7 +1,6 @@
 # Interactive timeline for the hero
 
-Status: renderer and interactions built (`src/scripts/timeline.ts`). Sequence data is generated
-(`src/data/timeline.ts`) until Ryan's real sequence is transcribed. Real thumbnails and waveforms
+Status: renderer and interactions built (`src/scripts/timeline.ts`). Sequence data for the teaser is transcribed from Resolve screenshots in `src/data/hero-timeline.ts` (±0.15 s; the generator in `src/data/timeline.ts` remains as a fallback). Real thumbnails and waveforms
 (steps 3 and 4 below) are not started.
 Scope: one-off, for the single video used in the hero.
 
@@ -66,4 +65,6 @@ Option + scroll zoom around the cursor, Shift + scroll track height, horizontal 
 view follows the playhead during playback.
 
 What is left: real frames pulled from the hero video into the filmstrips, real waveform peaks from
-the film's audio (or stems), and the transcription of Ryan's cut.
+the film's audio (or stems), and frame-accurate times from an XML/EDL export. Note: the sequence in the
+screenshots runs to about 60 s while the exported teaser is 49.4 s; clips past the end are kept in the
+data but fall off the right edge of the ruler.

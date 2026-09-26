@@ -3,7 +3,11 @@ import { video } from '../data/media';
 ---
 <section id="reel" style="padding:0">
   <div class="monitor">
-    <video id="hero" autoplay muted loop playsinline poster={video.heroPoster} src={video.hero}></video>
+    <video id="hero" autoplay muted loop playsinline poster={video.heroPoster} data-hd={video.hero} data-sd={video.hero720}></video>
+    <script is:inline>
+      // pick the source before the browser starts fetching: 720p on small screens, 1080p otherwise
+      (function () { var v = document.getElementById('hero'); v.src = matchMedia('(max-width: 900px)').matches ? v.dataset.sd : v.dataset.hd; })();
+    </script>
     <div class="veil"></div>
     <div class="vctl">
       <button id="play" aria-label="Play or pause"><svg viewBox="0 0 12 12" id="play-ico"><path d="M2 1.5v9l8-4.5z"/></svg></button>

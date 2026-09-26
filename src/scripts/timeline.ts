@@ -1,5 +1,6 @@
 import { tc } from '../lib/timecode';
 import { buildSequence, type Track, type Clip } from '../data/timeline';
+import { heroSequence } from '../data/hero-timeline';
 
 /**
  * Data-driven timeline renderer synced to the hero video.
@@ -58,7 +59,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
 
   function load() {
     duration = video.duration || 60;
-    tracks = buildSequence(duration);
+    tracks = heroSequence.length ? heroSequence : buildSequence(duration);
     pps = fitPps(); scrollX = 0; dirty = true; sizeCanvas();
   }
 
