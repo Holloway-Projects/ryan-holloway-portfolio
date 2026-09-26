@@ -25,7 +25,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Instrument Sans for everything, Fraunces only for the about lede and the contact heading, JetBrains Mono only for real timecodes and technical labels.
 - Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to headings unless Ryan asks. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
-- Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky blurred bar from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
+- Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky glass bar (translucent, blurred, saturated, hairline highlight) from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
 - The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the grey r lifted to off-white, the tan h untouched). The original two-tone file is `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
 - Square zero-gap grids for button groups (social icons, hero play/mute, grading toggle).
 - No footer. About is the last thing on the page.
@@ -45,6 +45,8 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 Project names, clients, copy, all footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. Replace via `src/data/` and `public/media/`.
 
 ## Working conventions
+
+- Do not add `-webkit-backdrop-filter` next to `backdrop-filter`. The CSS minifier collapses the pair into the prefixed one only and Chrome then ignores it. Write the unprefixed property alone; the build handles prefixes.
 
 - Verify visually in a browser after changes; the hero timeline and audio panel are canvas and Web Audio, and break silently.
 - Keep placeholder media remote until Ryan's files arrive, then switch `src/data/media.ts` to `/media/...` paths.
