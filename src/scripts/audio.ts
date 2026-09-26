@@ -80,15 +80,16 @@ export function initAudio() {
     const target = scoreOn && playing ? scoreBase * (1 - .6 * lvl) : 0;
     scoreG.gain.setTargetAtTime(target, ctx.currentTime, .08); duck.classList.toggle('on', scoreOn && playing && lvl > .3);
   }
+  function kill() { for (const s of srcs) { s.onended = null; try { s.stop(); } catch {} } srcs = []; }
   function start(at: number) {
-    srcs = [];
+    kill();
     if (noiseBuf && noiseIn) { const n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true; n.connect(noiseIn); n.start(); srcs.push(n); }
     const mk = (b: AudioBuffer, dest: AudioNode) => { const s = ctx.createBufferSource(); s.buffer = b; s.connect(dest); s.start(0, at); srcs.push(s); return s; };
     const lead = mk(mixBuf, mixG); mk(rawBuf || mixBuf, rawIn); if (scoreBuf) mk(scoreBuf, scoreG);
     startedAt = ctx.currentTime; offset = at; playing = true; lead.onended = () => { if (playing && srcs.includes(lead)) start(0); };
     ico.innerHTML = '<path d="M2 1.5h3v9H2zM7 1.5h3v9H7z"/>';
   }
-  function stop() { offset = pos(); playing = false; for (const s of srcs) { s.onended = null; try { s.stop(); } catch {} } srcs = []; ico.innerHTML = '<path d="M2 1.5v9l8-4.5z"/>'; }
+  function stop() { offset = pos(); playing = false; kill(); ico.innerHTML = '<path d="M2 1.5v9l8-4.5z"/>'; }
   playB.addEventListener('click', () => { if (!ctx) { load(); return; } if (!ready) return; ctx.resume(); if (playing) stop(); else start(offset >= mixBuf.duration ? 0 : offset); });
   wave.addEventListener('click', (e) => { if (!ready) return; const r = wave.getBoundingClientRect(); const t = ((e.clientX - r.left) / r.width) * mixBuf.duration; const was = playing; if (was) stop(); offset = t; if (was) start(t); draw(); });
   document.addEventListener('snd:mode', (e) => { if ((e as CustomEvent).detail !== 'dialogue' && playing) stop(); });
