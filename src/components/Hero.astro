@@ -6,7 +6,18 @@ import { video } from '../data/media';
     <video id="hero" autoplay muted loop playsinline poster={video.heroPoster} data-hd={video.hero} data-sd={video.hero720}></video>
     <script is:inline>
       // pick the source before the browser starts fetching: 720p on small screens, 1080p otherwise
-      (function () { var v = document.getElementById('hero'); v.src = matchMedia('(max-width: 900px)').matches ? v.dataset.sd : v.dataset.hd; })();
+      // sound on by default; if the browser refuses sound before any interaction, fall back to muted playback
+      // and unmute on the first gesture while the hero is still in view
+      (function () {
+        var v = document.getElementById('hero'); v.src = matchMedia('(max-width: 900px)').matches ? v.dataset.sd : v.dataset.hd;
+        v.muted = false;
+        var p = v.play(); if (!p || !p.catch) return;
+        p.catch(function () {
+          v.muted = true; v.dataset.forcedMute = '1'; v.play().catch(function () {});
+          var unmute = function () { if (v.dataset.forcedMute && scrollY < innerHeight * .6) { v.muted = false; } delete v.dataset.forcedMute; };
+          addEventListener('pointerdown', unmute, { once: true }); addEventListener('keydown', unmute, { once: true });
+        });
+      })();
     </script>
     <div class="veil"></div>
     <div class="vctl">
