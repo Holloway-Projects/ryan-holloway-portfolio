@@ -92,6 +92,14 @@ Decisions made in review that are not obvious from the code:
   (`/?v=N`) to defeat cache; avoid `#hash` URLs when testing the header, they distort scroll tests.
 - Git identity is Kyle's; commits end with the Claude co-author line.
 
+- Grading slider (2026-09-25, late): the concept is accepted (one bar, S-Log3 / Rec.709 / final grade in
+  order) but Kyle and Ryan do not love how the bar transitions between the three stages. Needs a new
+  solve; parked while the sound section is built. Don't polish the current mechanism further.
+- Sound section plan (2026-09-25): square-grid toggle with two modes. Mode one is what exists (raw
+  dialogue to mix crossfade, score bed layered under). Mode two is sound design: Ryan supplies seven or
+  eight isolated stems for a dialogue-free clip; left panel is a channel list with waveforms and
+  mute/solo per channel, right panel is the matching video clip, everything locked to one clock.
+
 Remaining sections to review in order: The Work (grid + case study), The Process (grading examples
 with Ryan's clips, sound design with real raw/mix files and a plugin capture), Photography (real
 stills), About (headshot, copy, gear, real links), then the share image with the real logo.
