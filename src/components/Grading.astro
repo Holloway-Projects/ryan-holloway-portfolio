@@ -1,0 +1,17 @@
+---
+import { looks } from '../data/looks';
+const first = looks[0];
+---
+<div class="craft" id="grade">
+  <div class="chead"><h3>Color Grading</h3></div>
+  <div class="wipe" id="wipe" style={`--grade:${first.grade}`}>
+    <video class="log" muted loop playsinline autoplay src={first.video}></video>
+    <video class="graded" muted loop playsinline autoplay src={first.video}></video>
+    <div class="handle"></div>
+    <span class="lab l">Camera original</span><span class="lab r">Final grade</span>
+  </div>
+  <div class="xgrid" id="look-list">
+    {looks.map((l, i) => <button class={i === 0 ? 'on' : ''}>{l.name}</button>)}
+  </div>
+  <script type="application/json" id="looks-json" set:html={JSON.stringify(looks)} />
+</div>

@@ -1,0 +1,13 @@
+---
+import { photos } from '../data/photos';
+---
+<section id="photo" class="tint">
+  <div class="head"><h2 class="sec">Photography</h2></div>
+  <div class="photos">
+    {photos.map((p) => (
+      <button data-full={p.full} data-caption={p.caption} aria-label={`View ${p.caption}`}>
+        <img src={p.src} alt={p.caption} loading="lazy" />
+      </button>
+    ))}
+  </div>
+</section>

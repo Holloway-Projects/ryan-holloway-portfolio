@@ -1,0 +1,26 @@
+---
+import { projects } from '../data/projects';
+---
+<div class="case" id="case" role="dialog" aria-modal="true" aria-label="Project">
+  <div class="bar">
+    <button id="c-close"><svg viewBox="0 0 14 14" style="width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.6;vertical-align:-1px;margin-right:8px"><path d="M9 2 4 7l5 5"/></svg>Back</button>
+    <div><b id="c-name"></b><span id="c-kind"></span></div>
+  </div>
+  <div class="cwrap">
+    <div class="ctitle"><h2 id="c-title"></h2><p id="c-lede"></p></div>
+    <div class="cmeta" id="c-meta"></div>
+    <div class="player">
+      <div>
+        <div class="vid"><video id="c-video" controls playsinline muted></video></div>
+        <div class="scrub" id="scrub"><div class="fill" id="fill"></div></div>
+        <div class="bar2"><span id="c-cur">00:00:00:00</span><span id="c-dur"></span></div>
+      </div>
+      <div class="notes">
+        <h3>Notes at timecode</h3>
+        <p class="sub">Select a note to jump the film to that moment.</p>
+        <div id="c-notes"></div>
+      </div>
+    </div>
+  </div>
+  <script type="application/json" id="projects-json" set:html={JSON.stringify(projects)} />
+</div>

@@ -1,0 +1,7 @@
+---
+import { site } from '../data/site';
+---
+<header class="site">
+  <a class="brand" href="#reel">{site.name}</a>
+  <nav>{site.nav.map((n) => <a href={n.href}>{n.label}</a>)}</nav>
+</header>

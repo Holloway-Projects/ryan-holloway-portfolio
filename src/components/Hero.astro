@@ -1,0 +1,22 @@
+---
+import { video } from '../data/media';
+---
+<section id="reel" style="padding:0">
+  <div class="monitor">
+    <video id="hero" autoplay muted loop playsinline poster={video.heroPoster} src={video.hero}></video>
+    <div class="veil"></div>
+    <div class="vctl">
+      <button id="play" aria-label="Play or pause"><svg viewBox="0 0 12 12" id="play-ico"><path d="M2 1.5v9l8-4.5z"/></svg></button>
+      <button id="mute" aria-label="Mute or unmute"><svg viewBox="0 0 24 24" id="mute-ico"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 9l5 6M21 9l-5 6"/></svg></button>
+    </div>
+  </div>
+  <div class="deck">
+    <div class="deck-body">
+      <div class="capture">
+        <canvas id="tl-ruler"></canvas>
+        <div class="tl-scroll" id="tl-scroll"><canvas id="tl"></canvas></div>
+        <span class="tag">Timeline · placeholder · scroll for more tracks</span>
+      </div>
+    </div>
+  </div>
+</section>
