@@ -17,6 +17,7 @@ export const sound = {
     raw: audio.dialogueRaw,
     mix: audio.dialogueMix,
     score: audio.score,
+    /** Score bed level under the dialogue, 0 to 1. The on-page slider is master volume, not this. */
     scoreLevel: 0.6,
     chain: [
       ['HPF', '100 Hz'], ['Presence', '+4 dB @ 6.3k'], ['Comp', 'LRA 2 LU'], ['Limiter', '-1 dBFS'], ['Loudness', '-16 LUFS'],

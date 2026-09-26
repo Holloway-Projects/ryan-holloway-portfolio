@@ -25,7 +25,7 @@ const stems = sound.design.stems;
       <div class="score">
         <span>Score</span>
         <div class="seg"><button class="on" id="sc-off">Dialogue only</button><button id="sc-on">With score bed</button></div>
-        <label>Level<input type="range" id="sc-lvl" min="0" max="100" value={Math.round(d.scoreLevel * 100)} aria-label="Score level" /></label>
+        <label>Volume<input type="range" id="vol" min="0" max="100" value="80" aria-label="Volume" /></label>
         <span class="duck" id="duck">ducking</span>
       </div>
       <p class="ab-note" id="a-status"></p>

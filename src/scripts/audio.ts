@@ -18,23 +18,24 @@ export function initAudio() {
   const wctx = wave.getContext('2d')!, sctx = spec.getContext('2d')!;
   const $ = (id: string) => document.getElementById(id)!;
   const playB = $('a-play'), ico = $('a-ico'), tcEl = $('a-tc'), status = $('a-status'), xf = $('xfade') as HTMLInputElement;
-  const scOff = $('sc-off'), scOn = $('sc-on'), scLvl = $('sc-lvl') as HTMLInputElement, duck = $('duck'), rackSrc = $('rack-src');
+  const scOff = $('sc-off'), scOn = $('sc-on'), vol = $('vol') as HTMLInputElement, duck = $('duck'), rackSrc = $('rack-src');
 
   let ctx: AudioContext, mixBuf: AudioBuffer, rawBuf: AudioBuffer | null = null, scoreBuf: AudioBuffer | null = null;
   let peaks: { raw: Float32Array; mix: Float32Array } | null = null;
   let srcs: AudioBufferSourceNode[] = [], noiseBuf: AudioBuffer | null = null, noiseIn: AudioNode | null = null;
-  let rawG: GainNode, mixG: GainNode, scoreG: GainNode, master: GainNode, an: AnalyserNode, dlgAn: AnalyserNode, rawIn: AudioNode;
+  let rawG: GainNode, mixG: GainNode, scoreG: GainNode, master: GainNode, out: GainNode, an: AnalyserNode, dlgAn: AnalyserNode, rawIn: AudioNode;
   let playing = false, offset = 0, startedAt = 0, ready = false, loading = false, scoreOn = false, scoreBase = Number(panel.dataset.level) || .6;
   const simulated = !URLS.raw;
 
+  const volCurve = () => Math.pow(Number(vol.value) / 100, 1.6);
   function fit(c: HTMLCanvasElement) { const r = c.getBoundingClientRect(); const d = Math.min(2, devicePixelRatio || 1); c.width = r.width * d; c.height = r.height * d; c.getContext('2d')!.setTransform(d, 0, 0, d, 0, 0); return r; }
 
   function build() {
     ctx = new AudioContext();
-    rawG = ctx.createGain(); mixG = ctx.createGain(); scoreG = ctx.createGain(); scoreG.gain.value = 0; master = ctx.createGain();
+    rawG = ctx.createGain(); mixG = ctx.createGain(); scoreG = ctx.createGain(); scoreG.gain.value = 0; master = ctx.createGain(); out = ctx.createGain(); out.gain.value = volCurve();
     an = ctx.createAnalyser(); an.fftSize = 2048; an.smoothingTimeConstant = .82;
     dlgAn = ctx.createAnalyser(); dlgAn.fftSize = 1024;
-    rawG.connect(master); mixG.connect(master); master.connect(dlgAn); master.connect(an); scoreG.connect(an); an.connect(ctx.destination);
+    rawG.connect(master); mixG.connect(master); master.connect(dlgAn); master.connect(out); scoreG.connect(out); out.connect(an).connect(ctx.destination);
     if (simulated) {
       // undo the mix, roughly: no low end below 100 Hz is put back with a shelf, the 6 k lift is dipped, the top is rolled off, a little hiss
       const shelf = ctx.createBiquadFilter(); shelf.type = 'lowshelf'; shelf.frequency.value = 120; shelf.gain.value = 5;
@@ -58,7 +59,7 @@ export function initAudio() {
   function setScore(on: boolean) { scoreOn = on; scOff.classList.toggle('on', !on); scOn.classList.toggle('on', on); if (ctx && !playing && on) start(offset >= mixBuf.duration ? 0 : offset); }
   scOff.addEventListener('click', () => setScore(false));
   scOn.addEventListener('click', () => { if (!ctx) { load().then(() => setScore(true)); return; } setScore(true); });
-  scLvl.addEventListener('input', () => (scoreBase = Number(scLvl.value) / 100));
+  vol.addEventListener('input', () => { if (out) out.gain.setTargetAtTime(volCurve(), ctx.currentTime, .02); });
 
   const peaksOf = (b: AudioBuffer, N = 600) => { const ch = b.getChannelData(0); const out = new Float32Array(N); const step = Math.floor(ch.length / N); for (let i = 0; i < N; i++) { let m = 0; for (let j = 0; j < step; j += 8) { const v = Math.abs(ch[i * step + j]); if (v > m) m = v; } out[i] = m; } return out; };
   async function fetchBuf(url: string) { const res = await fetch(url); return ctx.decodeAudioData(await res.arrayBuffer()); }
