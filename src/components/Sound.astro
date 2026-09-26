@@ -1,17 +1,22 @@
 ---
-import { audio } from '../data/media';
-import { site } from '../data/site';
+import { sound } from '../data/sound';
+const d = sound.dialogue;
+const stems = sound.design.stems;
 ---
 <div class="craft" id="audio">
-  <div class="chead"><h3>Sound Design</h3></div>
-  <div class="audio-grid">
+  <div class="chead">
+    <h3>Sound Design</h3>
+    <div class="xgrid" id="snd-mode"><button class="on" data-mode="dialogue">Dialogue</button><button data-mode="design">Sound design</button></div>
+  </div>
+
+  <div class="audio-grid" id="snd-dialogue" data-raw={d.raw} data-mix={d.mix} data-score={d.score} data-level={d.scoreLevel}>
     <div class="ab">
       <div class="ab-top">
         <button class="btn" id="a-play" aria-label="Play or pause audio"><svg viewBox="0 0 12 12" id="a-ico"><path d="M2 1.5v9l8-4.5z"/></svg></button>
         <div class="tcr" id="a-tc">00:00:00:00 <span>/ 00:00:00:00</span></div>
-        <div class="lab" id="a-lab">Interview · A001 · boom, placeholder audio</div>
+        <div class="lab" id="a-lab">{d.label}</div>
       </div>
-      <canvas id="wave" data-src={audio.dialogue}></canvas>
+      <canvas id="wave"></canvas>
       <div class="xf">
         <span id="xf-raw">Raw</span>
         <input type="range" id="xfade" min="0" max="100" value="100" aria-label="Crossfade between raw and mixed audio" />
@@ -20,16 +25,31 @@ import { site } from '../data/site';
       <div class="score">
         <span>Score</span>
         <div class="seg"><button class="on" id="sc-off">Dialogue only</button><button id="sc-on">With score bed</button></div>
-        <label>Level<input type="range" id="sc-lvl" min="0" max="100" value="45" aria-label="Score level" /></label>
+        <label>Level<input type="range" id="sc-lvl" min="0" max="100" value={Math.round(d.scoreLevel * 100)} aria-label="Score level" /></label>
         <span class="duck" id="duck">ducking</span>
       </div>
-      <p class="ab-note" id="a-status">Press play to load the placeholder audio.</p>
+      <p class="ab-note" id="a-status"></p>
     </div>
     <div class="rack">
-      <div class="rack-head"><b>Channel strip · Dialogue</b><span>placeholder for plugin capture</span></div>
+      <div class="rack-head"><b>Channel strip · Dialogue</b><span id="rack-src">mix</span></div>
       <canvas id="spec"></canvas>
-      <div class="chain" id="chain">{site.soundChain.map(([n, v]) => <span>{n}<i>{v}</i></span>)}</div>
+      <div class="chain" id="chain">{d.chain.map(([n, v]) => <span>{n}<i>{v}</i></span>)}</div>
       <div class="meters"><div class="meter"><i id="m-l"></i></div><div class="meter"><i id="m-r"></i></div><span class="mono">L / R</span></div>
+      <script type="application/json" id="response-json" set:html={JSON.stringify(d.response)} />
     </div>
+  </div>
+
+  <div class="audio-grid design" id="snd-design" hidden data-video={sound.design.video}>
+    <div class="stems" id="stems">
+      {stems.map((s, i) => (
+        <div class="stem" data-id={s.id} data-src={s.src}>
+          <div class="stem-head"><span class="stem-n">{i + 1}</span><span class="stem-name">{s.name}</span>
+            <span class="xgrid tiny"><button class="mute" aria-label={`Mute ${s.name}`}>M</button><button class="solo" aria-label={`Solo ${s.name}`}>S</button></span></div>
+          <canvas class="stem-wave"></canvas>
+        </div>
+      ))}
+      {stems.length === 0 && <p class="ab-note">Stems on the way.</p>}
+    </div>
+    <div class="monitor-sm"><video id="design-video" muted loop playsinline preload="metadata"></video></div>
   </div>
 </div>

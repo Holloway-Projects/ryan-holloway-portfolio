@@ -43,12 +43,19 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
   all final, far right is all log. The legend under the frame follows the bands. Drag on the frame or the
   legend, arrow keys on the frame. Stage names and order live in `src/data/grade.ts`; a stage with an
   empty src is skipped.
-- Sound Design: Web Audio crossfade between a simulated raw and a processed mix, a synthesized score bed with ducking, live spectrum and EQ curve. Everything here is placeholder until raw + mix files exist.
+- Sound Design: square-grid toggle with two modes. Dialogue: Ryan's mix (`dialogue-mix.m4a`) and score
+  bed (`score.m4a`) as real Web Audio buffers, equal-power crossfade raw <-> mix, score ducks under the
+  dialogue envelope; the rack shows a live spectrum, the measured mix response curve and the chain chips,
+  all from `src/data/sound.ts`. The raw side is simulated from the mix until a non-silent Raw-Dialogue.wav
+  arrives (the first export was digital silence); set `audio.dialogueRaw` in `media.ts` and the simulation
+  drops out. Then re-measure raw vs mix and replace `response`/`chain` with the true difference. Sound
+  design mode: stems + dialogue-free clip, mute/solo per channel, driven by `sound.design`; empty until
+  Ryan's stems land (`stems.ts` still to write).
 - Photography: six-column grid, lightbox with arrows and keyboard.
 
 ## Placeholders still in place
 
-Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video, its timeline and the three grading clips are real. Replace via `src/data/` and `public/media/`.
+Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video, its timeline, the three grading clips, the mixed dialogue and the score bed are real. Replace via `src/data/` and `public/media/`.
 
 ## Working conventions
 

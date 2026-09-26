@@ -3,6 +3,7 @@ import { initHero } from './hero';
 import { initWork } from './work';
 import { initGrading } from './grading';
 import { initAudio } from './audio';
+import { initSoundMode } from './soundmode';
 import { initLightbox } from './lightbox';
 import { initCaseStudy } from './casestudy';
 
@@ -12,4 +13,5 @@ initCaseStudy();
 initWork();
 initGrading();
 initAudio();
+initSoundMode();
 initLightbox();

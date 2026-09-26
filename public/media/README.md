@@ -4,7 +4,7 @@ Everything the site plays or shows. Keep files web-sized: total media should sta
 
 ```
 video/   hero.mp4, hero-720.mp4, hero-poster.jpg, grade-log.mp4, grade-709.mp4, grade-final.mp4, <project>.mp4, <project>-poster.jpg
-audio/   dialogue-raw.wav|.mp3, dialogue-mix.wav|.mp3, score.mp3
+audio/   dialogue-raw.m4a, dialogue-mix.m4a, score.m4a, stems/<channel>.m4a
 images/  headshot.jpg, photo-01.jpg …
 ```
 
@@ -65,4 +65,6 @@ ffmpeg -ss 3 -i out.mp4 -frames:v 1 -q:v 3 out-poster.jpg
 ```
 
 Hover previews in the work grid use the same file as the case study, so no extra encode is needed.
-Audio: 48 kHz, 16-bit WAV or 192k MP3. Raw and mix should be the same take, same length, so the crossfade lines up.
+Audio: Ryan exports 48 kHz 24-bit WAV; encode with `ffmpeg -i in.wav -c:a aac -b:a 192k -movflags +faststart out.m4a`.
+Raw, mix and score must be the same range and length so the crossfade and ducking line up. Check a WAV is not
+silent before encoding (`ffmpeg -i in.wav -af astats -f null -` should show a finite peak level).

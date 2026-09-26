@@ -21,8 +21,10 @@ export const video = {
 };
 
 export const audio = {
-  /** One placeholder clip; the raw side is simulated in the browser until real raw + mix files exist. */
-  dialogue: 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Section_1_of_Alex_Interview-Wikimedia_Version.ogg',
+  /** Dialogue A/B. Raw is empty until a non-silent export lands; the raw side is then simulated from the mix. */
+  dialogueRaw: '',
+  dialogueMix: '/media/audio/dialogue-mix.m4a',
+  score: '/media/audio/score.m4a',
 };
 
 /** Placeholder stills. Replace with "/media/images/…" paths. */
