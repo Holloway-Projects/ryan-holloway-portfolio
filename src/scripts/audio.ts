@@ -22,7 +22,7 @@ export function initAudio() {
 
   let ctx: AudioContext, mixBuf: AudioBuffer, rawBuf: AudioBuffer | null = null, scoreBuf: AudioBuffer | null = null;
   let peaks: { raw: Float32Array; mix: Float32Array } | null = null;
-  let srcs: AudioBufferSourceNode[] = [], noise: AudioBufferSourceNode | null = null, noiseOn = false;
+  let srcs: AudioBufferSourceNode[] = [], noiseBuf: AudioBuffer | null = null, noiseIn: AudioNode | null = null;
   let rawG: GainNode, mixG: GainNode, scoreG: GainNode, master: GainNode, an: AnalyserNode, dlgAn: AnalyserNode, rawIn: AudioNode;
   let playing = false, offset = 0, startedAt = 0, ready = false, loading = false, scoreOn = false, scoreBase = Number(panel.dataset.level) || .6;
   const simulated = !URLS.raw;
@@ -42,9 +42,9 @@ export function initAudio() {
       const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 5200; lp.Q.value = .5;
       const trim = ctx.createGain(); trim.gain.value = .55;
       shelf.connect(dip).connect(lp).connect(trim).connect(rawG); rawIn = shelf;
-      const nb = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate); const dd = nb.getChannelData(0); for (let i = 0; i < dd.length; i++) dd[i] = Math.random() * 2 - 1;
-      noise = ctx.createBufferSource(); noise.buffer = nb; noise.loop = true; const nbp = ctx.createBiquadFilter(); nbp.type = 'bandpass'; nbp.frequency.value = 2500; nbp.Q.value = .4; const ng = ctx.createGain(); ng.gain.value = .012;
-      noise.connect(nbp).connect(ng).connect(rawG);
+      noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate); const dd = noiseBuf.getChannelData(0); for (let i = 0; i < dd.length; i++) dd[i] = Math.random() * 2 - 1;
+      const nbp = ctx.createBiquadFilter(); nbp.type = 'bandpass'; nbp.frequency.value = 2500; nbp.Q.value = .4; const ng = ctx.createGain(); ng.gain.value = .0045;
+      nbp.connect(ng).connect(rawG); noiseIn = nbp;
     } else rawIn = rawG;
     setFade(Number(xf.value) / 100);
   }
@@ -81,11 +81,11 @@ export function initAudio() {
     scoreG.gain.setTargetAtTime(target, ctx.currentTime, .08); duck.classList.toggle('on', scoreOn && playing && lvl > .3);
   }
   function start(at: number) {
-    if (noise && !noiseOn) { noise.start(); noiseOn = true; }
     srcs = [];
+    if (noiseBuf && noiseIn) { const n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true; n.connect(noiseIn); n.start(); srcs.push(n); }
     const mk = (b: AudioBuffer, dest: AudioNode) => { const s = ctx.createBufferSource(); s.buffer = b; s.connect(dest); s.start(0, at); srcs.push(s); return s; };
     const lead = mk(mixBuf, mixG); mk(rawBuf || mixBuf, rawIn); if (scoreBuf) mk(scoreBuf, scoreG);
-    startedAt = ctx.currentTime; offset = at; playing = true; lead.onended = () => { if (playing && srcs[0] === lead) start(0); };
+    startedAt = ctx.currentTime; offset = at; playing = true; lead.onended = () => { if (playing && srcs.includes(lead)) start(0); };
     ico.innerHTML = '<path d="M2 1.5h3v9H2zM7 1.5h3v9H7z"/>';
   }
   function stop() { offset = pos(); playing = false; for (const s of srcs) { s.onended = null; try { s.stop(); } catch {} } srcs = []; ico.innerHTML = '<path d="M2 1.5v9l8-4.5z"/>'; }
