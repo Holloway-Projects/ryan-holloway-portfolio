@@ -33,7 +33,8 @@ header.site{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-cont
 header.site[data-state="hidden"]{opacity:0;transform:translateY(-14px);filter:blur(6px);pointer-events:none;transition-duration:1.8s,1.8s,1.8s,.6s,.6s,.6s}
 header.site[data-state="peek"]{opacity:1;transform:none;background:linear-gradient(rgba(14,14,14,.85),rgba(14,14,14,0))}
 header.site[data-state="stuck"]{background:rgba(14,14,14,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line);padding:14px var(--gutter);text-shadow:none}
-header.site .brand{font-weight:600;letter-spacing:-.025em;font-size:21px;line-height:1}
+header.site .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:-.025em;font-size:21px;line-height:1}
+header.site .logo{height:26px;width:auto;display:block}
 header.site nav{display:flex;gap:28px;font-size:15px}
 header.site nav a{opacity:.7;transition:opacity .15s}
 header.site nav a:hover{opacity:1}
