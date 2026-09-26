@@ -1,6 +1,8 @@
 # Interactive timeline for the hero
 
-Status: planned, waiting on files from Ryan.
+Status: renderer and interactions built (`src/scripts/timeline.ts`). Sequence data is generated
+(`src/data/timeline.ts`) until Ryan's real sequence is transcribed. Real thumbnails and waveforms
+(steps 3 and 4 below) are not started.
 Scope: one-off, for the single video used in the hero.
 
 ## Idea
@@ -54,6 +56,14 @@ canvas rather than a screen recording, it can behave like his editor:
 
 ## Where it plugs in
 
-`index.html`, hero section: the `.capture` block holds `#tl-ruler` and `#tl` canvases
-inside `#tl-scroll`. The current `drawStatic` and `drawRuler` functions are the
-placeholder to replace. Transport, playhead sync and wheel handoff stay as they are.
+`src/components/Hero.astro` holds `#tl-ruler` and `#tl` canvases inside `#tl-scroll`.
+`src/scripts/timeline.ts` is the renderer: `createTimeline(video, ruler, canvas, scrollEl, capture)`.
+It reads tracks from `buildSequence()` in `src/data/timeline.ts`. To use a real sequence, replace
+that call with a static `Track[]` export in the same shape (`{ id, name, type, clips: [{ id, name, in, out, kind, gain? }] }`).
+
+What is done: adaptive ruler, clip headers, wireframe filmstrips, seeded waveforms, gain lines,
+Option + scroll zoom around the cursor, Shift + scroll track height, horizontal pan, drag to scrub,
+view follows the playhead during playback.
+
+What is left: real frames pulled from the hero video into the filmstrips, real waveform peaks from
+the film's audio (or stems), and the transcription of Ryan's cut.

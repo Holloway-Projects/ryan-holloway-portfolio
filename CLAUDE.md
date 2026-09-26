@@ -32,7 +32,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 
 ## Section behaviour
 
-- Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. The timeline drawing is a placeholder until `docs/interactive-timeline.md` is built from Ryan's real sequence.
+- Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is generated in `src/data/timeline.ts` until Ryan's real cut is transcribed (`docs/interactive-timeline.md`).
 - Work grid: hover plays the film on devices with a pointer, click opens the case study overlay.
 - Case study: title, meta, film with a scrubber and amber note markers, notes on the right that seek the film and highlight as it plays. Back button, Escape, arrow keys between projects.
 - Color Grading: drag wipe between camera original and final grade. Two examples, each a different clip and grade.

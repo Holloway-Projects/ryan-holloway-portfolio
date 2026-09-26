@@ -56,13 +56,14 @@ header.site nav a:hover{opacity:1}
 .scrub .m{position:absolute;top:7px;width:2px;height:12px;background:var(--amber);transform:translateX(-1px)}
 .scrub .m.on{background:#fff;box-shadow:0 0 0 3px rgba(217,165,94,.35)}
 .deck-body{display:block}
-.capture{position:relative;background:#0b0b0b;height:236px;display:flex;flex-direction:column}
+.capture{position:relative;background:#0b0b0b;height:250px;display:flex;flex-direction:column}
 #tl-ruler{width:100%;height:22px;flex:none;display:block}
 .tl-scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:thin;scrollbar-color:#3a3a3a #0b0b0b}
 .tl-scroll::-webkit-scrollbar{width:8px}.tl-scroll::-webkit-scrollbar-track{background:#0b0b0b}.tl-scroll::-webkit-scrollbar-thumb{background:#333;border-radius:4px}
-#tl{width:100%;height:470px;display:block}
+#tl{width:100%;display:block}
 .capture video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.capture .tag{position:absolute;right:16px;bottom:10px;z-index:2;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.55);padding:3px 7px;border-radius:2px;letter-spacing:.04em}
+.tl-hint{position:absolute;right:14px;bottom:8px;z-index:2;font-family:var(--mono);font-size:10.5px;color:#6b6b69;letter-spacing:.03em;opacity:0;transition:opacity .3s;pointer-events:none}
+.capture:hover .tl-hint{opacity:1}
 
 /* sections */
 section{padding:clamp(80px,10vw,140px) var(--gutter);scroll-margin-top:16px;position:relative}
