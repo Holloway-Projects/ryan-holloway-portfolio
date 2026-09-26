@@ -1,54 +1,51 @@
 /**
- * Color grading slider. The rail under the frame is the control: its stops are the stages, left to right
- * (log, Rec.709, final grade). At a stop the whole frame is that stage. Between two stops the later stage
- * sweeps in from the right edge, so the earlier stage is always on the left of the seam and the frame
- * reads in the same order as the rail. Dragging anywhere over the frame or the rail sets the position.
+ * Color grading slider. One full-height bar in the frame. Left of the bar is the log image, right of it
+ * the Rec.709 conversion, and once the bar is left of the middle the final grade grows in from the right
+ * edge (its seam sits at 2x the bar position), so the frame always reads log, Rec.709, final grade left
+ * to right and at the far left it is all final grade, at the far right all log. The legend under the frame
+ * follows the bands. With two stages there is a single seam at the bar.
  */
 export function initGrading() {
   const root = document.getElementById('grader');
   if (!root) return;
   const wipe = root.querySelector<HTMLElement>('.wipe')!;
-  const rail = root.querySelector<HTMLElement>('.rail')!;
+  const legend = root.querySelector<HTMLElement>('.legend')!;
   const vids = [...wipe.querySelectorAll('video')];
   const layers = [...wipe.querySelectorAll<HTMLElement>('.layer')];
-  const bands = [...wipe.querySelectorAll<HTMLElement>('.band')];
-  const stops = [...rail.querySelectorAll<HTMLElement>('.stop')];
+  const bands = [...legend.querySelectorAll<HTMLElement>('.band')];
   const seam = wipe.querySelector<HTMLElement>('.seam')!;
-  const pairs = Math.max(1, vids.length - 1);
-  let p = Number(root.dataset.start) || 0.75;
+  const three = layers.length > 1;
+  let x = Number(root.dataset.start) || 0.3;
 
   function apply() {
-    const t = p * pairs;
-    const k = Math.min(pairs - 1, Math.floor(t));   // active pair: stage k on the left, k+1 sweeping in
-    const frac = t - k;                              // how far stage k+1 has swept in
-    const s = 1 - frac;                              // seam position across the frame
-    root!.style.setProperty('--p', p * 100 + '%');
-    root!.style.setProperty('--s', s * 100 + '%');
-    layers.forEach((l, i) => { const j = i + 1; l.style.clipPath = j <= k ? 'inset(0)' : j === k + 1 ? `inset(0 0 0 ${s * 100}%)` : 'inset(0 0 0 100%)'; });
-    seam.style.opacity = frac > 0.004 && frac < 0.996 ? '1' : '0';
+    const g = three ? Math.min(1, 2 * x) : 1;
+    root!.style.setProperty('--x', x * 100 + '%');
+    root!.style.setProperty('--g', g * 100 + '%');
+    layers[0].style.clipPath = `inset(0 0 0 ${x * 100}%)`;
+    if (three) layers[1].style.clipPath = `inset(0 0 0 ${g * 100}%)`;
+    seam.style.opacity = three && g < 0.996 && g - x > 0.004 ? '1' : '0';
+    const spans = three ? [[0, x], [x, g], [g, 1]] : [[0, x], [x, 1]];
     const w = wipe.clientWidth;
     bands.forEach((b, i) => {
-      const span = i === k ? [0, s] : i === k + 1 ? [s, 1] : null;
-      if (!span) { b.style.opacity = '0'; return; }
-      b.style.left = span[0] * 100 + '%'; b.style.width = (span[1] - span[0]) * 100 + '%';
-      b.style.opacity = (span[1] - span[0]) * w > 96 ? '1' : '0';
+      const [s0, s1] = spans[i];
+      b.style.left = s0 * 100 + '%'; b.style.width = (s1 - s0) * 100 + '%';
+      b.style.opacity = (s1 - s0) * w > 90 ? '1' : '0';
     });
-    stops.forEach((st, i) => st.classList.toggle('on', Math.abs(t - i) < 0.5 + 0.001));
-    rail.setAttribute('aria-valuenow', String(Math.round(p * 100)));
+    wipe.setAttribute('aria-valuenow', String(Math.round(x * 100)));
   }
-  const set = (cx: number) => { const r = wipe.getBoundingClientRect(); p = Math.max(0, Math.min(1, (cx - r.left) / r.width)); apply(); };
+  const set = (cx: number) => { const r = wipe.getBoundingClientRect(); x = Math.max(0, Math.min(1, (cx - r.left) / r.width)); apply(); };
   let d = false;
-  for (const el of [wipe, rail]) {
+  for (const el of [wipe, legend]) {
     el.addEventListener('pointerdown', (e) => { d = true; try { el.setPointerCapture(e.pointerId); } catch {} set(e.clientX); });
     el.addEventListener('pointermove', (e) => { if (d) set(e.clientX); });
     el.addEventListener('pointerup', () => (d = false)); el.addEventListener('pointercancel', () => (d = false));
   }
-  rail.addEventListener('keydown', (e) => {
+  wipe.addEventListener('keydown', (e) => {
     const step = e.shiftKey ? 0.1 : 0.02;
-    if (e.key === 'ArrowRight') { p = Math.min(1, p + step); apply(); e.preventDefault(); }
-    if (e.key === 'ArrowLeft') { p = Math.max(0, p - step); apply(); e.preventDefault(); }
-    if (e.key === 'Home') { p = 0; apply(); e.preventDefault(); }
-    if (e.key === 'End') { p = 1; apply(); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { x = Math.min(1, x + step); apply(); e.preventDefault(); }
+    if (e.key === 'ArrowLeft') { x = Math.max(0, x - step); apply(); e.preventDefault(); }
+    if (e.key === 'Home') { x = 0; apply(); e.preventDefault(); }
+    if (e.key === 'End') { x = 1; apply(); e.preventDefault(); }
   });
   addEventListener('resize', apply);
 

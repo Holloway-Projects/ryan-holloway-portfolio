@@ -2,21 +2,19 @@
 import { grade } from '../data/grade';
 const stages = grade.stages.filter((s) => s.src);
 const [base, ...layers] = stages;
-const last = stages.length - 1;
 ---
 <div class="craft" id="grade">
   <div class="chead"><h3>Color Grading</h3></div>
-  <div class="grader" id="grader" data-start={grade.start} style={`--p:${grade.start * 100}%;--s:100%`}>
-    <div class="wipe">
+  <div class="grader" id="grader" data-start={grade.start} style={`--x:${grade.start * 100}%;--g:100%`}>
+    <div class="wipe" tabindex="0" role="slider" aria-label="Grading stages" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(grade.start * 100)}>
       <video class="base" muted loop playsinline autoplay preload="metadata" src={base.src}></video>
       {layers.map((s, i) => <video class="layer" data-k={i + 1} muted loop playsinline autoplay preload="metadata" src={s.src}></video>)}
       <div class="seam"></div>
-      {stages.map((s, i) => <span class="band" data-k={i}>{s.name}</span>)}
+      <div class="handle"></div>
     </div>
-    <div class="rail" tabindex="0" role="slider" aria-label="Grading stage" aria-valuemin="0" aria-valuemax="100" aria-valuenow={Math.round(grade.start * 100)}>
-      <span class="fill"></span>
-      {stages.map((s, i) => <span class={'stop' + (i === 0 ? ' first' : i === last ? ' last' : '')} style={`--at:${(i / last) * 100}%`}>{s.name}</span>)}
-      <span class="handle"></span>
+    <div class="legend">
+      {stages.map((s, i) => <span class="band" data-k={i}>{s.name}</span>)}
+      <span class="tick a"></span><span class="tick b"></span>
     </div>
   </div>
 </div>

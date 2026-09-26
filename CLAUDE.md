@@ -36,12 +36,13 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically inside itself. Play/mute buttons sit on the video. Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is `public/media/video/hero.mp4` (Ryan's 4K export) with `hero-720.mp4` for small screens, chosen by an inline script before fetch.
 - Work grid: hover plays the film on devices with a pointer, click opens the case study overlay.
 - Case study: title, meta, film with a scrubber and amber note markers, notes on the right that seek the film and highlight as it plays. Back button, Escape, arrow keys between projects.
-- Color Grading: one slider, no toggles. The same 14 s of the teaser exported at every stage (S-Log3,
-  Rec.709, final grade) stacked as synced 1080p videos. The rail under the frame is the control and its
-  stops are the stages left to right. At a stop the whole frame is that stage; between two stops the later
-  stage sweeps in from the right edge, so the earlier stage is always on the left and the frame reads in
-  the same order as the rail. Drag on the frame or the rail, arrow keys on the rail. Stage names and order
-  live in `src/data/grade.ts`; a stage with an empty src is skipped.
+- Color Grading: one full-height bar, no toggles. The same 14 s of the teaser exported at every stage
+  (S-Log3, Rec.709, final grade) stacked as synced 1080p videos. Log is left of the bar, Rec.709 right of
+  it, and once the bar is left of the midpoint the final grade grows in from the right edge (its seam is
+  at twice the bar position), so the frame always reads log, Rec.709, final left to right; far left is
+  all final, far right is all log. The legend under the frame follows the bands. Drag on the frame or the
+  legend, arrow keys on the frame. Stage names and order live in `src/data/grade.ts`; a stage with an
+  empty src is skipped.
 - Sound Design: Web Audio crossfade between a simulated raw and a processed mix, a synthesized score bed with ducking, live spectrum and EQ curve. Everything here is placeholder until raw + mix files exist.
 - Photography: six-column grid, lightbox with arrows and keyboard.
 
