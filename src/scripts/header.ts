@@ -3,16 +3,16 @@
  *  intro  — visible over the hero on load, fades out after a beat so the film is all you see
  *  hidden — while the hero is on screen
  *  peek   — hidden, but the pointer is at the top edge
- *  stuck  — from The Work onward: solid, sticky, stays for the rest of the page
+ *  stuck  — from the first section after the hero onward: glass, sticky, stays for the rest of the page
  */
 export function initHeader() {
   const hdr = document.querySelector<HTMLElement>('header.site');
-  const work = document.getElementById('work');
-  if (!hdr || !work) return;
+  const first = document.getElementById('reel')?.nextElementSibling as HTMLElement | null;
+  if (!hdr || !first) return;
   let introDone = false, peek = false, peekTimer = 0;
   const set = (s: string) => { if (hdr.dataset.state !== s) hdr.dataset.state = s; };
   const update = () => {
-    const stuckAt = work.getBoundingClientRect().top + scrollY - 120;
+    const stuckAt = first.getBoundingClientRect().top + scrollY - 120;
     if (scrollY >= stuckAt) { set('stuck'); return; }
     if (!introDone) { set('intro'); return; }
     set(peek ? 'peek' : 'hidden');

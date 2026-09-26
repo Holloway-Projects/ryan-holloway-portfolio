@@ -10,7 +10,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 
 ## Layout of the code
 
-- `src/components/` one component per section: Hero, Work, Process (Grading + Sound), Photography, About, plus CaseStudy and Lightbox overlays, Header, Icon.
+- `src/components/` one component per section, in page order: Hero, Process (Grading + Sound), Work, Photography, About, plus CaseStudy and Lightbox overlays, Header, Icon.
 - `src/scripts/` client behaviour, one module per component, all wired in `main.ts`. Data reaches scripts through `data-*` attributes or `<script type="application/json">` blocks, never globals.
 - `src/data/` all content: `projects.ts`, `photos.ts`, `looks.ts` (grading examples), `site.ts` (copy, nav, links, gear), `media.ts` (URLs).
 - `src/styles/global.css` every style, organised by section. Tokens at the top.
@@ -25,7 +25,7 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Instrument Sans for everything, Fraunces only for the about lede and the contact heading, JetBrains Mono only for real timecodes and technical labels.
 - Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to headings unless Ryan asks. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
-- Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky glass bar (translucent, blurred, saturated, hairline highlight) from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
+- Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky glass bar (translucent, blurred, saturated, hairline highlight) from the first section after the hero onward (the script reads the hero's next sibling, so reordering sections is safe). Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
 - The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the grey r lifted to off-white, the tan h untouched). The original two-tone file is `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
 - Square zero-gap grids for button groups (social icons, hero play/mute, grading toggle).
 - No footer. About is the last thing on the page.
@@ -56,7 +56,8 @@ Project names, clients, copy, project footage (Wikimedia Commons), all stills (p
 
 Kyle and Ryan review together, section by section, top of page down. Verified in Chrome after every
 change, committed and pushed to `main` after each accepted round. Header, hero and timeline are
-considered done for now; The Work is the next section to refine.
+considered done for now; The Work is the next section to refine. Page order is Hero, The Process, The Work,
+Photography, About: the hero film feeds straight into the grading and sound sections, so they sit first.
 
 Decisions made in review that are not obvious from the code:
 - Hero copy, transport bar, timecode readout and the timeline caption were all removed on request.
