@@ -25,8 +25,8 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
 - Instrument Sans for everything, Fraunces only for the about lede and the contact heading, JetBrains Mono only for real timecodes and technical labels.
 - Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to headings unless Ryan asks. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
-- Header shows over the hero on load, fades out after ~2.6 s so the film is all you see, and returns as a sticky blurred bar from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
-- The wordmark is a small mark (three track bars with a red playhead that slides across on hover) plus the name in Instrument Sans. There is no logo file.
+- Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is all you see, and returns as a sticky blurred bar from The Work onward. Moving the pointer to the top edge while hidden peeks it. States live in `data-state` on `header.site` (intro, hidden, peek, stuck).
+- The header is a plain wordmark for now. Ryan has an "rh" monogram (dark grey r, tan h); once the file is in `public/`, it goes before the name.
 - Square zero-gap grids for button groups (social icons, hero play/mute, grading toggle).
 - No footer. About is the last thing on the page.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the audio panel.

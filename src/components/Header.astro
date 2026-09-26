@@ -2,9 +2,6 @@
 import { site } from '../data/site';
 ---
 <header class="site" data-state="intro">
-  <a class="brand" href="#reel" aria-label={site.name}>
-    <span class="mark" aria-hidden="true"><i></i><i></i><i></i><b></b></span>
-    <span class="name">{site.name}</span>
-  </a>
+  <a class="brand" href="#reel">{site.name}</a>
   <nav>{site.nav.map((n) => <a href={n.href}>{n.label}</a>)}</nav>
 </header>

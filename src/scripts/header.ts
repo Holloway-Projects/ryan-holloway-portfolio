@@ -17,7 +17,7 @@ export function initHeader() {
     if (!introDone) { set('intro'); return; }
     set(peek ? 'peek' : 'hidden');
   };
-  setTimeout(() => { introDone = true; update(); }, 2600);
+  setTimeout(() => { introDone = true; update(); }, 3000);
   addEventListener('scroll', update, { passive: true });
   addEventListener('resize', update);
   addEventListener('mousemove', (e) => {
