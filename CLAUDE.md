@@ -51,3 +51,38 @@ Project names, clients, copy, project footage (Wikimedia Commons), all stills (p
 - Verify visually in a browser after changes; the hero timeline and audio panel are canvas and Web Audio, and break silently.
 - Keep placeholder media remote until Ryan's files arrive, then switch `src/data/media.ts` to `/media/...` paths.
 - Prefer editing `src/data/` for content changes and `global.css` for style changes. Only touch scripts for behaviour.
+
+## Where things stand (updated 2026-09-25, end of first build session)
+
+Kyle and Ryan review together, section by section, top of page down. Verified in Chrome after every
+change, committed and pushed to `main` after each accepted round. Header, hero and timeline are
+considered done for now; The Work is the next section to refine.
+
+Decisions made in review that are not obvious from the code:
+- Hero copy, transport bar, timecode readout and the timeline caption were all removed on request.
+  The hero is video plus timeline plus two square buttons only.
+- Motion section, footer, contact section, clients line, palette strip and look descriptions were all
+  cut. Don't reintroduce supporting copy or a footer.
+- Header: logo mark only (no name). Intro fade timer starts on page load, not first frame; flagged to
+  Kyle as a judgement call, not yet changed.
+- Timeline commands are the ones Ryan asked for: Option+scroll zoom, Shift+scroll track height,
+  horizontal pan, drag to scrub. A hover-only hint sits bottom-right of the strip; can be removed.
+- Video lives in the repo on purpose (Vercel Hobby, 100 GB/month static transfer). Vercel Blob was
+  rejected (10 GB/month cap). Plan B if bandwidth bites: Vimeo embeds for case-study films only.
+- Hero target size 25–40 MB at 1080p. Current encode (28.6 MB) showed a colour shift because the
+  master lacks colour primaries/matrix tags. Ryan is re-exporting from Resolve with Rec.709 tags,
+  6,000 Kb/s 1080p and a 2,500 Kb/s 720p; when the files land in ~/Downloads, replace
+  `public/media/video/hero.mp4` and `hero-720.mp4`, re-cut `hero-poster.jpg` (ffmpeg is installed
+  via Homebrew), rebuild, verify, commit. `git config http.postBuffer` is already raised for pushes.
+- Hero timeline data is transcribed from Ryan's Resolve screenshots (±0.15 s). Open questions for
+  Ryan: the sequence runs to ~60 s but the export is 49.4 s (trimmed render?); an FCP XML export
+  would give frame accuracy. Real filmstrip frames from the video are the next timeline step and
+  need nothing from Ryan; real per-track waveforms need audio stems.
+- Verification habit: use the Chrome DevTools MCP against `npx astro preview` on port 4321, check
+  console for errors, screenshot the affected section. Reload with a fresh query string
+  (`/?v=N`) to defeat cache; avoid `#hash` URLs when testing the header, they distort scroll tests.
+- Git identity is Kyle's; commits end with the Claude co-author line.
+
+Remaining sections to review in order: The Work (grid + case study), The Process (grading examples
+with Ryan's clips, sound design with real raw/mix files and a plugin capture), Photography (real
+stills), About (headshot, copy, gear, real links), then the share image with the real logo.
