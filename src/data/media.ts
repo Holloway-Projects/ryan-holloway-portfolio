@@ -12,6 +12,9 @@ export const video = {
   gradeLog: '/media/video/grade-log.mp4',
   grade709: '/media/video/grade-709.mp4',
   gradeFinal: '/media/video/grade-final.mp4',
+  /** Sound design clip, picture only. */
+  design: '/media/video/design.mp4',
+  designPoster: '/media/video/design-poster.jpg',
   swiss: C + 'c/c4/Timelapse_of_Swiss_mountains.webm/Timelapse_of_Swiss_mountains.webm.480p.vp9.webm',
   fish: C + '3/3c/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm/Timelapse_video-_Fish_Lake_Campground%2C_Steens_Mountain_%2828956669637%29.webm.480p.vp9.webm',
   times: C + 'c/cd/WP25_Times_Square_billboard.webm/WP25_Times_Square_billboard.webm.480p.vp9.webm',
@@ -25,6 +28,8 @@ export const audio = {
   dialogueRaw: '',
   dialogueMix: '/media/audio/dialogue-mix.m4a',
   score: '/media/audio/score.m4a',
+  /** Sound design stems, one per channel, same 16 s range as video.design. */
+  stems: (n: string) => `/media/audio/stems/${n}.m4a`,
 };
 
 /** Placeholder stills. Replace with "/media/images/…" paths. */

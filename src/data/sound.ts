@@ -1,6 +1,6 @@
-import { audio } from './media';
+import { audio, video } from './media';
 
-export interface Stem { id: string; name: string; src: string }
+export interface Stem { id: string; name: string; src: string; /** Channel trim, 1 = unity. */ gain?: number }
 
 /**
  * Sound section. Mode one is the dialogue A/B: raw location audio against Ryan's mix, with his score bed
@@ -29,9 +29,20 @@ export const sound = {
     ] as [number, number][],
   },
   design: {
-    /** Dialogue-free clip for the stems view. Empty until Ryan's clip lands. */
-    video: '',
-    /** One per channel, in the order they should stack. Empty until Ryan's stems land. */
-    stems: [] as Stem[],
+    label: 'Seven channels · 16 s',
+    video: video.design,
+    poster: video.designPoster,
+    /** Every stem peaks near full scale, so the sum is trimmed here and a limiter catches the rest. */
+    trim: 0.4,
+    /** One per channel, top to bottom. Rename freely; set `gain` to rebalance a channel. */
+    stems: [
+      { id: 'dialogue', name: 'Dialogue', src: audio.stems('dialogue') },
+      { id: 'sfx-1', name: 'SFX 1', src: audio.stems('sfx-1') },
+      { id: 'sfx-2', name: 'SFX 2', src: audio.stems('sfx-2') },
+      { id: 'sfx-3', name: 'SFX 3', src: audio.stems('sfx-3') },
+      { id: 'sfx-4', name: 'SFX 4', src: audio.stems('sfx-4') },
+      { id: 'sfx-5', name: 'SFX 5', src: audio.stems('sfx-5') },
+      { id: 'sfx-6', name: 'SFX 6', src: audio.stems('sfx-6') },
+    ] as Stem[],
   },
 };

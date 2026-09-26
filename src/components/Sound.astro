@@ -39,17 +39,25 @@ const stems = sound.design.stems;
     </div>
   </div>
 
-  <div class="audio-grid design" id="snd-design" hidden data-video={sound.design.video}>
+  <div class="audio-grid design" id="snd-design" hidden data-trim={sound.design.trim}>
     <div class="stems" id="stems">
+      <div class="ab-top">
+        <button class="btn" id="d-play" aria-label="Play or pause"><svg viewBox="0 0 12 12" id="d-ico"><path d="M2 1.5v9l8-4.5z"/></svg></button>
+        <div class="tcr" id="d-tc">00:00:00:00 <span>/ 00:00:00:00</span></div>
+        <div class="lab">{sound.design.label}</div>
+      </div>
       {stems.map((s, i) => (
-        <div class="stem" data-id={s.id} data-src={s.src}>
-          <div class="stem-head"><span class="stem-n">{i + 1}</span><span class="stem-name">{s.name}</span>
-            <span class="xgrid tiny"><button class="mute" aria-label={`Mute ${s.name}`}>M</button><button class="solo" aria-label={`Solo ${s.name}`}>S</button></span></div>
-          <canvas class="stem-wave"></canvas>
+        <div class="stem" data-src={s.src} data-gain={s.gain ?? 1}>
+          <span class="stem-n">{i + 1}</span>
+          <span class="stem-name">{s.name}</span>
+          <canvas class="stem-wave" title="Click to seek"></canvas>
+          <span class="xgrid tiny"><button class="mute" aria-label={`Mute ${s.name}`} aria-pressed="false">M</button><button class="solo" aria-label={`Solo ${s.name}`} aria-pressed="false">S</button></span>
         </div>
       ))}
-      {stems.length === 0 && <p class="ab-note">Stems on the way.</p>}
     </div>
-    <div class="monitor-sm"><video id="design-video" muted loop playsinline preload="metadata"></video></div>
+    <div class="monitor-sm" id="d-monitor">
+      <video id="design-video" muted loop playsinline preload="metadata" src={sound.design.video} poster={sound.design.poster}></video>
+      <span class="prog" id="d-prog"></span>
+    </div>
   </div>
 </div>

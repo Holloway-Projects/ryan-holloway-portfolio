@@ -3,8 +3,8 @@
 Everything the site plays or shows. Keep files web-sized: total media should stay in the low hundreds of MB.
 
 ```
-video/   hero.mp4, hero-720.mp4, hero-poster.jpg, grade-log.mp4, grade-709.mp4, grade-final.mp4, <project>.mp4, <project>-poster.jpg
-audio/   dialogue-raw.m4a, dialogue-mix.m4a, score.m4a, stems/<channel>.m4a
+video/   hero.mp4, hero-720.mp4, hero-poster.jpg, grade-log.mp4, grade-709.mp4, grade-final.mp4, design.mp4, design-poster.jpg, <project>.mp4, <project>-poster.jpg
+audio/   dialogue-raw.m4a, dialogue-mix.m4a, score.m4a, stems/dialogue.m4a, stems/sfx-1.m4a … sfx-6.m4a
 images/  headshot.jpg, photo-01.jpg …
 ```
 

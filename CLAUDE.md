@@ -49,13 +49,16 @@ Personal portfolio for Ryan Holloway: video editor, cinematographer, motion desi
   all from `src/data/sound.ts`. The raw side is simulated from the mix until a non-silent Raw-Dialogue.wav
   arrives (the first export was digital silence); set `audio.dialogueRaw` in `media.ts` and the simulation
   drops out. Then re-measure raw vs mix and replace `response`/`chain` with the true difference. Sound
-  design mode: stems + dialogue-free clip, mute/solo per channel, driven by `sound.design`; empty until
-  Ryan's stems land (`stems.ts` still to write).
+  design mode (`stems.ts`): seven of Ryan's stems (dialogue + SFX 1-6, 16 s) decoded into per-channel
+  gains, summed through a trim and a safety limiter (each stem peaks near full scale, unity sum clips by
+  5 dB); the picture is `design.mp4`, muted, slaved to the audio clock. Mute/solo per channel like an NLE,
+  click a waveform to seek, buffers load when the mode is opened. Channel names, order and per-channel
+  gain live in `sound.design.stems`.
 - Photography: six-column grid, lightbox with arrows and keyboard.
 
 ## Placeholders still in place
 
-Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video, its timeline, the three grading clips, the mixed dialogue and the score bed are real. Replace via `src/data/` and `public/media/`.
+Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the headshot, the social links, the email. The hero video, its timeline, the three grading clips, the mixed dialogue, the score bed, the sound design clip and its seven stems are real. Replace via `src/data/` and `public/media/`.
 
 ## Working conventions
 

@@ -4,6 +4,7 @@ import { initWork } from './work';
 import { initGrading } from './grading';
 import { initAudio } from './audio';
 import { initSoundMode } from './soundmode';
+import { initStems } from './stems';
 import { initLightbox } from './lightbox';
 import { initCaseStudy } from './casestudy';
 
@@ -14,4 +15,5 @@ initWork();
 initGrading();
 initAudio();
 initSoundMode();
+initStems();
 initLightbox();

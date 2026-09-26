@@ -106,6 +106,7 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .chead .xgrid{justify-self:end}
 .xgrid.tiny button{padding:0;width:26px;height:26px;font-size:11px;font-family:var(--mono)}
 .xgrid.tiny button.on{background:var(--amber);color:#111}
+.xgrid.tiny button.mute.on{background:var(--fg2);color:#111}
 .xgrid button{padding:11px 20px;font-size:14px;color:var(--fg2);border-right:1px solid var(--line2);transition:.15s}
 .xgrid button:last-child{border-right:0}
 .xgrid button:hover{color:var(--fg);background:var(--bg3)}
@@ -132,15 +133,17 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 #audio{padding-top:0}
 .audio-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}
 .audio-grid[hidden]{display:none}
-.audio-grid.design{grid-template-columns:1fr 1.25fr;align-items:start}
+.audio-grid.design{align-items:start}
 .stems{border:1px solid var(--line);border-radius:4px;background:linear-gradient(180deg,#131313,#0f0f0f);overflow:hidden}
-.stem{border-bottom:1px solid var(--line)}.stem:last-child{border-bottom:0}
-.stem-head{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:8px 12px;font-size:13px}
+.stem{display:grid;grid-template-columns:22px 92px 1fr auto;gap:12px;align-items:center;padding:0 12px 0 14px;border-top:1px solid var(--line);height:52px}
 .stem-n{font-family:var(--mono);font-size:11px;color:var(--fg3)}
-.stem-wave{width:100%;height:44px;display:block}
-.stem.muted .stem-wave{opacity:.3}
-.monitor-sm{position:relative;aspect-ratio:16/9;background:#000;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.stem-name{font-size:13px;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .15s}
+.stem.solo .stem-name{color:var(--amber)}
+.stem.muted .stem-name{color:var(--fg3)}
+.stem-wave{width:100%;height:40px;display:block;cursor:pointer}
+.monitor-sm{position:relative;aspect-ratio:16/9;background:#000;border-radius:4px;overflow:hidden;border:1px solid var(--line);cursor:pointer}
 .monitor-sm video{width:100%;height:100%;object-fit:cover;display:block}
+.monitor-sm .prog{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--fg);pointer-events:none}
 .ab,.rack{border:1px solid var(--line);border-radius:4px;background:linear-gradient(180deg,#131313,#0f0f0f);overflow:hidden}
 .ab-top{display:grid;grid-template-columns:auto auto 1fr;gap:16px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
 .ab-top .lab{text-align:right;font-size:12.5px;color:var(--fg3)}
