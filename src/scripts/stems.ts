@@ -73,7 +73,7 @@ export function initStems() {
     if (!c.peaks) return;
     const anySolo = chs.some((k) => k.solo); const on = !c.muted && (!anySolo || c.solo);
     const N = c.peaks.length, bw = w / N;
-    for (let i = 0; i < N; i++) { const a = c.peaks[i] * h * .46; const played = i / N < p; x.fillStyle = !on ? (played ? '#2e2e2e' : '#222') : c.solo ? (played ? '#d9a55e' : '#5a4630') : played ? '#a3a3a0' : '#3a3a38'; x.fillRect(i * bw, h / 2 - a, Math.max(1, bw - .6), Math.max(1, a * 2)); }
+    for (let i = 0; i < N; i++) { const a = c.peaks[i] * h * .46; const played = i / N < p; x.fillStyle = played ? '#a3a3a0' : '#3a3a38'; x.fillRect(i * bw, h / 2 - a, Math.max(1, bw - .6), Math.max(1, a * 2)); }
     x.fillStyle = '#fff'; x.fillRect(p * w, 3, 1, h - 6);
   }
   function drawAll() { const p = duration ? pos() / duration : 0; for (const c of chs) drawRow(c, p); prog.style.width = p * 100 + '%'; tcEl.innerHTML = `${tc(duration ? pos() : 0)} <span>/ ${tc(duration)}</span>`; }
