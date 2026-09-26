@@ -22,11 +22,15 @@ If unsure, assume Ryan.
 
 ## Ryan procedure
 
-Ryan only ever sees the site and your plain-English replies. Git, the build, tests and code quality are
-entirely your job. The git history on `main` will contain trial and error; Kyle has accepted that as the
-price of Ryan never touching git.
+The goal is a Base44-style experience: Ryan opens a session, the site is already on screen, he says what he
+wants, and it changes in front of him. He only ever sees the site and your plain-English replies. Git, the
+build, tests, media encoding and code quality are entirely your job. The git history on `main` will contain
+trial and error; Kyle has accepted that as the price of Ryan never touching git.
 
 ### 1. Start of every session, before any change
+
+Do all of this on your own at the start of the session, even if Ryan's first message is just "hi" or a
+change request. Do not ask permission and do not narrate the steps.
 
 1. `git status`. If there are uncommitted changes left from an earlier session, do not discard them. Run
    `npm run check && npm run build`; if both pass, commit them as
@@ -37,6 +41,15 @@ price of Ryan never touching git.
 3. `git pull --rebase origin main`, so you are never working on a stale copy. If it conflicts, resolve it
    yourself (Ryan cannot), then `npm run check && npm run build`. Never ask Ryan to resolve anything in git.
 4. If `package-lock.json` changed in the pull, or `node_modules` is missing, run `npm install`.
+5. `npm run check && npm run build` to confirm the fresh copy is healthy. If `main` itself is broken, fix it
+   first (and commit and push the fix) before taking requests.
+6. **Put the site on screen for Ryan.** Start the dev server in the background so it keeps running for the
+   whole session: `npm run dev` (http://localhost:4321, reloads by itself on every save). Open it where Ryan
+   can see it: your built-in browser pane if you have one (Claude Code: the `dev` entry in
+   `.claude/launch.json`), otherwise `open http://localhost:4321` to open it in his normal browser. If port
+   4321 is taken by an old server from a previous session, stop that one first.
+7. Greet him in one or two lines: the site is open and up to date, what would he like to change. If
+   **Where things stand** lists something unfinished from last time, mention it in one line.
 
 ### 2. For every request
 
@@ -47,15 +60,19 @@ price of Ryan never touching git.
 2. **Make the change** following the conventions in this file.
 3. **Test your own work. Never hand Ryan something unverified.**
    - `npm run check` (0 errors) and `npm run build` must both pass.
-   - Run the site (`npm run build && npx astro preview`, port 4321) and look at the section you changed in a
-     browser. Check the console for errors. Exercise the interaction you touched (click, drag, hover, keys).
+   - Look at the section you changed in the browser on the dev server, and point Ryan's view at it (scroll
+     there) so he sees the result without hunting. Check the console for errors. Exercise the interaction you
+     touched (click, drag, hover, keys).
+   - If you changed scripts, media or the page head, also check the production build:
+     `npx astro preview --port 4322` (4321 is Ryan's dev server), then stop it.
    - Check at desktop width and at phone width (375 px): no horizontal scroll, nothing overlapping.
    - The hero timeline, grading bar and audio panel are canvas and Web Audio and break silently; if you touched
      their scripts or data, test them even if they look fine.
    - Some browser tools screenshot `<video>` as black. That is the tool, not the site; confirm playback from
      script (`readyState`, `currentTime`) instead of assuming it is broken.
-   - **Clean up afterwards:** stop the preview server and close the browser tab. The hero plays with sound on,
-     and a tab left open keeps playing audio at Ryan.
+   - Leave Ryan's dev server and his tab running; that is his view of the site for the whole session. Close
+     any extra tabs or servers you opened for your own testing. The hero plays with sound on, so a forgotten
+     tab keeps playing audio at him.
 4. **Commit and push, every time something works.** Do not wait to be asked, and do not batch a whole session
    into one commit.
    - `git status` first. Never commit `dist/`, `node_modules/`, `.env` or any secret, or a media file that has
@@ -65,9 +82,28 @@ price of Ryan never touching git.
    - `git pull --rebase origin main`, then `git push origin main`.
    - If the push fails, pull and retry once. If it still fails, tell Ryan in one sentence that the change is
      saved on this computer and will go up next session, and put the error in the reply so Kyle can see it.
-   - Treat every push as going to the live site. Nothing broken gets pushed.
+   - Nothing broken gets pushed.
+   - One commit per working change, with a message that says what changed on the page. Never mix unrelated
+     changes in one commit.
 5. **Reply to Ryan** in plain language: what changed, where on the page to look, anything that did not work.
-   No git terms, no code, no file paths unless he asks.
+   No git terms, no code, no file paths unless he asks. Keep it short and friendly; suggest one natural next
+   tweak if there is an obvious one.
+
+### Adding new assets (videos, audio, photos, logos)
+
+Ryan will hand over files by dragging them into the chat or by saying where they are ("it's in Downloads",
+"the file on my desktop called ..."). Handle the rest:
+
+1. Find the file. If you cannot, ask him where he saved it, in plain terms. Never ask for a path format.
+2. Inspect it (`ffprobe` for video and audio: resolution, duration, codec, colour flags; size for images).
+3. Encode it into `public/media/` per `public/media/README.md`, with a clear lowercase name. Never commit the
+   raw export. Video and audio need `ffmpeg`; if it is missing, install it with `brew install ffmpeg`.
+   Images: resize to what the layout needs and compress (`sips` is built into macOS).
+4. Wire it up through `src/data/` (usually `media.ts`), replacing the placeholder it stands in for. If it is
+   unclear where it goes, show him the likely spot and ask in visual terms.
+5. Show him it on the page, then verify, commit and push as usual. Mention the file size if it is large.
+6. Keep total media in the low hundreds of MB. If a file would push past that, tell him in one sentence and
+   suggest a shorter or smaller version before adding it.
 
 ### 3. When Ryan wants to undo
 
@@ -78,7 +114,8 @@ history.
 ### 4. End of a session
 
 When Ryan signs off or a round of work clearly ends, update **Where things stand** below with anything a
-future session needs to know (decisions made, open questions, what is half-done), commit and push.
+future session needs to know (decisions made, open questions, what is half-done), commit and push. Make sure
+every change is pushed, then stop the dev server and close the site tab.
 
 ### Never, for Ryan
 
@@ -113,7 +150,8 @@ yourself on every change:
   100 GB/month of static transfer; if that ever bites, case-study films move to Vimeo embeds and only the hero
   and grading clips stay self-hosted.
 - One page (`src/pages/index.astro`). Case studies and the photo lightbox are overlays on that page, not routes.
-- Commands: `npm run check` (types), `npm run build`, `npx astro preview` (port 4321).
+- Commands: `npm run dev` (live reload, port 4321), `npm run check` (types), `npm run build`,
+  `npx astro preview` (serves the built `dist/`). Kyle is setting up Vercel and the domain separately.
 
 ## Layout of the code
 
