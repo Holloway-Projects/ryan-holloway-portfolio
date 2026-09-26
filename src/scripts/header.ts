@@ -1,11 +1,29 @@
-/** Header sits over the hero and fades out during the first ~220px of scroll. */
+/**
+ * Header states:
+ *  intro  — visible over the hero on load, fades out after a beat so the film is all you see
+ *  hidden — while the hero is on screen
+ *  peek   — hidden, but the pointer is at the top edge
+ *  stuck  — from The Work onward: solid, sticky, stays for the rest of the page
+ */
 export function initHeader() {
   const hdr = document.querySelector<HTMLElement>('header.site');
-  if (!hdr) return;
-  const onScroll = () => {
-    hdr.style.opacity = String(Math.max(0, 1 - scrollY / 220));
-    hdr.style.pointerEvents = scrollY > 220 ? 'none' : '';
+  const work = document.getElementById('work');
+  if (!hdr || !work) return;
+  let introDone = false, peek = false, peekTimer = 0;
+  const set = (s: string) => { if (hdr.dataset.state !== s) hdr.dataset.state = s; };
+  const update = () => {
+    const stuckAt = work.getBoundingClientRect().top + scrollY - 120;
+    if (scrollY >= stuckAt) { set('stuck'); return; }
+    if (!introDone) { set('intro'); return; }
+    set(peek ? 'peek' : 'hidden');
   };
-  addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  setTimeout(() => { introDone = true; update(); }, 2600);
+  addEventListener('scroll', update, { passive: true });
+  addEventListener('resize', update);
+  addEventListener('mousemove', (e) => {
+    if (hdr.dataset.state === 'stuck' || hdr.dataset.state === 'intro') return;
+    if (e.clientY < 72) { peek = true; clearTimeout(peekTimer); update(); }
+    else if (peek && e.clientY > 140) { peekTimer = window.setTimeout(() => { peek = false; update(); }, 600); }
+  }, { passive: true });
+  update();
 }
