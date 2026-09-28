@@ -1,4 +1,4 @@
-import { video, img } from './media';
+import { video, img, images } from './media';
 
 export interface Note { t: number; text: string }
 export interface Project {
@@ -13,22 +13,17 @@ export interface Project {
   lede: string;
   video: string;
   poster: string;
+  preview?: string;
   notes: Note[];
 }
 
-/** Placeholder projects. Copy and clients are invented; media is open-licensed footage. */
+/** The first project is Ryan’s film; remaining entries are placeholders pending his uploads. */
 export const projects: Project[] = [
   {
-    id: 'ridgeline', name: 'Ridgeline', kind: 'Brand film', client: 'Northline Outfitters', year: '2026', runtime: '1:07', dur: 67,
-    role: 'Director, cinematographer, editor, colourist', video: video.swiss, poster: img('ridge', 1200, 675),
-    lede: 'An outfitter wanted a film that felt like a place rather than a product. We shot the place and let the product arrive late.',
-    notes: [
-      { t: 4, text: 'Held the opening nine seconds, longer than is comfortable. It buys the rest of the film its patience.' },
-      { t: 23, text: 'Cutting on the exhale rather than the footstep. When you cut to breath, people stop noticing the edit.' },
-      { t: 41, text: "First frame with the product. The client was nervous. It tested best of anything we've made together." },
-      { t: 52, text: "The grade turns cold here on purpose. The one warm practical in the cab is the only thing that isn't blue." },
-      { t: 63, text: 'Title lands six frames before the downbeat. Six frames is the difference between on the beat and with the beat.' },
-    ],
+    id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
+    client: 'Radius Consulting', year: '', runtime: '1:40', dur: 99.561333,
+    role: '', lede: '', notes: [],
+    video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
   {
     id: 'sixty-frames', name: 'Sixty Frames', kind: 'Music video', client: 'Fen Harbour', year: '2025', runtime: '0:31', dur: 31,

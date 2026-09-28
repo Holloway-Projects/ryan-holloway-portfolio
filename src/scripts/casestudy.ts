@@ -12,8 +12,12 @@ export function openCase(i: number) {
   (document.getElementById('hero') as HTMLVideoElement | null)?.pause();
   const $ = (id: string) => document.getElementById(id)!;
   $('c-name').textContent = p.name; $('c-kind').textContent = p.kind; $('c-title').textContent = p.name; $('c-lede').textContent = p.lede;
-  $('c-meta').innerHTML = ([['Client', p.client], ['Role', p.role], ['Year', p.year], ['Runtime', p.runtime]] as [string, string][]).map(([k, v]) => `<div><b>${k}</b>${v}</div>`).join('');
+  $('c-lede').hidden = !p.lede;
+  els.root.querySelector<HTMLElement>('.notes')!.hidden = !p.notes.length;
+  els.root.querySelector<HTMLElement>('.player')!.classList.toggle('without-notes', !p.notes.length);
+  $('c-meta').innerHTML = ([['Client', p.client], ['Role', p.role], ['Year', p.year], ['Runtime', p.runtime]] as [string, string][]).filter(([, v]) => v).map(([k, v]) => `<div><b>${k}</b>${v}</div>`).join('');
   $('c-dur').textContent = tc(p.dur);
+  els.video.poster = p.poster;
   els.video.src = p.video; els.video.play().catch(() => {});
   els.scrub.querySelectorAll('.m').forEach((m) => m.remove());
   const nn = $('c-notes'); nn.innerHTML = '';

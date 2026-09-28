@@ -5,6 +5,8 @@
 const C = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/';
 
 export const video = {
+  impossible: '/media/video/making-the-impossible-possible.mp4',
+  impossiblePreview: '/media/video/making-the-impossible-possible-preview.mp4',
   hero: '/media/video/hero.mp4',
   hero720: '/media/video/hero-720.mp4',
   heroPoster: '/media/video/hero-poster.jpg',
@@ -37,5 +39,6 @@ export const audio = {
 export const img = (seed: string, w = 900, h = 600) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
 
 export const images = {
+  impossible: '/media/images/making-the-impossible-possible.jpg',
   headshot: '/media/images/ryan-headshot.jpg',
 };

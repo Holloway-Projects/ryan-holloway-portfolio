@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
   <div class="head"><h2 class="sec">The Work</h2></div>
   <div class="grid">
     {projects.map((p, i) => (
-      <button class="work" data-index={i} data-video={p.video} aria-label={`Open ${p.name}`}>
+      <button class="work" data-index={i} data-video={p.preview ?? p.video} aria-label={`Open ${p.name}`}>
         <div class="fr">
           <img src={p.poster} alt="" loading={i < 3 ? 'eager' : 'lazy'} />
           <video muted loop playsinline preload="none"></video>
