@@ -219,11 +219,12 @@ yourself on every change:
   a trim and a safety limiter (each stem peaks near full scale, unity sum clips by 5 dB); the picture is
   `design.mp4`, muted, slaved to the audio clock. Mute/solo per channel like an NLE, click a waveform to seek,
   buffers load when the mode is opened. Channel names, order and per-channel gain live in `sound.design.stems`.
-- Photography: six-column grid, lightbox with arrows and keyboard.
+- Photography: seven real images in two rows: four taller portrait/motorcycle images above three documentary photos.
+  Preserve original colors; stack on phones. Lightbox with arrows and keyboard.
 
 ## Placeholders still in place
 
-Project names, clients, copy, project footage (Wikimedia Commons), photography stills (picsum), the interview audio, and the
+Project names, clients, copy, project footage (Wikimedia Commons), project stills (picsum), the interview audio, and the
 unconnected social links. The hero video, its timeline, the three grading clips, the mixed
 dialogue, the score bed, the sound design clip and its seven stems are real. Replace via `src/data/` and
 `public/media/`. When Ryan hands over a file, encode it per `public/media/README.md`, switch the entry in
@@ -238,7 +239,7 @@ dialogue, the score bed, the sound design clip and its seven stems are real. Rep
 - When testing the header, reload with a fresh query string (`/?v=N`) to defeat cache, and avoid `#hash` URLs;
   they distort scroll tests.
 - Git on Ryan's Mac commits as Ryan Holloway (`facemelter99` on GitHub, repo-local config) and pushes to
-  `kylepholloway/ryan-holloway` over HTTPS through the `gh` credential helper. `http.postBuffer` is raised for
+  `Holloway-Projects/ryan-holloway-portfolio` over HTTPS through the `gh` credential helper. `http.postBuffer` is raised for
   large media pushes. Commits end with the agent's co-author line.
 
 ## Where things stand (updated 2026-09-26)
@@ -249,10 +250,13 @@ straight into the grading and sound sections, so they sit first. Header, hero an
 for now; The Work is the next section to refine.
 
 Decisions made in review that are not obvious from the code:
+- Photography (2026-09-28): seven supplied JPEGs replace all gallery placeholders. Optimized at their
+  supplied 1024 px maximum dimension. Four equal, cropped tiles on top (motorcycle fills its tile with no bars),
+  three uncropped documentary images below, with 12 px gaps. Ryan likes this for now; may revisit the layout.
 - About portrait (2026-09-28): Ryan’s ryan.2025.jpg is now a centered 4:5 crop, 1200×1500 JPEG at
   /media/images/ryan-headshot.jpg. Preserve the supplied colors; no CSS color filter.
 - Contact (2026-09-28): moved out of About into a compact footer. Email is mail.ryanholloway@gmail.com.
-  LinkedIn is connected (ryan-holloway-014420283). Vimeo and Instagram await Ryan’s profile links.
+  LinkedIn (ryan-holloway-014420283) and Instagram (mail.ryanholloway) are connected. Vimeo awaits Ryan’s link.
   Social buttons appear only when real profile links are supplied; hide placeholder links and CV downloads.
 - Hero sound (2026-09-28): Ryan wants unmuted by default. If the browser blocks sound-on autoplay, wait
   for Play with audio enabled instead of silently playing muted.
