@@ -29,7 +29,7 @@ export const site = {
   },
   links: [
     { label: 'Vimeo', href: '#', icon: 'vimeo' },
-    { label: 'Instagram', href: '#', icon: 'instagram' },
+    { label: 'Instagram', href: 'https://www.instagram.com/mail.ryanholloway/', icon: 'instagram' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ryan-holloway-014420283/', icon: 'linkedin' },
     { label: 'Download CV', href: '#', icon: 'download' },
   ],
