@@ -193,8 +193,8 @@ yourself on every change:
 ## Section behaviour
 
 - Hero fills the viewport: video, then a fixed-height timeline strip with a pinned ruler that scrolls vertically
-  inside itself. Play/mute buttons sit on the video. The video asks for sound on; browsers that refuse unmuted
-  autoplay get muted playback and the first pointer or key gesture (while the hero is still in view) unmutes it.
+  inside itself. Play/mute buttons sit on the video. The video defaults to sound on; browsers that refuse unmuted
+  autoplay leave it paused until Play is pressed. Never fall back to muted autoplay.
   Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal
   scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in
   `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is
@@ -249,6 +249,8 @@ straight into the grading and sound sections, so they sit first. Header, hero an
 for now; The Work is the next section to refine.
 
 Decisions made in review that are not obvious from the code:
+- Hero sound (2026-09-28): Ryan wants unmuted by default. If the browser blocks sound-on autoplay, wait
+  for Play with audio enabled instead of silently playing muted.
 - Hero copy, transport bar, timecode readout and the timeline caption were all removed on request. The hero is
   video plus timeline plus two square buttons only.
 - Motion section, footer, contact section, clients line, palette strip and look descriptions were all cut. Don't
