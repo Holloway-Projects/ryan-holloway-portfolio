@@ -223,8 +223,8 @@ yourself on every change:
 
 ## Placeholders still in place
 
-Project names, clients, copy, project footage (Wikimedia Commons), all stills (picsum), the interview audio, the
-headshot, the social links, the email. The hero video, its timeline, the three grading clips, the mixed
+Project names, clients, copy, project footage (Wikimedia Commons), photography stills (picsum), the interview audio, and the
+unconnected social links. The hero video, its timeline, the three grading clips, the mixed
 dialogue, the score bed, the sound design clip and its seven stems are real. Replace via `src/data/` and
 `public/media/`. When Ryan hands over a file, encode it per `public/media/README.md`, switch the entry in
 `src/data/media.ts` to a `/media/...` path, and keep placeholders remote until then.
@@ -249,6 +249,8 @@ straight into the grading and sound sections, so they sit first. Header, hero an
 for now; The Work is the next section to refine.
 
 Decisions made in review that are not obvious from the code:
+- About portrait (2026-09-28): Ryan’s ryan.2025.jpg is now a centered 4:5 crop, 1200×1500 JPEG at
+  /media/images/ryan-headshot.jpg. Preserve the supplied colors; no CSS color filter.
 - Contact (2026-09-28): moved out of About into a compact footer. Email is mail.ryanholloway@gmail.com.
   LinkedIn is connected (ryan-holloway-014420283). Vimeo and Instagram await Ryan’s profile links.
   Social buttons appear only when real profile links are supplied; hide placeholder links and CV downloads.

@@ -34,3 +34,7 @@ export const audio = {
 
 /** Placeholder stills. Replace with "/media/images/…" paths. */
 export const img = (seed: string, w = 900, h = 600) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
+
+export const images = {
+  headshot: '/media/images/ryan-headshot.jpg',
+};

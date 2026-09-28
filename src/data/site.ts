@@ -1,4 +1,4 @@
-import { img } from './media';
+import { images } from './media';
 
 export const site = {
   name: 'Ryan Holloway',
@@ -12,7 +12,7 @@ export const site = {
     { label: 'About', href: '#about' },
   ],
   about: {
-    headshot: img('rh-headshot', 900, 1125),
+    headshot: images.headshot,
     lede: "I started as an editor, picked up a camera because I was tired of waiting for footage that didn't cut, and learned motion because titles kept being an afterthought.",
     paragraphs: [
       "Ten years in, I work with brands, agencies and documentary teams who need one person to own a film from the first call to the final export. I'm most useful on projects where the person holding the camera is also the one who has to cut it later.",
