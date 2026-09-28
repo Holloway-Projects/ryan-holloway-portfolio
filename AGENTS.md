@@ -296,10 +296,10 @@ copy, gear, real links), then the share image with the real logo.
 ### Work update — 2026-09-28
 
 The first Work card is now Ryan’s Making the Impossible Possible for Radius Consulting,
-replacing Ridgeline. His supplied Johnny still is the thumbnail; a separate six-second,
+replacing Ridgeline. His September 8 screenshot (closer framing) replaces the original Johnny still as the thumbnail; a separate six-second,
 muted 720p preview plays on hover. Clicking opens the full 1:40 film with sound. The
 1080p picture was remuxed with Rec.709 flags, not re-encoded; audio is AAC 128 kbps.
-Assets total about 34 MB plus a 337 KB preview and 114 KB still. Project.preview is
+Assets total about 34 MB plus a 337 KB preview and an optimized screenshot thumbnail. Project.preview is
 optional; placeholders continue using their film URL. Missing notes, role, year and
 description stay hidden rather than showing invented credits or copy. Ryan still needs
 to supply those details and the remaining five films. Reduced-motion skips hover autoplay.
