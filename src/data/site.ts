@@ -4,7 +4,8 @@ export const site = {
   name: 'Ryan Holloway',
   title: 'Ryan Holloway — Editor, Cinematographer, Motion Designer',
   description: 'Editor, cinematographer and motion designer in Denver. Brand films, commercials, documentary and music video, shot, cut and graded by one person.',
-  email: 'hello@ryanholloway.tv',
+  email: 'mail.ryanholloway@gmail.com',
+  contactHeading: 'Have a project in mind?',
   nav: [
     { label: 'Work', href: '#work' },
     { label: 'Photography', href: '#photo' },
@@ -25,12 +26,11 @@ export const site = {
       ['Sound', 'Sennheiser MKH 416, Zoom F6'],
       ['Delivery', 'Broadcast, social, cinema DCP'],
     ] as [string, string][],
-    reachHeading: 'Have a project in mind?',
   },
   links: [
     { label: 'Vimeo', href: '#', icon: 'vimeo' },
     { label: 'Instagram', href: '#', icon: 'instagram' },
-    { label: 'LinkedIn', href: '#', icon: 'linkedin' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ryan-holloway-014420283/', icon: 'linkedin' },
     { label: 'Download CV', href: '#', icon: 'download' },
   ],
   soundChain: [

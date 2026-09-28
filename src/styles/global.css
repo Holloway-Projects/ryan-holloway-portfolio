@@ -197,12 +197,13 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .facts div span:first-child{color:var(--fg3)}
 .facts div:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
 
-/* contact, inside about */
-.reach{margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
-.reach h3{margin:0 0 8px;font-size:clamp(26px,3vw,40px);line-height:1.05}
-.reach a.big{font-size:clamp(19px,2vw,26px);border-bottom:1px solid var(--fg2);padding-bottom:3px;display:inline-block}
-.reach a.big:hover{border-color:var(--amber)}
-.reach .links{display:grid;grid-template-columns:repeat(4,52px);gap:0;margin-top:24px;border:1px solid var(--line2);width:max-content}
+/* compact contact footer */
+.reach{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:32px var(--gutter);border-top:1px solid var(--line)}
+.reach h2{margin:0 0 6px;font-size:24px;line-height:1.2}
+.reach .email{font-size:16px;border-bottom:1px solid var(--fg2);padding-bottom:3px;overflow-wrap:anywhere}
+.reach .email:hover{border-color:var(--amber)}
+.reach .links{display:grid;grid-auto-flow:column;grid-auto-columns:44px;gap:0;border:1px solid var(--line2);width:max-content;flex:none}
+.reach .links:empty{display:none}
 .reach .links a{display:grid;place-items:center;aspect-ratio:1;color:var(--fg2);border-right:1px solid var(--line2);transition:.15s}
 .reach .links a:last-child{border-right:0}
 .reach .links a:hover{color:var(--fg);background:var(--bg3)}
@@ -259,6 +260,9 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
   .capture{height:200px}
   .capture{border-right:0;border-bottom:1px solid var(--line)}
   .head,.ctitle,#about,.audio-grid,.chead{grid-template-columns:1fr;gap:20px}
+  #about>*{min-width:0}
+  .facts{grid-template-columns:1fr}
+  .reach{flex-direction:column;align-items:flex-start}
   .head p,.chead p,.ctitle p{text-align:left;justify-self:start}
   .score{grid-template-columns:1fr 1fr}
   .grid{grid-template-columns:1fr}

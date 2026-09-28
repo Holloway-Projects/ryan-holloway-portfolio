@@ -1,6 +1,5 @@
 ---
 import { site } from '../data/site';
-import Icon from './Icon.astro';
 const a = site.about;
 ---
 <section id="about">
@@ -9,12 +8,5 @@ const a = site.about;
     <p class="lede serif">{a.lede}</p>
     {a.paragraphs.map((t) => <p>{t}</p>)}
     <div class="facts">{a.facts.map(([k, v]) => <div><span>{k}</span><span>{v}</span></div>)}</div>
-    <div class="reach">
-      <h3 class="serif">{a.reachHeading}</h3>
-      <a class="big" href={`mailto:${site.email}`}>{site.email}</a>
-      <div class="links">
-        {site.links.map((l) => <a href={l.href} aria-label={l.label} title={l.label}><Icon name={l.icon} /></a>)}
-      </div>
-    </div>
   </div>
 </section>

@@ -1,0 +1,15 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+---
+<footer class="reach">
+  <div>
+    <h2 class="serif">{site.contactHeading}</h2>
+    <a class="email" href={`mailto:${site.email}`}>{site.email}</a>
+  </div>
+  <div class="links">
+    {site.links.filter((link) => link.href !== '#').map((link) => (
+      <a href={link.href} aria-label={link.label} title={link.label}><Icon name={link.icon} /></a>
+    ))}
+  </div>
+</footer>

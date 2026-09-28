@@ -186,7 +186,7 @@ yourself on every change:
   grey r lifted to off-white, the tan h untouched). The original two-tone file is
   `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
 - Square zero-gap grids for button groups (social icons, hero play/mute).
-- No footer. About is the last thing on the page.
+- Compact contact footer after About: small heading and email on the left, square social buttons on the right.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the
   audio panel.
 
@@ -249,12 +249,15 @@ straight into the grading and sound sections, so they sit first. Header, hero an
 for now; The Work is the next section to refine.
 
 Decisions made in review that are not obvious from the code:
+- Contact (2026-09-28): moved out of About into a compact footer. Email is mail.ryanholloway@gmail.com.
+  LinkedIn is connected (ryan-holloway-014420283). Vimeo and Instagram await Ryan’s profile links.
+  Social buttons appear only when real profile links are supplied; hide placeholder links and CV downloads.
 - Hero sound (2026-09-28): Ryan wants unmuted by default. If the browser blocks sound-on autoplay, wait
   for Play with audio enabled instead of silently playing muted.
 - Hero copy, transport bar, timecode readout and the timeline caption were all removed on request. The hero is
   video plus timeline plus two square buttons only.
 - Motion section, footer, contact section, clients line, palette strip and look descriptions were all cut. Don't
-  reintroduce supporting copy or a footer.
+  reintroduce supporting copy. Ryan requested a compact contact footer on 2026-09-28.
 - Header: logo mark only (no name). Intro fade timer starts on page load, not first frame; flagged to Kyle as a
   judgement call, not yet changed.
 - Timeline commands are the ones Ryan asked for: Option+scroll zoom, Shift+scroll track height, horizontal pan,
