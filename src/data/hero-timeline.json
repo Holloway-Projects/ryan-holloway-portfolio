@@ -1,0 +1,1123 @@
+{
+  "fpsNumerator": 24000,
+  "fpsDenominator": 1001,
+  "endFrame": 1004,
+  "filmstrip": {
+    "width": 160,
+    "height": 90,
+    "columns": 10
+  },
+  "tracks": [
+    {
+      "id": "V5",
+      "name": "V5",
+      "type": "video",
+      "clips": [
+        {
+          "id": "v5-1",
+          "name": "EZCO-Flash03.mp4",
+          "startFrame": 498,
+          "endFrame": 503,
+          "kind": "broll",
+          "thumbnailFrames": [
+            498
+          ],
+          "thumbnailIndices": [
+            65
+          ]
+        },
+        {
+          "id": "v5-2",
+          "name": "6508357_Film Burn Transition Effect Overlay_By_Kino-Pravda_Artlist_2.5K.mp4",
+          "startFrame": 545,
+          "endFrame": 559,
+          "kind": "broll",
+          "thumbnailFrames": [
+            545,
+            557
+          ],
+          "thumbnailIndices": [
+            75,
+            79
+          ]
+        },
+        {
+          "id": "v5-3",
+          "name": "EZCO-16mm-Burn.mov",
+          "startFrame": 670,
+          "endFrame": 675,
+          "kind": "broll",
+          "thumbnailFrames": [
+            670
+          ],
+          "thumbnailIndices": [
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V4",
+      "name": "V4",
+      "type": "video",
+      "clips": [
+        {
+          "id": "v4-1",
+          "name": "Matte_16x9.mp4",
+          "startFrame": 399,
+          "endFrame": 426,
+          "kind": "broll",
+          "thumbnailFrames": [
+            399,
+            411,
+            423
+          ],
+          "thumbnailIndices": [
+            41,
+            42,
+            44
+          ]
+        },
+        {
+          "id": "v4-2",
+          "name": "EZCO-SideTape01.mp4",
+          "startFrame": 434,
+          "endFrame": 444,
+          "kind": "broll",
+          "thumbnailFrames": [
+            434
+          ],
+          "thumbnailIndices": [
+            46
+          ]
+        },
+        {
+          "id": "v4-3",
+          "name": "EZCO-PunchCombo06-Matte.mp4",
+          "startFrame": 444,
+          "endFrame": 452,
+          "kind": "broll",
+          "thumbnailFrames": [
+            444
+          ],
+          "thumbnailIndices": [
+            49
+          ]
+        },
+        {
+          "id": "v4-4",
+          "name": "EZCO-PunchCombo06-Matte.mp4",
+          "startFrame": 452,
+          "endFrame": 457,
+          "kind": "broll",
+          "thumbnailFrames": [
+            452
+          ],
+          "thumbnailIndices": [
+            51
+          ]
+        },
+        {
+          "id": "v4-5",
+          "name": "EZCO-PunchCombo06-Matte.mp4",
+          "startFrame": 457,
+          "endFrame": 470,
+          "kind": "broll",
+          "thumbnailFrames": [
+            457,
+            469
+          ],
+          "thumbnailIndices": [
+            53,
+            56
+          ]
+        },
+        {
+          "id": "v4-6",
+          "name": "EZCO-PunchCombo06-Matte.mp4",
+          "startFrame": 470,
+          "endFrame": 481,
+          "kind": "broll",
+          "thumbnailFrames": [
+            470
+          ],
+          "thumbnailIndices": [
+            57
+          ]
+        },
+        {
+          "id": "v4-7",
+          "name": "EZCO-PunchCombo06-Matte.mp4",
+          "startFrame": 481,
+          "endFrame": 494,
+          "kind": "broll",
+          "thumbnailFrames": [
+            481,
+            493
+          ],
+          "thumbnailIndices": [
+            60,
+            62
+          ]
+        },
+        {
+          "id": "v4-8",
+          "name": "6508355_Film Burn Transition Effect Overlay_By_Kino-Pravda_Artlist_2.5K.mp4",
+          "startFrame": 494,
+          "endFrame": 532,
+          "kind": "broll",
+          "thumbnailFrames": [
+            494,
+            506,
+            518,
+            530
+          ],
+          "thumbnailIndices": [
+            63,
+            66,
+            68,
+            71
+          ]
+        },
+        {
+          "id": "v4-9",
+          "name": "Film Leader 06.mov",
+          "startFrame": 557,
+          "endFrame": 578,
+          "kind": "broll",
+          "thumbnailFrames": [
+            557,
+            569
+          ],
+          "thumbnailIndices": [
+            79,
+            82
+          ]
+        },
+        {
+          "id": "v4-10",
+          "name": "Film Leader 10.mov",
+          "startFrame": 578,
+          "endFrame": 609,
+          "kind": "broll",
+          "thumbnailFrames": [
+            578,
+            590,
+            602
+          ],
+          "thumbnailIndices": [
+            86,
+            88,
+            90
+          ]
+        },
+        {
+          "id": "v4-11",
+          "name": "Film Leader 66.mov",
+          "startFrame": 644,
+          "endFrame": 672,
+          "kind": "broll",
+          "thumbnailFrames": [
+            644,
+            656,
+            668
+          ],
+          "thumbnailIndices": [
+            95,
+            97,
+            99
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V3",
+      "name": "V3",
+      "type": "video",
+      "clips": [
+        {
+          "id": "v3-1",
+          "name": "FilmMatte4K_Super8.mp4",
+          "startFrame": 372,
+          "endFrame": 399,
+          "kind": "broll",
+          "thumbnailFrames": [
+            372,
+            384,
+            396
+          ],
+          "thumbnailIndices": [
+            36,
+            38,
+            40
+          ]
+        },
+        {
+          "id": "v3-2",
+          "name": "EZCO-Overlay00-Matte.mp4",
+          "startFrame": 421,
+          "endFrame": 432,
+          "kind": "broll",
+          "thumbnailFrames": [
+            421
+          ],
+          "thumbnailIndices": [
+            43
+          ]
+        },
+        {
+          "id": "v3-3",
+          "name": "INTRO TITLE.mp4",
+          "startFrame": 736,
+          "endFrame": 830,
+          "kind": "title",
+          "thumbnailFrames": [
+            736,
+            748,
+            760,
+            772,
+            784,
+            796,
+            808,
+            820
+          ],
+          "thumbnailIndices": [
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V2",
+      "name": "V2",
+      "type": "video",
+      "clips": [
+        {
+          "id": "v2-1",
+          "name": "206710_Space shuttle launching_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 336,
+          "endFrame": 372,
+          "kind": "broll",
+          "thumbnailFrames": [
+            336,
+            348,
+            360
+          ],
+          "thumbnailIndices": [
+            31,
+            32,
+            34
+          ]
+        },
+        {
+          "id": "v2-2",
+          "name": "206707_Astronaut wearing a spacesuit\u00a0_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 426,
+          "endFrame": 439,
+          "kind": "broll",
+          "thumbnailFrames": [
+            426,
+            438
+          ],
+          "thumbnailIndices": [
+            45,
+            48
+          ]
+        },
+        {
+          "id": "v2-3",
+          "name": "206705_Astronaut getting off a spacecraft_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 455,
+          "endFrame": 484,
+          "kind": "broll",
+          "thumbnailFrames": [
+            455,
+            467,
+            479
+          ],
+          "thumbnailIndices": [
+            52,
+            55,
+            59
+          ]
+        },
+        {
+          "id": "v2-4",
+          "name": "206704_Astronaut placing a flag on the moon_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 522,
+          "endFrame": 548,
+          "kind": "broll",
+          "thumbnailFrames": [
+            522,
+            534,
+            546
+          ],
+          "thumbnailIndices": [
+            70,
+            73,
+            76
+          ]
+        },
+        {
+          "id": "v2-5",
+          "name": "199014_Vintage Typewriter Office Antique_By_Orangebox_Pictures_Artlist_4K.mp4",
+          "startFrame": 550,
+          "endFrame": 578,
+          "kind": "broll",
+          "thumbnailFrames": [
+            550,
+            562,
+            574
+          ],
+          "thumbnailIndices": [
+            78,
+            81,
+            84
+          ]
+        },
+        {
+          "id": "v2-6",
+          "name": "199018_Typewriter Desk Pen Notebook_By_Orangebox_Pictures_Artlist_4K.mp4",
+          "startFrame": 578,
+          "endFrame": 609,
+          "kind": "broll",
+          "thumbnailFrames": [
+            578,
+            590,
+            602
+          ],
+          "thumbnailIndices": [
+            86,
+            88,
+            90
+          ]
+        },
+        {
+          "id": "v2-7",
+          "name": "525926_Speed Dynamic Car Wheel Car Driving_By_Brad_Day_Artlist_8K.mp4",
+          "startFrame": 672,
+          "endFrame": 722,
+          "kind": "broll",
+          "thumbnailFrames": [
+            672,
+            684,
+            696,
+            708,
+            720
+          ],
+          "thumbnailIndices": [
+            101,
+            103,
+            104,
+            105,
+            106
+          ]
+        }
+      ]
+    },
+    {
+      "id": "V1",
+      "name": "V1",
+      "type": "video",
+      "clips": [
+        {
+          "id": "v1-1",
+          "name": "Joshua-Multicam",
+          "startFrame": 0,
+          "endFrame": 95,
+          "kind": "interview",
+          "thumbnailFrames": [
+            0,
+            12,
+            24,
+            36,
+            48,
+            60,
+            72,
+            84
+          ],
+          "thumbnailIndices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "id": "v1-2",
+          "name": "Joshua-Multicam",
+          "startFrame": 95,
+          "endFrame": 145,
+          "kind": "interview",
+          "thumbnailFrames": [
+            95,
+            107,
+            119,
+            131,
+            143
+          ],
+          "thumbnailIndices": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "id": "v1-3",
+          "name": "Joshua-Multicam",
+          "startFrame": 145,
+          "endFrame": 182,
+          "kind": "interview",
+          "thumbnailFrames": [
+            145,
+            157,
+            169,
+            181
+          ],
+          "thumbnailIndices": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "id": "v1-4",
+          "name": "Joshua-Multicam",
+          "startFrame": 182,
+          "endFrame": 250,
+          "kind": "interview",
+          "thumbnailFrames": [
+            182,
+            194,
+            206,
+            218,
+            230,
+            242
+          ],
+          "thumbnailIndices": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "id": "v1-5",
+          "name": "Joshua-Multicam",
+          "startFrame": 250,
+          "endFrame": 292,
+          "kind": "interview",
+          "thumbnailFrames": [
+            250,
+            262,
+            274,
+            286
+          ],
+          "thumbnailIndices": [
+            23,
+            24,
+            25,
+            26
+          ]
+        },
+        {
+          "id": "v1-6",
+          "name": "Joshua-Multicam",
+          "startFrame": 292,
+          "endFrame": 336,
+          "kind": "interview",
+          "thumbnailFrames": [
+            292,
+            304,
+            316,
+            328
+          ],
+          "thumbnailIndices": [
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "id": "v1-7",
+          "name": "206708_Spacecraft heading to space\u00a0_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 354,
+          "endFrame": 399,
+          "kind": "broll",
+          "thumbnailFrames": [
+            354,
+            366,
+            378,
+            390
+          ],
+          "thumbnailIndices": [
+            33,
+            35,
+            37,
+            39
+          ]
+        },
+        {
+          "id": "v1-8",
+          "name": "206703_Astronaut walking on the moon_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 399,
+          "endFrame": 473,
+          "kind": "broll",
+          "thumbnailFrames": [
+            399,
+            411,
+            423,
+            435,
+            447,
+            459,
+            471
+          ],
+          "thumbnailIndices": [
+            41,
+            42,
+            44,
+            47,
+            50,
+            54,
+            58
+          ]
+        },
+        {
+          "id": "v1-9",
+          "name": "206703_Astronaut walking on the moon_By_Kino-Pravda_Artlist_4K.mp4",
+          "startFrame": 484,
+          "endFrame": 548,
+          "kind": "broll",
+          "thumbnailFrames": [
+            484,
+            496,
+            508,
+            520,
+            532,
+            544
+          ],
+          "thumbnailIndices": [
+            61,
+            64,
+            67,
+            69,
+            72,
+            74
+          ]
+        },
+        {
+          "id": "v1-10",
+          "name": "428022_Dark Web Hacker Screens Computer_By_Thomas_Gellert_Artlist_4K.mp4",
+          "startFrame": 549,
+          "endFrame": 575,
+          "kind": "broll",
+          "thumbnailFrames": [
+            549,
+            561,
+            573
+          ],
+          "thumbnailIndices": [
+            77,
+            80,
+            83
+          ]
+        },
+        {
+          "id": "v1-11",
+          "name": "6497025_Retro Glitching Analog Display_By_Tony_Vall\u00e9s_Artlist_4K.mp4",
+          "startFrame": 575,
+          "endFrame": 609,
+          "kind": "broll",
+          "thumbnailFrames": [
+            575,
+            587,
+            599
+          ],
+          "thumbnailIndices": [
+            85,
+            87,
+            89
+          ]
+        },
+        {
+          "id": "v1-12",
+          "name": "6596797_Creative Process Laptop Screen Digital Interface Focused Work_By_Pressmaster_Artlist_4K.mp4",
+          "startFrame": 609,
+          "endFrame": 643,
+          "kind": "broll",
+          "thumbnailFrames": [
+            609,
+            621,
+            633
+          ],
+          "thumbnailIndices": [
+            91,
+            92,
+            93
+          ]
+        },
+        {
+          "id": "v1-13",
+          "name": "6106501_Denmark Film Vintage Cars Driving_By_Kristian_Ozer_Kettner_Artlist_4K.mp4",
+          "startFrame": 643,
+          "endFrame": 680,
+          "kind": "broll",
+          "thumbnailFrames": [
+            643,
+            655,
+            667,
+            679
+          ],
+          "thumbnailIndices": [
+            94,
+            96,
+            98,
+            102
+          ]
+        },
+        {
+          "id": "v1-14",
+          "name": "Joshua-Multicam",
+          "startFrame": 821,
+          "endFrame": 928,
+          "kind": "interview",
+          "thumbnailFrames": [
+            821,
+            833,
+            845,
+            857,
+            869,
+            881,
+            893,
+            905,
+            917
+          ],
+          "thumbnailIndices": [
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123
+          ]
+        },
+        {
+          "id": "v1-15",
+          "name": "Joshua-Multicam",
+          "startFrame": 928,
+          "endFrame": 1004,
+          "kind": "interview",
+          "thumbnailFrames": [
+            928,
+            940,
+            952,
+            964,
+            976,
+            988,
+            1000
+          ],
+          "thumbnailIndices": [
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130
+          ]
+        }
+      ]
+    },
+    {
+      "id": "A1",
+      "name": "A1",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a1-1",
+          "name": "josh-audio-esv2-62p-bg-10p-music-m.wav",
+          "startFrame": 0.42186840830612016,
+          "endFrame": 17.0,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a1-2",
+          "name": "josh-audio-esv2-62p-bg-10p-music-m.wav",
+          "startFrame": 17,
+          "endFrame": 145,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a1-3",
+          "name": "josh-audio-esv2-62p-bg-10p-music-m.wav",
+          "startFrame": 145,
+          "endFrame": 312,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a1-4",
+          "name": "josh-audio-esv2-62p-bg-10p-music-m.wav",
+          "startFrame": 312,
+          "endFrame": 336,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a1-5",
+          "name": "josh-audio-esv2-62p-bg-10p-music-m.wav",
+          "startFrame": 821,
+          "endFrame": 1004,
+          "kind": "dialogue"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "A2",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a2-1",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 0,
+          "endFrame": 130,
+          "kind": "music"
+        },
+        {
+          "id": "a2-2",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 130,
+          "endFrame": 271,
+          "kind": "music"
+        },
+        {
+          "id": "a2-3",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 271,
+          "endFrame": 297,
+          "kind": "music"
+        },
+        {
+          "id": "a2-4",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 297,
+          "endFrame": 322,
+          "kind": "music"
+        },
+        {
+          "id": "a2-5",
+          "name": "Space Shuttle Launch Countdown.mp4",
+          "startFrame": 329,
+          "endFrame": 399,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-6",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 399,
+          "endFrame": 473,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-7",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 473,
+          "endFrame": 545,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-8",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 545,
+          "endFrame": 580,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-9",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 580,
+          "endFrame": 614,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-10",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 614,
+          "endFrame": 642,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-11",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 642,
+          "endFrame": 672,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-12",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 672,
+          "endFrame": 702,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-13",
+          "name": "'One small step for man' Moment of Neil Armstrong's famous line.mp4",
+          "startFrame": 702,
+          "endFrame": 722,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a2-14",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 780,
+          "endFrame": 1004,
+          "kind": "music"
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "A3",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a3-1",
+          "name": "DSGNMorph_SLOW MOTION-Into the Dark_Ocular_Shift.wav",
+          "startFrame": 265,
+          "endFrame": 503,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-2",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 545,
+          "endFrame": 551,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-3",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 578,
+          "endFrame": 582,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-4",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 607.9218918454399,
+          "endFrame": 611.9218918454399,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-5",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 640,
+          "endFrame": 644,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-6",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 670,
+          "endFrame": 674,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-7",
+          "name": "MOTRMisc_DESIGNED RACE SEQUENCE-Engine Stem 02 Overdrive_Ocular_Velocity.wav",
+          "startFrame": 674,
+          "endFrame": 722,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-8",
+          "name": "MOTRMisc_DESIGNED RACE SEQUENCE-Engine Stem 02 Overdrive_Ocular_Velocity.wav",
+          "startFrame": 722,
+          "endFrame": 736,
+          "kind": "sfx"
+        },
+        {
+          "id": "a3-9",
+          "name": "INTRO TITLE.mp4",
+          "startFrame": 736,
+          "endFrame": 830,
+          "kind": "sfx"
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "A4",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a4-1",
+          "name": "DSGNMisc_DESIGNED SEQUENCE-Designed Camera Sequence 01_Ocular_Aperture.wav",
+          "startFrame": 319,
+          "endFrame": 336,
+          "kind": "sfx"
+        },
+        {
+          "id": "a4-2",
+          "name": "Film Leader 06.mov",
+          "startFrame": 557,
+          "endFrame": 578,
+          "kind": "sfx"
+        },
+        {
+          "id": "a4-3",
+          "name": "Film Leader 10.mov",
+          "startFrame": 578,
+          "endFrame": 609,
+          "kind": "sfx"
+        },
+        {
+          "id": "a4-4",
+          "name": "Film Leader 66.mov",
+          "startFrame": 644,
+          "endFrame": 672,
+          "kind": "sfx"
+        },
+        {
+          "id": "a4-5",
+          "name": "DSGNMorph_SLOW MOTION-Off the Cliff_Ocular_Shift.wav",
+          "startFrame": 672,
+          "endFrame": 719,
+          "kind": "sfx"
+        },
+        {
+          "id": "a4-6",
+          "name": "OBJMisc_FOLEY-Thumb Drive Put Down On Desk 02_Ocular_Utility.wav",
+          "startFrame": 722,
+          "endFrame": 726,
+          "kind": "sfx"
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "A5",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a5-1",
+          "name": "DSGNRise_RISER-Excitement Seeker_Ocular_Foundation.wav",
+          "startFrame": 561,
+          "endFrame": 830,
+          "kind": "sfx"
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "A6",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a6-1",
+          "name": "Matte_16x9.mp4",
+          "startFrame": 399,
+          "endFrame": 426,
+          "kind": "sfx"
+        },
+        {
+          "id": "a6-2",
+          "name": "DSGNBoom_BOOM-Distant_Ocular_Foundation.wav",
+          "startFrame": 719,
+          "endFrame": 904,
+          "kind": "sfx"
+        }
+      ]
+    },
+    {
+      "id": "A7",
+      "name": "A7",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a7-1",
+          "name": "DSGNBoom_BOOM-Distant_Ocular_Foundation.wav",
+          "startFrame": 332,
+          "endFrame": 517,
+          "kind": "sfx"
+        },
+        {
+          "id": "a7-2",
+          "name": "AMBSea_CLIFFTOPS-Clifftop Ambience with Distant Seagulls Loop 02_Ocular_Seaside Vol 1.wav",
+          "startFrame": 578,
+          "endFrame": 734,
+          "kind": "amb"
+        }
+      ]
+    },
+    {
+      "id": "A8",
+      "name": "A8",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a8-1",
+          "name": "Space Shuttle Launch Countdown.mp4",
+          "startFrame": 372,
+          "endFrame": 444,
+          "kind": "dialogue"
+        },
+        {
+          "id": "a8-2",
+          "name": "DSGNBoom_BOOM-Theyre Here_Ocular_Foundation.wav",
+          "startFrame": 535,
+          "endFrame": 559,
+          "kind": "sfx"
+        },
+        {
+          "id": "a8-3",
+          "name": "uncovered-joseph-william-morgan-musicbed.mp3",
+          "startFrame": 579,
+          "endFrame": 720,
+          "kind": "music"
+        },
+        {
+          "id": "a8-4",
+          "name": "COMCam_VINTAGE FLASHBULB-Camera Flash Bulb C 04_Ocular_Aperture.wav",
+          "startFrame": 722,
+          "endFrame": 753,
+          "kind": "sfx"
+        }
+      ]
+    },
+    {
+      "id": "A9",
+      "name": "A9",
+      "type": "audio",
+      "clips": [
+        {
+          "id": "a9-1",
+          "name": "MUSCPerc_PERCUSSION-Buckets Loopable_Ocular_Pendulum_90 bpm.wav",
+          "startFrame": 336,
+          "endFrame": 722,
+          "kind": "music"
+        }
+      ]
+    }
+  ]
+}

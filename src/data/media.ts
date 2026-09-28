@@ -8,6 +8,7 @@ export const video = {
   hero: '/media/video/hero.mp4',
   hero720: '/media/video/hero-720.mp4',
   heroPoster: '/media/video/hero-poster.jpg',
+  heroFilmstrip: '/media/images/hero-filmstrip.jpg',
   /** Grading slider: the same 14 s excerpt of the teaser exported at each stage. */
   gradeLog: '/media/video/grade-log.mp4',
   grade709: '/media/video/grade-709.mp4',

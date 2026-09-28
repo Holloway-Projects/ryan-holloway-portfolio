@@ -196,7 +196,7 @@ yourself on every change:
   inside itself. Play/mute buttons sit on the video. The video defaults to sound on; browsers that refuse unmuted
   autoplay leave it paused until Play is pressed. Never fall back to muted autoplay.
   Drag on the timeline to scrub. Option + scroll zooms time, Shift + scroll changes track height, horizontal
-  scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut transcribed in
+  scroll pans. The renderer is `src/scripts/timeline.ts`; the sequence is Ryan's real teaser cut imported from Resolve in
   `src/data/hero-timeline.ts` (generator in `src/data/timeline.ts` is the fallback). Hero video is
   `public/media/video/hero.mp4` (Ryan's 4K export) with `hero-720.mp4` for small screens, chosen by an inline
   script before fetch.
@@ -275,11 +275,13 @@ Decisions made in review that are not obvious from the code:
   they are rewritten in the bitstream with an ffmpeg bitstream filter (recipe in `public/media/README.md`).
   `hero-720.mp4` is a downscale for phones only. To swap in a new export: remux with the filter, re-encode the
   720, re-cut `hero-poster.jpg`, rebuild, verify, commit.
-- Hero timeline data is transcribed from Ryan's Resolve screenshots (±0.15 s). The 2026-09-25 export trimmed the
-  last 7.5 s (49.4 s to 41.9 s); frame alignment confirmed everything before that is unchanged, so the
-  transcription still syncs. Open questions for Ryan: the sequence runs to ~60 s but the export is 41.9 s; an
-  FCP XML export would give frame accuracy. Real filmstrip frames from the video are the next timeline step and
-  need nothing from Ryan; real per-track waveforms need audio stems.
+- Hero timeline (2026-09-28): imported from Ryan's Main-Edit.drt at 24000/1001 fps,
+  starting at frame zero and trimmed to the existing hero's 1,004 picture frames (41.875167 s),
+  as Ryan requested. Data is in hero-timeline.json with a typed adapter in hero-timeline.ts;
+  scripts/import-hero-timeline.py regenerates it and the 279 KB thumbnail atlas. See
+  docs/interactive-timeline.md for the container ID and workflow. Thumbnails show the finished
+  composite, not isolated source footage per track. Audio waveforms remain illustrative;
+  real per-track peaks still need stems. Hero video itself was not modified.
 - Grading slider (2026-09-25, late): the concept is accepted (one bar, S-Log3 / Rec.709 / final grade in order)
   but Kyle and Ryan do not love how the bar transitions between the three stages. Needs a new solve; parked
   while the sound section is built. Don't polish the current mechanism further.

@@ -1,6 +1,7 @@
 import { tc } from '../lib/timecode';
 import { buildSequence, type Track, type Clip } from '../data/timeline';
-import { heroSequence } from '../data/hero-timeline';
+import { heroSequence, heroDuration, heroFps, heroFilmstrip, heroThumbnailClips } from '../data/hero-timeline';
+import { video as media } from '../data/media';
 
 /**
  * Data-driven timeline renderer synced to the hero video.
@@ -23,6 +24,8 @@ const COL: Record<string, { body: string; head: string; line: string }> = {
   amb:       { body: '#33403c', head: '#26302d', line: 'rgba(255,255,255,.08)' },
 };
 const WAVE = 'rgba(190,225,200,.55)';
+// Resolve's 23.976 non-drop timecode counts frames at a nominal 24 per second.
+const frameTimecode = (seconds: number) => tc(Math.floor(seconds * heroFps + 1e-6) / 24 + 1e-6);
 
 const fract = (x: number) => x - Math.floor(x);
 const hash = (i: number, s: number) => fract(Math.sin(i * 12.9898 + s * 78.233) * 43758.5453);
@@ -50,6 +53,9 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
   let pps = 1, scrollX = 0, hScale = 1;         // pixels per second, horizontal offset in px, track height scale
   let layer: HTMLCanvasElement | null = null, dirty = true, layerH = 0;
   let follow = true;
+  const filmstrip = new Image();
+  filmstrip.onload = () => { dirty = true; };
+  filmstrip.src = media.heroFilmstrip;
 
   const trackH = (t: Track) => Math.max(8, Math.round(BASE[t.type === 'audio' ? 'audio' : t.id === 'V3' ? 'title' : 'video'] * hScale));
   const totalH = () => tracks.reduce((a, t) => a + trackH(t) + 2, 2);
@@ -58,7 +64,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
   const clampScroll = () => { const max = Math.max(0, duration * pps - (width - L)); scrollX = Math.max(0, Math.min(max, scrollX)); };
 
   function load() {
-    duration = video.duration || 60;
+    duration = Math.min(video.duration || heroDuration, heroDuration);
     tracks = heroSequence.length ? heroSequence : buildSequence(duration);
     pps = fitPps(); scrollX = 0; dirty = true; sizeCanvas();
   }
@@ -73,18 +79,18 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
 
   // ---------- ruler ----------
   function tickStep() {
-    const steps = [1 / 24, 0.25, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 1200];
+    const steps = [1 / heroFps, 0.25, 0.5, 1, 2, 5, 10, 15, 30, 60, 120, 300, 600, 1200];
     return steps.find((s) => s * pps >= 84) ?? 1200;
   }
   function label(t: number, step: number) {
-    const s = tc(t, step < 1);
+    const s = step < 1 ? frameTimecode(t) : tc(t, false);
     return duration < 3600 ? s.slice(3) : s;
   }
   function drawRuler() {
     rctx.fillStyle = '#141414'; rctx.fillRect(0, 0, width, rulerH);
     rctx.fillStyle = '#0f0f0f'; rctx.fillRect(0, 0, L, rulerH);
     const step = tickStep(), minor = step / 5;
-    const s = tc(video.currentTime); rctx.font = '11px JetBrains Mono, monospace'; const tw = rctx.measureText(s).width; const readoutX = width - tw - 14;
+    const s = frameTimecode(Math.min(video.currentTime, duration)); rctx.font = '11px JetBrains Mono, monospace'; const tw = rctx.measureText(s).width; const readoutX = width - tw - 14;
     const k0 = Math.floor(scrollX / pps / minor), k1 = Math.ceil((scrollX + width - L) / pps / minor);
     rctx.strokeStyle = '#33332f'; rctx.lineWidth = 1; rctx.font = '10px JetBrains Mono, monospace'; rctx.fillStyle = '#7a7873';
     for (let k = k0; k <= k1; k++) {
@@ -97,7 +103,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
     // current timecode, right corner
     rctx.font = '11px JetBrains Mono, monospace'; rctx.fillStyle = '#141414'; rctx.fillRect(readoutX, 0, tw + 14, rulerH - 1); rctx.fillStyle = '#c9c7c0'; rctx.fillText(s, width - tw - 7, 14);
     // playhead
-    const px = L + video.currentTime * pps - scrollX;
+    const px = L + Math.min(video.currentTime, duration) * pps - scrollX;
     if (px >= L && px <= width) { rctx.fillStyle = '#ff3b30'; rctx.fillRect(px - .5, 0, 1.5, rulerH); rctx.beginPath(); rctx.moveTo(px - 6, 0); rctx.lineTo(px + 6, 0); rctx.lineTo(px, 9); rctx.closePath(); rctx.fill(); }
   }
 
@@ -111,22 +117,21 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
     if (showHead) { c.fillStyle = col.head; c.fillRect(vx0, y, w, HEAD); }
     // content
     c.save(); c.beginPath(); c.rect(vx0, bodyY, w, bodyH); c.clip();
-    const isVideo = clip.kind === 'video' || clip.kind === 'interview' || clip.kind === 'broll';
+    const isVideo = clip.kind === 'video' || clip.kind === 'interview' || clip.kind === 'broll' || clip.kind === 'title';
     const fh = bodyH - 6, fw = Math.max(18, Math.round(fh * 16 / 9)), gap = 3;
-    if (isVideo && bodyH >= 22 && (x1 - x0) >= fw * 1.4) {
-      // wireframe filmstrip: frames anchored to the clip start, spaced by frame width
-      const s = seedOf(clip.id);
+    const thumbnails = heroThumbnailClips.get(clip.id);
+    if (isVideo && bodyH >= 12 && filmstrip.complete && filmstrip.naturalWidth && thumbnails?.thumbnailFrames && thumbnails.thumbnailIndices) {
+      // Final-composite samples stay inside this clip, even when zoomed or panned.
       const first = Math.max(0, Math.floor((vx0 - x0) / (fw + gap)));
       for (let k = first; ; k++) { const fx = x0 + k * (fw + gap); if (fx > vx1) break; if (fx + fw < vx0) continue;
-        const shade = 0.05 + 0.07 * hash(k, s); c.fillStyle = `rgba(255,255,255,${shade})`; c.fillRect(fx, bodyY + 3, fw, fh);
-        c.strokeStyle = 'rgba(255,255,255,.14)'; c.lineWidth = 1; c.strokeRect(fx + .5, bodyY + 3.5, fw - 1, fh - 1);
-        c.beginPath(); c.moveTo(fx, bodyY + 3); c.lineTo(fx + fw, bodyY + 3 + fh); c.moveTo(fx + fw, bodyY + 3); c.lineTo(fx, bodyY + 3 + fh); c.strokeStyle = 'rgba(255,255,255,.07)'; c.stroke();
-        // a horizon line so frames read as shots rather than boxes
-        const hz = bodyY + 3 + fh * (0.35 + 0.4 * hash(k + 99, s)); c.fillStyle = 'rgba(255,255,255,.10)'; c.fillRect(fx + 2, hz, fw - 4, 1);
+        const frame = (clip.in + k * (fw + gap) / pps) * heroFps;
+        let sample = 0;
+        while (sample + 1 < thumbnails.thumbnailFrames.length && thumbnails.thumbnailFrames[sample + 1] <= frame) sample++;
+        const index = thumbnails.thumbnailIndices[sample];
+        const { width: sw, height: sh, columns } = heroFilmstrip;
+        c.drawImage(filmstrip, (index % columns) * sw, Math.floor(index / columns) * sh, sw, sh, fx, bodyY + 3, fw, fh);
       }
-    } else if (clip.kind === 'title' && bodyH >= 14) {
-      c.fillStyle = 'rgba(255,255,255,.12)'; const tw = Math.min(w - 12, 60); c.fillRect(vx0 + 6, bodyY + bodyH / 2 - 2, tw, 3); c.fillRect(vx0 + 6, bodyY + bodyH / 2 + 4, tw * 0.6, 2);
-    } else if (!isVideo && clip.kind !== 'title' && bodyH >= 12) {
+    } else if (!isVideo && bodyH >= 12) {
       // waveform, one column per pixel, stable across zoom because it samples clip-local time
       const mid = bodyY + bodyH / 2, half = (bodyH - 4) / 2; c.fillStyle = WAVE;
       for (let px = Math.floor(vx0); px < vx1; px++) { const t = (px - x0) / pps; const a = amp(clip, t) * half; c.fillRect(px, mid - a, 1, Math.max(1, a * 2)); }
@@ -165,7 +170,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
     if (follow && !video.paused) { const px = L + video.currentTime * pps - scrollX; if (px > width - 24 || px < L) { scrollX = video.currentTime * pps - (width - L) * 0.12; clampScroll(); dirty = true; } }
     if (dirty || !layer) renderLayer();
     ctx.drawImage(layer!, 0, 0, layer!.width, layer!.height, 0, 0, width, layerH);
-    const px = L + video.currentTime * pps - scrollX;
+    const px = L + Math.min(video.currentTime, duration) * pps - scrollX;
     if (px >= L && px <= width) { ctx.fillStyle = '#ff3b30'; ctx.fillRect(px - .5, 0, 1.5, layerH); }
     drawRuler();
   }
