@@ -1,13 +1,28 @@
-import { img } from './media';
+export interface Photo {
+  src: string;
+  full: string;
+  caption: string;
+  width: number;
+  height: number;
+}
 
-export interface Photo { src: string; full: string; caption: string }
+const photo = (name: string, caption: string, width: number, height: number): Photo => ({
+  src: `/media/images/${name}.jpg`,
+  full: `/media/images/${name}.jpg`,
+  caption, width, height,
+});
 
-const seeds: [string, string][] = [
-  ['harbour1', 'Harbour Light, Oregon coast'], ['ridge-s1', 'Ridgeline, day two'], ['salt-s2', 'Salt and Ash, the pans at dawn'],
-  ['mercy-s1', 'Night shift, 7am'], ['way-s3', 'Wayfinder, where the pavement ends'], ['harbour2', 'Harbour Light'],
-  ['sixty-s1', 'Sixty Frames, the room'], ['salt-s3', 'Salt and Ash'], ['ridge-s2', 'Ridgeline, the cab'],
-  ['harbour3', 'Harbour Light'], ['lumen-s1', 'Lumen, studio'], ['way-s2', 'Wayfinder, chase car'],
+/** Rows group related work, preserving each photograph's complete composition. */
+export const photoRows: Photo[][] = [
+  [
+    photo('motorcycle-portrait', 'Motorcycle rider with mountains behind him', 1024, 683),
+    photo('studio-portrait-woman', 'Studio portrait of a woman', 1024, 683),
+    photo('studio-portrait-man', 'Studio portrait of a man in a blue shirt', 1024, 683),
+    photo('tommy-portrait', 'Tommy, studio portrait', 683, 1024),
+  ],
+  [
+    photo('waving-child', 'A smiling child waving to the camera', 1024, 768),
+    photo('child-by-vehicle', 'A child standing beside a vehicle', 768, 1024),
+    photo('orange-door', 'Two children seated by an orange door', 1024, 768),
+  ],
 ];
-
-/** Placeholder stills. Replace src/full with "/media/images/…" paths. */
-export const photos: Photo[] = seeds.map(([seed, caption]) => ({ src: img(seed, 900, 600), full: img(seed, 1800, 1200), caption }));
