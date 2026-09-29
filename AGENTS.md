@@ -310,3 +310,9 @@ Rec.709 flags; muted hover preview runs from 4–10 seconds, after the opening l
 Credits, year, description and notes remain blank pending Ryan’s details.
 
 Its category is Training video.
+
+CHE Story is the third Work card, replacing Lumen, for Colorado Homeschool Enrichment.
+Ryan calls it a Story video. His September 28 screenshot is the thumbnail; the hover
+preview covers seconds 4–10. The 3:55 full film was already web-encoded at 1080p with
+Rec.709 tags, so it was remuxed for fast start without re-encoding. Three placeholder
+projects remain. Credits, year and notes are still pending.

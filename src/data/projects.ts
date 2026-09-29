@@ -17,7 +17,7 @@ export interface Project {
   notes: Note[];
 }
 
-/** The first two projects are Ryan’s films; remaining entries are placeholders pending his uploads. */
+/** The first three projects are Ryan’s films; remaining entries are placeholders pending his uploads. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -32,14 +32,10 @@ export const projects: Project[] = [
     video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
   },
   {
-    id: 'lumen', name: 'Lumen', kind: 'Motion', client: 'Lumen', year: '2026', runtime: '0:30', dur: 30,
-    role: 'Motion design, edit', video: video.times, poster: img('lumen', 1200, 675),
-    lede: 'A launch piece for a product that is, essentially, light. Everything on screen is lit by the thing being sold.',
-    notes: [
-      { t: 3, text: 'Nothing eases in over twelve frames. Fast in, slow out, every time.' },
-      { t: 12, text: 'The lamp is the only light source for the type. Rendered together, not composited after.' },
-      { t: 26, text: 'End card holds for forty-eight frames. Long enough to read it twice.' },
-    ],
+    id: 'che-story', name: 'CHE Story', kind: 'Story video',
+    client: 'Colorado Homeschool Enrichment', year: '', runtime: '3:55', dur: 235.369333,
+    role: '', lede: '', notes: [],
+    video: video.che, preview: video.chePreview, poster: images.che,
   },
   {
     id: 'salt-and-ash', name: 'Salt and Ash', kind: 'Documentary short', client: 'Independent', year: '2025', runtime: '12:14', dur: 734,
