@@ -17,7 +17,7 @@ export interface Project {
   notes: Note[];
 }
 
-/** The first three projects are Ryan’s films; remaining entries are placeholders pending his uploads. */
+/** The first four projects are Ryan’s work; remaining entries are placeholders pending his uploads. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -38,14 +38,10 @@ export const projects: Project[] = [
     video: video.che, preview: video.chePreview, poster: images.che,
   },
   {
-    id: 'salt-and-ash', name: 'Salt and Ash', kind: 'Documentary short', client: 'Independent', year: '2025', runtime: '12:14', dur: 734,
-    role: 'Cinematographer, editor', video: video.tears, poster: img('salt', 1200, 675),
-    lede: 'A family salt works on its last season, shot over four visits and cut once, slowly.',
-    notes: [
-      { t: 30, text: 'The interview is off-axis on purpose. He talks to his daughter, not to us.' },
-      { t: 240, text: 'The longest shot in the film. Nothing happens for forty seconds. Everything happens.' },
-      { t: 500, text: 'We never show the last day. You know it happened.' },
-    ],
+    id: 'obvious-mentions', name: 'Obvious — Mentions', kind: 'Product feature video',
+    client: 'Obvious', year: '', runtime: '1:10', dur: 70.028292,
+    role: 'Editor', lede: '', notes: [],
+    video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
   {
     id: 'wayfinder', name: 'Wayfinder', kind: 'Commercial', client: 'Wayfinder Vehicles', year: '2026', runtime: '0:52', dur: 52,

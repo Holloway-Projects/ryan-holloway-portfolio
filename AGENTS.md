@@ -316,3 +316,9 @@ Ryan calls it a Story video. His September 28 screenshot is the thumbnail; the h
 preview covers seconds 4–10. The 3:55 full film was already web-encoded at 1080p with
 Rec.709 tags, so it was remuxed for fast start without re-encoding. Three placeholder
 projects remain. Credits, year and notes are still pending.
+
+Obvious — Mentions is the fourth Work card, replacing Salt and Ash. Category: Product
+feature video. Ryan only edited it; the role must be Editor, with no filming credit.
+His supplied screenshot is the thumbnail. The large 4K original is kept outside the
+repo; the site uses a compressed 1080p film and a separate muted six-second preview.
+Two placeholder projects remain.

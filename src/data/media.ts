@@ -5,6 +5,8 @@
 const C = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/';
 
 export const video = {
+  obvious: '/media/video/obvious-mentions.mp4',
+  obviousPreview: '/media/video/obvious-mentions-preview.mp4',
   che: '/media/video/che-story.mp4',
   chePreview: '/media/video/che-story-preview.mp4',
   cypher: '/media/video/who-is-cypher.mp4',
@@ -43,6 +45,7 @@ export const audio = {
 export const img = (seed: string, w = 900, h = 600) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
 
 export const images = {
+  obvious: '/media/images/obvious-mentions.jpg',
   che: '/media/images/che-story.jpg',
   cypher: '/media/images/who-is-cypher.jpg',
   impossible: '/media/images/making-the-impossible-possible.jpg',
