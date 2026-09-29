@@ -332,5 +332,6 @@ About now uses Ryan's supplied visual-creator bio verbatim, replacing the earlie
 editor-origin copy. A three-column Work history grid follows the portrait/bio and
 existing gear facts: Radius Group (Director of Radius Studio, 2025–Present), World
 Challenge (Videographer, 2023–2025), Springs Church (Creative Director, 2020–2023).
-The section is now titled Resume and sits below the gear facts beside the portrait.
+The section is now titled Resume and sits above the gear facts beside the portrait.
+The gear facts have a matching Tools heading.
 Roles stack as compact ruled rows with dates on the left and role/company on the right.

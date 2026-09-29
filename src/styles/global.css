@@ -193,8 +193,8 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .photos button:hover{outline:1px solid var(--fg2);outline-offset:3px}
 
 /* about */
-.experience{margin-top:30px}
-.experience h2{margin:0 0 16px;font-size:20px}
+.experience,.tools{margin-top:30px}
+.experience h2,.tools h2{margin:0 0 16px;font-size:20px}
 .experience-grid{list-style:none;padding:0;margin:0}
 .experience-grid li{display:grid;grid-template-columns:110px 1fr;gap:12px;border-top:1px solid var(--line);padding:11px 0;font-size:14.5px}
 .experience-grid li:last-child{border-bottom:1px solid var(--line)}
@@ -205,7 +205,7 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 #about .lede{font-size:clamp(24px,2.6vw,36px);line-height:1.22;margin:0 0 22px;max-width:26ch}
 #about p{color:var(--fg2);max-width:58ch;margin:0 0 16px}
 #about .experience-grid p{margin:0}
-.facts{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
 .facts div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
 .facts div span:first-child{color:var(--fg3)}
 .facts div:nth-last-child(-n+2){border-bottom:1px solid var(--line)}

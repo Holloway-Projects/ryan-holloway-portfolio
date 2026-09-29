@@ -6,15 +6,18 @@ const a = site.about;
   <img src={a.headshot} alt={site.name} loading="lazy" />
   <div>
     <p class="lede serif">{a.lede}</p>
-    <div class="facts">{a.facts.map(([k, v]) => <div><span>{k}</span><span>{v}</span></div>)}</div>
-  <div class="experience">
-    <h2>Resume</h2>
-    <ul class="experience-grid">
-      {a.experience.map((job) => <li>
-        <span>{job.dates}</span>
-        <div><h3>{job.role}</h3><p>{job.company}</p></div>
-      </li>)}
-    </ul>
-  </div>
+    <div class="experience">
+      <h2>Resume</h2>
+      <ul class="experience-grid">
+        {a.experience.map((job) => <li>
+          <span>{job.dates}</span>
+          <div><h3>{job.role}</h3><p>{job.company}</p></div>
+        </li>)}
+      </ul>
+    </div>
+    <div class="tools">
+      <h2>Tools</h2>
+      <div class="facts">{a.facts.map(([k, v]) => <div><span>{k}</span><span>{v}</span></div>)}</div>
+    </div>
   </div>
 </section>
