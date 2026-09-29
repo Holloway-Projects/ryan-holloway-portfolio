@@ -13,10 +13,11 @@ export const site = {
   ],
   about: {
     headshot: images.headshot,
-    lede: "I started as an editor, picked up a camera because I was tired of waiting for footage that didn't cut, and learned motion because titles kept being an afterthought.",
-    paragraphs: [
-      "Ten years in, I work with brands, agencies and documentary teams who need one person to own a film from the first call to the final export. I'm most useful on projects where the person holding the camera is also the one who has to cut it later.",
-      'Based in Denver. I travel for shoots and work remotely for post.',
+    lede: "I'm a visual creator specializing in animation, videography, and photography. My work combines technical precision with creative storytelling to bring ideas to life.",
+    experience: [
+      { role: 'Director of Radius Studio', company: 'Radius Group', dates: '2025–Present' },
+      { role: 'Videographer', company: 'World Challenge', dates: '2023–2025' },
+      { role: 'Creative Director', company: 'Springs Church', dates: '2020–2023' },
     ],
     facts: [
       ['Edit', 'Premiere Pro, DaVinci Resolve'],

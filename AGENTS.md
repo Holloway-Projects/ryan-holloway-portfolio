@@ -327,3 +327,9 @@ Radius Explainer is the fifth Work card, replacing Wayfinder. It uses Ryan's sup
 September 28 screenshot, a 1080p full film, and a muted six-second hover preview.
 Category: Explainer video; client: Radius. Credits remain blank pending confirmation.
 Only the Mercy placeholder remains.
+
+About now uses Ryan's supplied visual-creator bio verbatim, replacing the earlier
+editor-origin copy. A three-column Work history grid follows the portrait/bio and
+existing gear facts: Radius Group (Director of Radius Studio, 2025–Present), World
+Challenge (Videographer, 2023–2025), Springs Church (Creative Director, 2020–2023).
+The work history stacks on phones.
