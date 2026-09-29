@@ -16,6 +16,38 @@ export function initGrading() {
   const seam = wipe.querySelector<HTMLElement>('.seam')!;
   const three = layers.length > 1;
   let x = Number(root.dataset.start) || 0.3;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let hintDone = false;
+  let hintTimer = 0;
+  let hintFrame = 0;
+  function cancelHint() {
+    hintDone = true;
+    clearTimeout(hintTimer);
+    cancelAnimationFrame(hintFrame);
+  }
+  const hintObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) {
+      clearTimeout(hintTimer);
+      cancelAnimationFrame(hintFrame);
+      return;
+    }
+    if (hintDone || reducedMotion.matches) return;
+    hintTimer = window.setTimeout(() => {
+      hintDone = true;
+      const start = x;
+      const began = performance.now();
+      function animate(now: number) {
+        const t = Math.min(1, (now - began) / 1400);
+        // A gentle out-and-back movement demonstrates the wipe, then restores its position.
+        x = Math.min(1, start + 0.16 * Math.sin(Math.PI * t) ** 2);
+        apply();
+        if (t < 1) hintFrame = requestAnimationFrame(animate);
+      }
+      hintFrame = requestAnimationFrame(animate);
+    }, 1000);
+  }, { threshold: 0.5 });
+  hintObserver.observe(wipe);
+  reducedMotion.addEventListener('change', cancelHint);
 
   function apply() {
     const g = three ? Math.min(1, 2 * x) : 1;
@@ -36,11 +68,12 @@ export function initGrading() {
   const set = (cx: number) => { const r = wipe.getBoundingClientRect(); x = Math.max(0, Math.min(1, (cx - r.left) / r.width)); apply(); };
   let d = false;
   for (const el of [wipe, legend]) {
-    el.addEventListener('pointerdown', (e) => { d = true; try { el.setPointerCapture(e.pointerId); } catch {} set(e.clientX); });
+    el.addEventListener('pointerdown', (e) => { cancelHint(); d = true; try { el.setPointerCapture(e.pointerId); } catch {} set(e.clientX); });
     el.addEventListener('pointermove', (e) => { if (d) set(e.clientX); });
     el.addEventListener('pointerup', () => (d = false)); el.addEventListener('pointercancel', () => (d = false));
   }
   wipe.addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key)) cancelHint();
     const step = e.shiftKey ? 0.1 : 0.02;
     if (e.key === 'ArrowRight') { x = Math.min(1, x + step); apply(); e.preventDefault(); }
     if (e.key === 'ArrowLeft') { x = Math.max(0, x - step); apply(); e.preventDefault(); }
