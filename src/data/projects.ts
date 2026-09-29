@@ -17,7 +17,7 @@ export interface Project {
   notes: Note[];
 }
 
-/** The first four projects are Ryan’s work; remaining entries are placeholders pending his uploads. */
+/** The first five projects are Ryan’s work; the last entry is a placeholder pending his upload. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -44,14 +44,10 @@ export const projects: Project[] = [
     video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
   {
-    id: 'wayfinder', name: 'Wayfinder', kind: 'Commercial', client: 'Wayfinder Vehicles', year: '2026', runtime: '0:52', dur: 52,
-    role: 'Director, cinematographer, editor', video: video.car, poster: img('way', 1200, 675),
-    lede: "Fifty-two seconds, one road, one idea: it goes where the pavement doesn't.",
-    notes: [
-      { t: 3, text: "Open on the road ending. That's the whole spot in one frame." },
-      { t: 22, text: 'Pavement to dirt on a single wheel rotation. The match cut hides the location change.' },
-      { t: 46, text: 'The logo resolves out of the dust. Tracked into the plate rather than keyed over it.' },
-    ],
+    id: 'radius-explainer', name: 'Radius Explainer', kind: 'Explainer video',
+    client: 'Radius', year: '', runtime: '1:26', dur: 86.461375,
+    role: '', lede: '', notes: [],
+    video: video.radiusExplainer, preview: video.radiusExplainerPreview, poster: images.radiusExplainer,
   },
   {
     id: 'mercy', name: 'Mercy Health Foundation', kind: 'Campaign', client: 'Mercy Health Foundation', year: '2025', runtime: '3:55', dur: 235,

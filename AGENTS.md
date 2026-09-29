@@ -322,3 +322,8 @@ feature video. Ryan only edited it; the role must be Editor, with no filming cre
 His supplied screenshot is the thumbnail. The large 4K original is kept outside the
 repo; the site uses a compressed 1080p film and a separate muted six-second preview.
 Two placeholder projects remain.
+
+Radius Explainer is the fifth Work card, replacing Wayfinder. It uses Ryan's supplied
+September 28 screenshot, a 1080p full film, and a muted six-second hover preview.
+Category: Explainer video; client: Radius. Credits remain blank pending confirmation.
+Only the Mercy placeholder remains.
