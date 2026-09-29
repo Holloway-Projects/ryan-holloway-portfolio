@@ -17,7 +17,7 @@ export interface Project {
   notes: Note[];
 }
 
-/** The first project is Ryan’s film; remaining entries are placeholders pending his uploads. */
+/** The first two projects are Ryan’s films; remaining entries are placeholders pending his uploads. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -26,14 +26,10 @@ export const projects: Project[] = [
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
   {
-    id: 'sixty-frames', name: 'Sixty Frames', kind: 'Music video', client: 'Fen Harbour', year: '2025', runtime: '0:31', dur: 31,
-    role: 'Director, editor, motion designer', video: video.fish, poster: img('sixty', 1200, 675),
-    lede: 'One room, one take per section, and enough trust in the cut and the type to make it feel like a world.',
-    notes: [
-      { t: 4, text: 'Every cut in the first verse lands on a snare. We stop doing that in the chorus so it can feel loose.' },
-      { t: 14, text: 'The type here is hand-animated frame by frame. Sixty frames, which became the title.' },
-      { t: 26, text: 'The last section is a single take. It only works because everything before it cut fast.' },
-    ],
+    id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Brand film',
+    client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
+    role: '', lede: '', notes: [],
+    video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
   },
   {
     id: 'lumen', name: 'Lumen', kind: 'Motion', client: 'Lumen', year: '2026', runtime: '0:30', dur: 30,

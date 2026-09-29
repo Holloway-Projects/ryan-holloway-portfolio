@@ -5,6 +5,8 @@
 const C = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/';
 
 export const video = {
+  cypher: '/media/video/who-is-cypher.mp4',
+  cypherPreview: '/media/video/who-is-cypher-preview.mp4',
   impossible: '/media/video/making-the-impossible-possible.mp4',
   impossiblePreview: '/media/video/making-the-impossible-possible-preview.mp4',
   hero: '/media/video/hero.mp4',
@@ -39,6 +41,7 @@ export const audio = {
 export const img = (seed: string, w = 900, h = 600) => `https://picsum.photos/seed/${seed}/${w}/${h}`;
 
 export const images = {
+  cypher: '/media/images/who-is-cypher.jpg',
   impossible: '/media/images/making-the-impossible-possible.jpg',
   headshot: '/media/images/ryan-headshot.jpg',
 };

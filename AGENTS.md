@@ -302,4 +302,9 @@ muted 720p preview plays on hover. Clicking opens the full 1:40 film with sound.
 Assets total about 34 MB plus a 337 KB preview and an optimized screenshot thumbnail. Project.preview is
 optional; placeholders continue using their film URL. Missing notes, role, year and
 description stay hidden rather than showing invented credits or copy. Ryan still needs
-to supply those details and the remaining five films. Reduced-motion skips hover autoplay.
+to supply those details and the remaining four films. Reduced-motion skips hover autoplay.
+
+Who Is Cypher? is the second Work card, replacing Sixty Frames. Ryan supplied the
+September 28 screenshot as its poster. Full film is 2:06, encoded at 1080p with
+Rec.709 flags; muted hover preview runs from 4–10 seconds, after the opening logo.
+Credits, year, description and notes remain blank pending Ryan’s details.
