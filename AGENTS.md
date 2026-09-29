@@ -326,6 +326,8 @@ Two placeholder projects remain.
 Radius Explainer is the fifth Work card, replacing Wayfinder. It uses Ryan's supplied
 September 28 screenshot, a 1080p full film, and a muted six-second hover preview.
 Category: Explainer video; client: Radius. Credits remain blank pending confirmation.
+Radius hover preview starts at 5.672333 seconds, the first shot after the intro logo,
+and loops six seconds; the full film retains the intro.
 Only the Mercy placeholder remains.
 
 About now uses Ryan's supplied visual-creator bio verbatim, replacing the earlier
