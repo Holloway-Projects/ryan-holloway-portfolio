@@ -186,7 +186,7 @@ yourself on every change:
   grey r lifted to off-white, the tan h untouched). The original two-tone file is
   `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
 - Square zero-gap grids for button groups (social icons, hero play/mute).
-- Compact centered contact footer after About: “For inquiries please email”, email, then square social buttons.
+- Compact centered contact footer after About: “for inquiries email”, email, then square social buttons.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the
   audio panel.
 
