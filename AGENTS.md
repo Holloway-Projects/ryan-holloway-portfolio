@@ -308,3 +308,5 @@ Who Is Cypher? is the second Work card, replacing Sixty Frames. Ryan supplied th
 September 28 screenshot as its poster. Full film is 2:06, encoded at 1080p with
 Rec.709 flags; muted hover preview runs from 4–10 seconds, after the opening logo.
 Credits, year, description and notes remain blank pending Ryan’s details.
+
+Its category is Training video.

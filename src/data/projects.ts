@@ -26,7 +26,7 @@ export const projects: Project[] = [
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
   {
-    id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Brand film',
+    id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Training video',
     client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
     role: '', lede: '', notes: [],
     video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
