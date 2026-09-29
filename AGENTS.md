@@ -334,4 +334,7 @@ existing gear facts: Radius Group (Director of Radius Studio, 2025–Present), W
 Challenge (Videographer, 2023–2025), Springs Church (Creative Director, 2020–2023).
 The section is now titled Resume and sits above the gear facts beside the portrait.
 The gear facts have a matching Tools heading.
+Work card order: Making the Impossible Possible, Obvious — Mentions, Colorado
+Homeschool Enrichment, Who Is Cypher?, Radius Explainer, Mercy placeholder.
+Obvious is top-center and Cypher bottom-left on desktop.
 Roles stack as compact ruled rows with dates on the left and role/company on the right.

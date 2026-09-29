@@ -26,10 +26,10 @@ export const projects: Project[] = [
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
   {
-    id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Training video',
-    client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
-    role: '', lede: '', notes: [],
-    video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
+    id: 'obvious-mentions', name: 'Obvious — Mentions', kind: 'Product feature video',
+    client: 'Obvious', year: '', runtime: '1:10', dur: 70.028292,
+    role: 'Editor', lede: '', notes: [],
+    video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
   {
     id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
@@ -38,10 +38,10 @@ export const projects: Project[] = [
     video: video.che, preview: video.chePreview, poster: images.che,
   },
   {
-    id: 'obvious-mentions', name: 'Obvious — Mentions', kind: 'Product feature video',
-    client: 'Obvious', year: '', runtime: '1:10', dur: 70.028292,
-    role: 'Editor', lede: '', notes: [],
-    video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
+    id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Training video',
+    client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
+    role: '', lede: '', notes: [],
+    video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
   },
   {
     id: 'radius-explainer', name: 'Radius Explainer', kind: 'Explainer video',
