@@ -193,16 +193,18 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .photos button:hover{outline:1px solid var(--fg2);outline-offset:3px}
 
 /* about */
-.experience{grid-column:1/-1}
-.experience h2{margin:0 0 24px}
-.experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;list-style:none;padding:0;margin:0}
-.experience-grid li{border-top:1px solid var(--line);padding-top:24px}
-.experience-grid h3{font-size:20px;font-weight:500;margin:0 0 12px}
-.experience-grid span{color:var(--fg2);font-size:14px}
+.experience{margin-top:30px}
+.experience h2{margin:0 0 16px;font-size:20px}
+.experience-grid{list-style:none;padding:0;margin:0}
+.experience-grid li{display:grid;grid-template-columns:110px 1fr;gap:12px;border-top:1px solid var(--line);padding:11px 0;font-size:14.5px}
+.experience-grid li:last-child{border-bottom:1px solid var(--line)}
+.experience-grid h3{font-size:inherit;font-weight:500;margin:0 0 4px}
+.experience-grid span{color:var(--fg3)}
 #about{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start;border-top:1px solid var(--line);padding-bottom:clamp(80px,10vw,140px)}
 #about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
 #about .lede{font-size:clamp(24px,2.6vw,36px);line-height:1.22;margin:0 0 22px;max-width:26ch}
 #about p{color:var(--fg2);max-width:58ch;margin:0 0 16px}
+#about .experience-grid p{margin:0}
 .facts{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
 .facts div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px}
 .facts div span:first-child{color:var(--fg3)}
@@ -273,7 +275,6 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
   .capture{border-right:0;border-bottom:1px solid var(--line)}
   .head,.ctitle,#about,.audio-grid,.chead{grid-template-columns:1fr;gap:20px}
   #about>*{min-width:0}
-  .experience-grid{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr}
   .head p,.chead p,.ctitle p{text-align:left;justify-self:start}
   .score{grid-template-columns:1fr 1fr}

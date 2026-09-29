@@ -7,15 +7,14 @@ const a = site.about;
   <div>
     <p class="lede serif">{a.lede}</p>
     <div class="facts">{a.facts.map(([k, v]) => <div><span>{k}</span><span>{v}</span></div>)}</div>
-  </div>
   <div class="experience">
-    <h2>Work history</h2>
+    <h2>Resume</h2>
     <ul class="experience-grid">
       {a.experience.map((job) => <li>
-        <h3>{job.role}</h3>
-        <p>{job.company}</p>
         <span>{job.dates}</span>
+        <div><h3>{job.role}</h3><p>{job.company}</p></div>
       </li>)}
     </ul>
+  </div>
   </div>
 </section>
