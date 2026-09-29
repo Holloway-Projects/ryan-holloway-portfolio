@@ -311,7 +311,7 @@ Credits, year, description and notes remain blank pending Ryan’s details.
 
 Its category is Training video.
 
-CHE Story is the third Work card, replacing Lumen, for Colorado Homeschool Enrichment.
+Colorado Homeschool Enrichment is the third Work card title (formerly CHE Story), replacing Lumen.
 Ryan calls it a Story video. His September 28 screenshot is the thumbnail; the hover
 preview covers seconds 4–10. The 3:55 full film was already web-encoded at 1080p with
 Rec.709 tags, so it was remuxed for fast start without re-encoding. Three placeholder

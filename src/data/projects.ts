@@ -32,7 +32,7 @@ export const projects: Project[] = [
     video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
   },
   {
-    id: 'che-story', name: 'CHE Story', kind: 'Story video',
+    id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
     client: 'Colorado Homeschool Enrichment', year: '', runtime: '3:55', dur: 235.369333,
     role: '', lede: '', notes: [],
     video: video.che, preview: video.chePreview, poster: images.che,
