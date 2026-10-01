@@ -24,7 +24,7 @@ export const projects: Project[] = [
     client: 'Radius Consulting', year: '', runtime: '1:40', dur: 99.561333,
     role: 'Scriptwriting, directing, editing, cinematography, color, motion graphics, sound', lede: '',
     notes: [
-      { t: 0, text: 'I chose intense music to grab the viewer’s attention within the first three seconds.' },
+      { t: 1, text: 'I chose intense music to grab the viewer’s attention within the first three seconds.' },
     ],
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
