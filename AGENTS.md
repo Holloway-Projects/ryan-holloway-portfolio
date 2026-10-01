@@ -345,10 +345,12 @@ Resume download (2026-10-01): Ryan's supplied 2026 PDF is available from the foo
 beside Instagram and LinkedIn, with a download attribute and accessible label.
 The file is public/ryan-holloway-resume-2026.pdf; preserve the supplied document.
 
-Project credits confirmed 2026-10-01: Making the Impossible Possible, Colorado
-Homeschool Enrichment, and Who Is Cypher? credit Ryan for scriptwriting, directing,
-editing, cinematography, color, motion graphics, and sound. Radius Explainer has
-the same credits except cinematography (no filming). Obvious remains Editor only.
+Project credits confirmed 2026-10-01: Making the Impossible Possible and Who Is
+Cypher? credit Ryan for scriptwriting, directing, editing, cinematography, color,
+motion graphics, and sound. Colorado Homeschool Enrichment credits him as
+interviewer, director, editor, cinematographer, colorist, motion designer, and sound
+designer. Radius Explainer has the same credits as the first two except
+cinematography (no filming). Obvious remains Editor only.
 Ryan will replace Mercy later. Next review item after credits is mobile navigation.
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.

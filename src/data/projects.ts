@@ -44,7 +44,7 @@ export const projects: Project[] = [
   {
     id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
     client: 'Colorado Homeschool Enrichment', year: '', runtime: '3:55', dur: 235.369333,
-    role: 'Scriptwriting, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [],
+    role: 'Interviewer, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [],
     video: video.che, preview: video.chePreview, poster: images.che,
   },
   {
