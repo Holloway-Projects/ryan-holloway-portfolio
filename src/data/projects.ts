@@ -35,7 +35,9 @@ export const projects: Project[] = [
   {
     id: 'obvious-mentions', name: 'Obvious — Mentions', kind: 'Product feature video',
     client: 'Obvious', year: '', runtime: '1:10', dur: 70.028292,
-    role: 'Editor', lede: '', notes: [],
+    role: 'Editor', lede: '', notes: [
+      { t: 8, text: 'At the client’s request, I cut this section in the fast, rhythmic style of contemporary Shorts and Reels to keep the pace immediate.' },
+    ],
     video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
   {
