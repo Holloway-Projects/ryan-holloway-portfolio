@@ -45,7 +45,7 @@ export const projects: Project[] = [
     id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
     client: 'Colorado Homeschool Enrichment', year: '', runtime: '3:55', dur: 235.369333,
     role: 'Interviewer, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
-      { t: 26, text: 'With limited B-roll and supporting assets, we used a slider on the B-camera to introduce movement and visual interest.' },
+      { t: 26, text: 'With limited B-roll and supporting assets, we used a slider on the B-Cam to introduce movement and visual interest.' },
       { t: 46, text: 'We chose a warmer, more inviting grade with a subtly feminine tone to complement both the subject matter and the conversation.' },
     ],
     video: video.che, preview: video.chePreview, poster: images.che,
