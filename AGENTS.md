@@ -340,3 +340,7 @@ Work card order: Making the Impossible Possible, Obvious — Mentions, Colorado
 Homeschool Enrichment, Who Is Cypher?, Radius Explainer, Mercy placeholder.
 Obvious is top-center and Cypher bottom-left on desktop.
 Roles stack as compact ruled rows with dates on the left and role/company on the right.
+
+Resume download (2026-10-01): Ryan's supplied 2026 PDF is available from the footer
+beside Instagram and LinkedIn, with a download attribute and accessible label.
+The file is public/ryan-holloway-resume-2026.pdf; preserve the supplied document.

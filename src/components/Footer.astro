@@ -9,7 +9,7 @@ import Icon from './Icon.astro';
   </div>
   <div class="links">
     {site.links.filter((link) => link.href !== '#').map((link) => (
-      <a href={link.href} aria-label={link.label} title={link.label}><Icon name={link.icon} /></a>
+      <a href={link.href} download={link.download} aria-label={link.label} title={link.label}><Icon name={link.icon} /></a>
     ))}
   </div>
 </footer>

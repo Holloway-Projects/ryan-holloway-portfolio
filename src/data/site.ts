@@ -32,7 +32,7 @@ export const site = {
     { label: 'Vimeo', href: '#', icon: 'vimeo' },
     { label: 'Instagram', href: 'https://www.instagram.com/mail.ryanholloway/', icon: 'instagram' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ryan-holloway-014420283/', icon: 'linkedin' },
-    { label: 'Download CV', href: '#', icon: 'download' },
+    { label: 'Download resume', href: '/ryan-holloway-resume-2026.pdf', icon: 'download', download: 'Ryan-Holloway-Resume-2026.pdf' },
   ],
   soundChain: [
     ['HPF', '80 Hz'], ['De-noise', '-12 dB'], ['EQ', '+3 dB @ 3k'], ['Shelf', '+2 dB @ 8k'], ['Comp', '3:1'], ['Limiter', '-1 dB'],
