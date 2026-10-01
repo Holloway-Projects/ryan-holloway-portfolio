@@ -358,4 +358,5 @@ Ryan will replace Mercy later. Next review item after credits is mobile navigati
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.
 The Process statement explains that the portfolio opens the edit up, showing the
-decisions behind the cuts, grade, and mix rather than only polished final films.
+decisions behind the cuts, grade, and mix rather than only polished final films. Its
+copy uses straightforward sentence structure without em dashes.

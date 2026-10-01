@@ -12,7 +12,7 @@ export const site = {
     { label: 'About', href: '#about' },
   ],
   process: {
-    lede: 'This portfolio opens the edit up: the choices behind each cut, the grade, and the mix. It is a look beyond the finished film—at how picture, color, sound, and motion work together to shape the story.',
+    lede: 'This portfolio opens the edit up: the choices behind each cut, the grade, and the mix. It looks beyond the finished film to show how picture, color, sound, and motion work together to shape the story.',
   },
   about: {
     headshot: images.headshot,
