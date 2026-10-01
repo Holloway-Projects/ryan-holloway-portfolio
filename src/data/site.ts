@@ -28,7 +28,7 @@ export const site = {
       ['Camera', 'Sony FX6 and FX3, Sony primes'],
       ['Grade', 'Resolve, calibrated reference'],
       ['Sound', 'Sennheiser MKH 416, Zoom F6'],
-      ['Delivery', 'Broadcast, social, cinema DCP'],
+      ['Delivery', 'YouTube, Web, Social'],
     ] as [string, string][],
   },
   links: [
