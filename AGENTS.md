@@ -334,7 +334,7 @@ About now uses Ryan's supplied visual-creator bio verbatim, replacing the earlie
 editor-origin copy. A three-column Work history grid follows the portrait/bio and
 existing gear facts: Radius Group (Director of Radius Studio, 2025–Present), World
 Challenge (Videographer, 2023–2025), Springs Church (Creative Director, 2020–2023).
-The section is now titled Resume and sits above the gear facts beside the portrait.
+The section is now titled Resumé and sits above the gear facts beside the portrait.
 The gear facts have a matching Tools heading.
 Work card order: Making the Impossible Possible, Obvious — Mentions, Colorado
 Homeschool Enrichment, Who Is Cypher?, Radius Explainer, Mercy placeholder.
