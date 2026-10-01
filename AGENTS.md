@@ -344,3 +344,9 @@ Roles stack as compact ruled rows with dates on the left and role/company on the
 Resume download (2026-10-01): Ryan's supplied 2026 PDF is available from the footer
 beside Instagram and LinkedIn, with a download attribute and accessible label.
 The file is public/ryan-holloway-resume-2026.pdf; preserve the supplied document.
+
+Project credits confirmed 2026-10-01: Making the Impossible Possible, Colorado
+Homeschool Enrichment, and Who Is Cypher? credit Ryan for scriptwriting, directing,
+editing, cinematography, color, motion graphics, and sound. Radius Explainer has
+the same credits except cinematography (no filming). Obvious remains Editor only.
+Ryan will replace Mercy later. Next review item after credits is mobile navigation.
