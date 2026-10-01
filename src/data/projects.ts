@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     id: 'who-is-cypher', name: 'Who Is Cypher?', kind: 'Training video',
     client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
-    role: 'Scriptwriting, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
+    role: 'Directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
       { t: 7, text: 'I pushed a deliberate amount of cyan into the grade to bring the image closer to Cypher’s brand palette.' },
     ],
     video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
