@@ -47,6 +47,7 @@ export const projects: Project[] = [
     role: 'Interviewer, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
       { t: 26, text: 'With limited B-roll and supporting assets, we used a slider on the B-Cam to introduce movement and visual interest.' },
       { t: 46, text: 'We chose a warmer, more inviting grade with a subtly feminine tone to complement both the subject matter and the conversation.' },
+      { t: 137, text: 'Because we filmed in front of two large windows, I used a Lens Node effect to guide the viewer’s eye back to the subject at the center of the frame.' },
     ],
     video: video.che, preview: video.chePreview, poster: images.che,
   },
