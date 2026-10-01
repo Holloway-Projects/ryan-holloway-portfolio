@@ -37,6 +37,7 @@ export const projects: Project[] = [
     client: 'Obvious', year: '', runtime: '1:10', dur: 70.028292,
     role: 'Editor', lede: '', notes: [
       { t: 8, text: 'At the client’s request, I cut this section in the fast, rhythmic style of contemporary Shorts and Reels to keep the pace immediate.' },
+      { t: 23, text: 'I introduced this animation to break up the talking-head format while clearly illustrating the product feature being discussed.' },
     ],
     video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
