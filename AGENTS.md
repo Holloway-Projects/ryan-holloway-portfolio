@@ -350,3 +350,5 @@ Homeschool Enrichment, and Who Is Cypher? credit Ryan for scriptwriting, directi
 editing, cinematography, color, motion graphics, and sound. Radius Explainer has
 the same credits except cinematography (no filming). Obvious remains Editor only.
 Ryan will replace Mercy later. Next review item after credits is mobile navigation.
+Video notes use the warm amber accent for both timecodes and comment text, including
+the active note. Refine Ryan's rough notes professionally while preserving his intent.

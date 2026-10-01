@@ -250,9 +250,8 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .note{display:grid;grid-template-columns:78px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);text-align:left;width:100%;transition:.15s}
 .note:last-child{border-bottom:1px solid var(--line)}
 .note small{font-family:var(--mono);font-size:11.5px;color:var(--amber);padding-top:3px;letter-spacing:.04em}
-.note span{font-size:14.5px;line-height:1.5;color:var(--fg2)}
-.note.on span,.note:hover span{color:var(--fg)}
-.note.on small{color:#fff}
+.note span{font-size:14.5px;line-height:1.5;color:var(--amber)}
+.note.on,.note:hover{background:rgba(217,165,94,.06)}
 
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:70;background:rgba(8,8,8,.96);display:none;grid-template-rows:1fr auto;padding:56px var(--gutter) 24px}
