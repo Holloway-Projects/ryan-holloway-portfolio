@@ -172,8 +172,8 @@ yourself on every change:
 ## Design rules that were decided on purpose
 
 - Dark, near-black (`#0e0e0e`) with animated film grain and faint grey radial gradients. Not pure black.
-- Instrument Sans for everything, Fraunces only for the about lede and the contact heading, JetBrains Mono only
-  for real timecodes and technical labels.
+- Instrument Sans for everything, Fraunces only for the contact heading, JetBrains Mono only for real timecodes
+  and technical labels.
 - Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to
   headings unless Ryan asks. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
@@ -330,10 +330,12 @@ Radius hover preview starts at 5.672333 seconds, the first shot after the intro 
 and loops six seconds; the full film retains the intro.
 Only the Mercy placeholder remains.
 
-About now uses Ryan's supplied visual-creator bio verbatim, replacing the earlier
-editor-origin copy. A three-column Work history grid follows the portrait/bio and
-existing gear facts: Radius Group (Director of Radius Studio, 2025–Present), World
-Challenge (Videographer, 2023–2025), Springs Church (Creative Director, 2020–2023).
+About now uses a concise, viewer-focused statement in smaller Instrument Sans type:
+"I create cinematic videos that capture attention from the first frame and keep
+audiences engaged through purposeful, impactful storytelling." A three-column Work
+history grid follows the portrait/bio and existing gear facts: Radius Group (Director
+of Radius Studio, 2025–Present), World Challenge (Videographer, 2023–2025), Springs
+Church (Creative Director, 2020–2023).
 The section is now titled Resumé and sits above the gear facts beside the portrait.
 The gear facts have a matching Tools heading.
 Work card order: Making the Impossible Possible, Obvious — Mentions, Colorado

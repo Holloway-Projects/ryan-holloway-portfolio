@@ -13,7 +13,7 @@ export const site = {
   ],
   about: {
     headshot: images.headshot,
-    lede: 'I create films, animation, and photography that turn complex ideas into clear, memorable stories.',
+    lede: 'I create cinematic videos that capture attention from the first frame and keep audiences engaged through purposeful, impactful storytelling.',
     experience: [
       { role: 'Director of Radius Studio', company: 'Radius Group', dates: '2025–Present' },
       { role: 'Videographer', company: 'World Challenge', dates: '2023–2025' },
