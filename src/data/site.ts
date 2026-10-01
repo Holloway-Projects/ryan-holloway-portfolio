@@ -21,8 +21,8 @@ export const site = {
     ],
     facts: [
       ['Edit', 'Premiere Pro, DaVinci Resolve'],
-      ['Motion', 'After Effects, Cinema 4D'],
-      ['Camera', 'Sony FX6 and FX3, Sigma primes'],
+      ['Motion', 'After Effects'],
+      ['Camera', 'Sony FX6 and FX3, Sony primes'],
       ['Grade', 'Resolve, calibrated reference'],
       ['Sound', 'Sennheiser MKH 416, Zoom F6'],
       ['Delivery', 'Broadcast, social, cinema DCP'],
