@@ -174,8 +174,8 @@ yourself on every change:
 - Dark, near-black (`#0e0e0e`) with animated film grain and faint grey radial gradients. Not pure black.
 - Instrument Sans for everything, Fraunces only for the contact heading, JetBrains Mono only for real timecodes
   and technical labels.
-- Copy is minimal. Section titles are two words ("The Work", "The Process"). No supporting paragraphs next to
-  headings unless Ryan asks. No eyebrow labels, no all-caps.
+- Copy is minimal. Section titles are two words ("The Work", "The Process"). The Process includes a short,
+  right-aligned companion statement explaining its behind-the-scenes purpose. No eyebrow labels, no all-caps.
 - Right-hand text in two-column headers is right-aligned, not floating.
 - Header shows over the hero on load, fades out after ~3 s (a slow 1.8 s fade with a slight blur) so the film is
   all you see, and returns as a sticky glass bar (translucent, blurred, saturated, hairline highlight) from the
@@ -357,3 +357,5 @@ filming). Obvious remains Editor only.
 Ryan will replace Mercy later. Next review item after credits is mobile navigation.
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.
+The Process statement explains that the portfolio opens the edit up, showing the
+decisions behind the cuts, grade, and mix rather than only polished final films.

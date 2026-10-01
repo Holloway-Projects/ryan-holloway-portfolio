@@ -1,9 +1,10 @@
 ---
 import Grading from './Grading.astro';
 import Sound from './Sound.astro';
+import { site } from '../data/site';
 ---
 <section id="craft" class="tint">
-  <div class="head"><h2 class="sec">The Process</h2></div>
+  <div class="head"><h2 class="sec">The Process</h2><p>{site.process.lede}</p></div>
   <Grading />
   <Sound />
 </section>

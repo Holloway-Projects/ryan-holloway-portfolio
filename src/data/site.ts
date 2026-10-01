@@ -11,6 +11,9 @@ export const site = {
     { label: 'Photography', href: '#photo' },
     { label: 'About', href: '#about' },
   ],
+  process: {
+    lede: 'This portfolio opens the edit up: the choices behind each cut, the grade, and the mix. It is a look beyond the finished film—at how picture, color, sound, and motion work together to shape the story.',
+  },
   about: {
     headshot: images.headshot,
     lede: 'I create cinematic videos that capture attention from the first frame and keep audiences engaged through purposeful, impactful storytelling.',
