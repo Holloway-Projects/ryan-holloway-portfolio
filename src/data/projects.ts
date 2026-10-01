@@ -65,6 +65,7 @@ export const projects: Project[] = [
     client: 'Radius', year: '', runtime: '1:26', dur: 86.461375,
     role: 'Scriptwriting, directing, editing, color, motion graphics, sound', lede: '', notes: [
       { t: 7, text: 'I built this animation in After Effects to create visual energy and keep the piece engaging.' },
+      { t: 63, text: 'During this 3D camera move in After Effects, I added depth of field to give the animation a more cinematic sense of space.' },
     ],
     video: video.radiusExplainer, preview: video.radiusExplainerPreview, poster: images.radiusExplainer,
   },
