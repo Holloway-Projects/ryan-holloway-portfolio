@@ -26,7 +26,7 @@ export const projects: Project[] = [
     notes: [
       { t: 1, text: 'I chose intense music to grab the viewer’s attention within the first three seconds.' },
       { t: 14, text: 'I adjusted the music’s intensity to shape the pacing and create a deliberate shift in energy.' },
-      { t: 17, text: 'With limited B-roll and supporting assets, I built this grid animation to turn the available footage into a more engaging visual moment.' },
+      { t: 17, text: 'With limited B-Roll and supporting assets, I built this grid animation to turn the available footage into a more engaging visual moment.' },
       { t: 35, text: 'As he realizes he’s unfulfilled in his career and ready for change, I increased the drama in the score to underscore that emotional pivot.' },
       { t: 57, text: 'I contrasted turbulent ocean swells and dark clouds with peaceful fields, flowers, and still water—moving from life’s challenges to the clarity, momentum, and calm his teams find together.' },
     ],
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
     client: 'Colorado Homeschool Enrichment', year: '', runtime: '3:55', dur: 235.369333,
     role: 'Interviewer, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
-      { t: 26, text: 'With limited B-roll and supporting assets, we used a slider on the B-Cam to introduce movement and visual interest.' },
+      { t: 26, text: 'With limited B-Roll and supporting assets, we used a slider on the B-Cam to introduce movement and visual interest.' },
       { t: 46, text: 'We chose a warmer, more inviting grade with a subtly feminine tone to complement both the subject matter and the conversation.' },
       { t: 137, text: 'Because we filmed in front of two large windows, I used a Lens Node effect to guide the viewer’s eye back to the subject at the center of the frame.' },
     ],
