@@ -56,6 +56,7 @@ export const projects: Project[] = [
     client: 'Cypher', year: '', runtime: '2:06', dur: 126.014667,
     role: 'Directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
       { t: 7, text: 'I pushed a deliberate amount of cyan into the grade to bring the image closer to Cypher’s brand palette.' },
+      { t: 17, text: 'I placed him in the front third of the frame to preserve the light behind him and lean into the orange-and-teal palette.' },
     ],
     video: video.cypher, preview: video.cypherPreview, poster: images.cypher,
   },
