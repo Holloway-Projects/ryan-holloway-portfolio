@@ -81,6 +81,7 @@ section.tint{background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,2
 .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:36px}
 h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing:-.03em;font-weight:600}
 .head p{margin:0;color:var(--fg2);max-width:48ch;font-size:16.5px;text-align:right;justify-self:end}
+#craft>.head p{font-size:clamp(17px,1.35vw,19px);text-align:center;justify-self:center}
 
 /* grade slider: one full-height bar; log left of it, Rec.709 right of it, final grade grows in from the right edge */
 #grade{padding-top:0}
@@ -276,6 +277,7 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
   #about>*{min-width:0}
   .facts{grid-template-columns:1fr}
   .head p,.chead p,.ctitle p{text-align:left;justify-self:start}
+  #craft>.head p{text-align:center;justify-self:center}
   .score{grid-template-columns:1fr 1fr}
   .grid{grid-template-columns:1fr}
   .photo-row:first-child,.photo-row:last-child{grid-template-columns:1fr}
