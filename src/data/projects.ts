@@ -27,6 +27,7 @@ export const projects: Project[] = [
       { t: 1, text: 'I chose intense music to grab the viewer’s attention within the first three seconds.' },
       { t: 14, text: 'I adjusted the music’s intensity to shape the pacing and create a deliberate shift in energy.' },
       { t: 17, text: 'With limited B-roll and supporting assets, I built this grid animation to turn the available footage into a more engaging visual moment.' },
+      { t: 35, text: 'As he realizes he’s unfulfilled in his career and ready for change, I increased the drama in the score to underscore that emotional pivot.' },
     ],
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
