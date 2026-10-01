@@ -63,7 +63,9 @@ export const projects: Project[] = [
   {
     id: 'radius-explainer', name: 'Radius Explainer', kind: 'Explainer video',
     client: 'Radius', year: '', runtime: '1:26', dur: 86.461375,
-    role: 'Scriptwriting, directing, editing, color, motion graphics, sound', lede: '', notes: [],
+    role: 'Scriptwriting, directing, editing, color, motion graphics, sound', lede: '', notes: [
+      { t: 7, text: 'I built this animation in After Effects to create visual energy and keep the piece engaging.' },
+    ],
     video: video.radiusExplainer, preview: video.radiusExplainerPreview, poster: images.radiusExplainer,
   },
   {
