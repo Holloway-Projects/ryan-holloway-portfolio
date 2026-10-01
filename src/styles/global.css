@@ -202,7 +202,7 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .experience-grid span{color:var(--fg3)}
 #about{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start;border-top:1px solid var(--line);padding-bottom:clamp(80px,10vw,140px)}
 #about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
-#about .lede{font-size:clamp(24px,2.6vw,36px);line-height:1.22;margin:0 0 22px;max-width:26ch}
+#about .lede{font-size:clamp(24px,2.6vw,36px);font-weight:450;letter-spacing:-.04em;line-height:1.12;margin:0 0 26px;max-width:25ch}
 #about p{color:var(--fg2);max-width:58ch;margin:0 0 16px}
 #about .experience-grid p{margin:0}
 .facts{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}

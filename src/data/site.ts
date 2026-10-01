@@ -13,7 +13,7 @@ export const site = {
   ],
   about: {
     headshot: images.headshot,
-    lede: "I'm a visual creator specializing in animation, videography, and photography. My work combines technical precision with creative storytelling to bring ideas to life.",
+    lede: 'I create films, animation, and photography that turn complex ideas into clear, memorable stories.',
     experience: [
       { role: 'Director of Radius Studio', company: 'Radius Group', dates: '2025–Present' },
       { role: 'Videographer', company: 'World Challenge', dates: '2023–2025' },
