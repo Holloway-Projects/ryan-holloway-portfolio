@@ -25,6 +25,7 @@ export const projects: Project[] = [
     role: 'Scriptwriting, directing, editing, cinematography, color, motion graphics, sound', lede: '',
     notes: [
       { t: 1, text: 'I chose intense music to grab the viewer’s attention within the first three seconds.' },
+      { t: 14, text: 'I adjusted the music’s intensity to shape the pacing and create a deliberate shift in energy.' },
     ],
     video: video.impossible, preview: video.impossiblePreview, poster: images.impossible,
   },
