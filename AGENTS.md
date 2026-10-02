@@ -288,6 +288,8 @@ Decisions made in review that are not obvious from the code:
 - Sound section (2026-09-25): square-grid toggle with two modes. Mode one is the raw dialogue to mix crossfade
   with the score bed layered under. Mode two is sound design: seven isolated stems for a dialogue-free clip,
   channel list with waveforms and mute/solo on the left, the matching video on the right, one clock.
+- Sound labels (2026-10-02): the dialogue-focused view is named Dialogue Mix; the separate stems and SFX view
+  is Sound Design.
 
 Remaining sections to review in order: The Work (grid + case study), The Process (grading examples with Ryan's
 clips, sound design with real raw/mix files and a plugin capture), Photography (real stills), About (headshot,
