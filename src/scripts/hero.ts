@@ -8,7 +8,7 @@ export function initHero() {
   const scrollEl = document.getElementById('tl-scroll'), capture = document.querySelector<HTMLElement>('.capture');
   if (!hero || !cvs || !rcv || !scrollEl || !capture) return;
 
-  createTimeline(hero, rcv, cvs, scrollEl, capture);
+  if (!matchMedia('(max-width: 900px)').matches) createTimeline(hero, rcv, cvs, scrollEl, capture);
 
   const playBtn = document.getElementById('play')!, playIco = document.getElementById('play-ico')!;
   const muteBtn = document.getElementById('mute')!, muteIco = document.getElementById('mute-ico')!;

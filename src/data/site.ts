@@ -3,7 +3,7 @@ import { images } from './media';
 export const site = {
   name: 'Ryan Holloway',
   title: 'Ryan Holloway — Editor, Cinematographer, Motion Designer',
-  description: 'Editor, cinematographer and motion designer in Denver. Brand films, commercials, documentary and music video, shot, cut and graded by one person.',
+  description: 'Denver-based video editor, cinematographer, and motion designer creating cinematic brand, training, product, and story-driven films through editing, color, sound, and motion.',
   email: 'mail.ryanholloway@gmail.com',
   contactHeading: 'For inquiries email',
   nav: [

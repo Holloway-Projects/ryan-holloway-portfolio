@@ -260,6 +260,8 @@ Decisions made in review that are not obvious from the code:
   Social buttons appear only when real profile links are supplied; hide placeholder links and CV downloads.
 - Hero sound (2026-09-28): Ryan wants unmuted by default. If the browser blocks sound-on autoplay, wait
   for Play with audio enabled instead of silently playing muted.
+- Mobile hero and navigation (2026-10-02): the timeline is hidden on phones so the film fills the opening
+  screen. A compact Menu button reveals Work, Photography, and About links.
 - Hero copy, transport bar, timecode readout and the timeline caption were all removed on request. The hero is
   video plus timeline plus two square buttons only.
 - Motion section, footer, contact section, clients line, palette strip and look descriptions were all cut. Don't

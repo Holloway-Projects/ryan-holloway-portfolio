@@ -41,6 +41,7 @@ header.site .brand:hover .logo{opacity:.8}
 header.site nav{display:flex;gap:28px;font-size:15px}
 header.site nav a{opacity:.7;transition:opacity .15s}
 header.site nav a:hover{opacity:1}
+.menu-toggle{display:none}
 
 /* hero: program monitor + timeline */
 #reel{background:#000;height:100vh;min-height:560px;display:flex;flex-direction:column}
@@ -268,11 +269,13 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .lb .arr svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6}
 
 @media (max-width:900px){
-  header.site nav{display:none}
-  #reel{height:auto;min-height:0}
-  .monitor{height:56vh}
-  .capture{height:200px}
-  .capture{border-right:0;border-bottom:1px solid var(--line)}
+  header.site .menu-toggle{display:block;padding:8px 0;color:var(--fg);font-size:14px}
+  header.site nav{position:absolute;top:calc(100% + 4px);right:var(--gutter);display:grid;width:min(220px,calc(100vw - 2 * var(--gutter)));padding:8px 0;background:rgba(20,20,20,.94);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(18px) saturate(1.35);opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s ease}
+  header.site[data-menu-open="true"] nav{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  header.site nav a{padding:10px 14px;opacity:1}
+  #reel{height:100svh;min-height:480px}
+  #reel .deck{display:none}
+  .monitor{height:auto;min-height:0}
   .head,.ctitle,#about,.audio-grid,.chead{grid-template-columns:1fr;gap:20px}
   #about>*{min-width:0}
   .facts{grid-template-columns:1fr}
