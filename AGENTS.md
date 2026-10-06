@@ -358,6 +358,8 @@ graphics, and sound. Colorado Homeschool Enrichment credits him as interviewer,
 director, editor, cinematographer, colorist, motion designer, and sound designer.
 Radius Explainer has the same credits as the first project except cinematography (no
 filming). Obvious remains Editor only.
+Project years (2026-10-06): Making the Impossible Possible, Obvious — Mentions,
+Colorado Homeschool Enrichment, and Who Is Cypher? are 2026; Radius Explainer is 2025.
 Ryan will replace Mercy later. Next review item after credits is mobile navigation.
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.
