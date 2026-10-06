@@ -19,7 +19,7 @@ export const site = {
     lede: 'I create cinematic videos that capture attention from the first frame and keep audiences engaged through purposeful, impactful storytelling.',
     experience: [
       { role: 'Director of Radius Studio', company: 'Radius Group', dates: '2025–Present' },
-      { role: 'Videographer', company: 'World Challenge', dates: '2023–2025' },
+      { role: 'Video Producer + Editor', company: 'World Challenge', dates: '2023–2025' },
       { role: 'Creative Director', company: 'Springs Church', dates: '2020–2023' },
     ],
     facts: [

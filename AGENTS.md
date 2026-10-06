@@ -338,7 +338,7 @@ About now uses a concise, viewer-focused statement in smaller Instrument Sans ty
 "I create cinematic videos that capture attention from the first frame and keep
 audiences engaged through purposeful, impactful storytelling." A three-column Work
 history grid follows the portrait/bio and existing gear facts: Radius Group (Director
-of Radius Studio, 2025–Present), World Challenge (Videographer, 2023–2025), Springs
+of Radius Studio, 2025–Present), World Challenge (Video Producer + Editor, 2023–2025), Springs
 Church (Creative Director, 2020–2023).
 The section is now titled Resumé and sits above the gear facts beside the portrait.
 The gear facts have a matching Tools heading.
