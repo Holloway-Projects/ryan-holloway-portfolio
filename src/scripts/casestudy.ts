@@ -9,6 +9,7 @@ let els: { root: HTMLElement; video: HTMLVideoElement; scrub: HTMLElement; fill:
 export function openCase(i: number) {
   if (!els) return;
   cur = i; const p = projects[i];
+  if (!p || p.available === false) return;
   (document.getElementById('hero') as HTMLVideoElement | null)?.pause();
   const $ = (id: string) => document.getElementById(id)!;
   $('c-name').textContent = p.name; $('c-kind').textContent = p.kind; $('c-title').textContent = p.name; $('c-lede').textContent = p.lede;
@@ -58,5 +59,5 @@ export function initCaseStudy() {
     if (e.key === 'ArrowRight') openCase((cur + 1) % projects.length);
     if (e.key === 'ArrowLeft') openCase((cur + projects.length - 1) % projects.length);
   });
-  const idx = projects.findIndex((p) => p.id === location.hash.slice(1)); if (idx > -1) openCase(idx);
+  const idx = projects.findIndex((p) => p.id === location.hash.slice(1)); if (idx > -1 && projects[idx].available !== false) openCase(idx);
 }

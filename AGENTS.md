@@ -332,7 +332,7 @@ September 28 screenshot, a 1080p full film, and a muted six-second hover preview
 Category: Explainer video; client: Radius. Credits remain blank pending confirmation.
 Radius hover preview starts at 5.672333 seconds, the first shot after the intro logo,
 and loops six seconds; the full film retains the intro.
-Only the Mercy placeholder remains.
+Archway is the remaining placeholder, awaiting Ryan's final social-media promo video.
 
 About now uses a concise, viewer-focused statement in smaller Instrument Sans type:
 "I create cinematic videos that capture attention from the first frame and keep
@@ -343,7 +343,7 @@ Church (Creative Director, 2020–2023).
 The section is now titled Resumé and sits above the gear facts beside the portrait.
 The gear facts have a matching Tools heading.
 Work card order: Making the Impossible Possible, Obvious — Mentions, Colorado
-Homeschool Enrichment, Who Is Cypher?, Radius Explainer, Mercy placeholder.
+ Homeschool Enrichment, Who Is Cypher?, Radius Explainer, Archway placeholder.
 Obvious is top-center and Cypher bottom-left on desktop.
 Roles stack as compact ruled rows with dates on the left and role/company on the right.
 
@@ -360,7 +360,9 @@ Radius Explainer has the same credits as the first project except cinematography
 filming). Obvious remains Editor only.
 Project years (2026-10-06): Making the Impossible Possible, Obvious — Mentions,
 Colorado Homeschool Enrichment, and Who Is Cypher? are 2026; Radius Explainer is 2025.
-Ryan will replace Mercy later. Next review item after credits is mobile navigation.
+Ryan will replace Archway later. Next review item after credits is mobile navigation.
+Archway (2026-10-06) replaces Mercy as the final Work card. Its supplied blue-on-light logo is shown as a
+non-interactive placeholder until its social-media promo video is ready; do not show unrelated footage.
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.
 The Process statement explains that the portfolio opens the edit up, showing the

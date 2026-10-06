@@ -1,4 +1,4 @@
-import { video, img, images } from './media';
+import { video, images } from './media';
 
 export interface Note { t: number; text: string }
 export interface Project {
@@ -14,10 +14,11 @@ export interface Project {
   video: string;
   poster: string;
   preview?: string;
+  available?: boolean;
   notes: Note[];
 }
 
-/** The first five projects are Ryan’s work; the last entry is a placeholder pending his upload. */
+/** The first five projects are Ryan’s completed work; the last entry is a placeholder pending its final film. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -70,13 +71,7 @@ export const projects: Project[] = [
     video: video.radiusExplainer, preview: video.radiusExplainerPreview, poster: images.radiusExplainer,
   },
   {
-    id: 'mercy', name: 'Mercy Health Foundation', kind: 'Campaign', client: 'Mercy Health Foundation', year: '2025', runtime: '3:55', dur: 235,
-    role: 'Editor, colourist', video: video.wiki, poster: img('mercy', 1200, 675),
-    lede: "An agency shoot handed over for the cut and grade. Sometimes the job is making other people's footage feel like a decision.",
-    notes: [
-      { t: 8, text: 'Four cameras, none matched. Graded to one look before making a single cut.' },
-      { t: 40, text: 'The pace doubles here and stays doubled. No slowing down until the end card.' },
-      { t: 118, text: 'The last line is delivered to the room, not the lens. We found it in an outtake.' },
-    ],
+    id: 'archway-social-promo', name: 'Archway', kind: 'Social media promo', client: 'Archway', year: '', runtime: '', dur: 0,
+    role: '', video: '', poster: '/media/images/archway-logo.svg', available: false, lede: '', notes: [],
   },
 ];

@@ -176,6 +176,9 @@ h2.sec{margin:0;font-size:clamp(26px,3.2vw,40px);line-height:1.05;letter-spacing
 .work .fr img,.work .fr video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .work .fr video{opacity:0;transition:opacity .35s}
 .work:hover .fr video.ready{opacity:1}
+.work.placeholder{cursor:default}
+.work.placeholder .fr{background:#f4f6fb}
+.work.placeholder .fr img{object-fit:contain;padding:22%;}
 .work .fr .rt{position:absolute;right:10px;bottom:9px;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.55);padding:3px 7px;border-radius:2px;letter-spacing:.04em}
 .work .cap{display:grid;grid-template-columns:1fr auto;gap:16px;padding-top:10px;align-items:baseline}
 .work .cap b{font-weight:600;font-size:17px;letter-spacing:-.015em;display:block}
