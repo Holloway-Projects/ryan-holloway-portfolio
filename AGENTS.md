@@ -253,6 +253,8 @@ Decisions made in review that are not obvious from the code:
 - Photography (2026-09-28): seven supplied JPEGs replace all gallery placeholders. Optimized at their
   supplied 1024 px maximum dimension. Four equal, cropped tiles on top (motorcycle fills its tile with no bars),
   three uncropped documentary images below, with 12 px gaps. Ryan likes this for now; may revisit the layout.
+- Photography hover (2026-10-13): desktop thumbnails rest at a darker exposure and brighten on hover or keyboard
+  focus. Keep the full-bright treatment for touch devices without hover.
 - About portrait (2026-09-28): Ryan’s ryan.2025.jpg is now a centered 4:5 crop, 1200×1500 JPEG at
   /media/images/ryan-headshot.jpg. Preserve the supplied colors; no CSS color filter.
 - Contact (2026-09-28): moved out of About into a compact footer. Email is mail.ryanholloway@gmail.com.
