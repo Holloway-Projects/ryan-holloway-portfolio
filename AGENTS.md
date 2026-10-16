@@ -185,7 +185,7 @@ yourself on every change:
 - The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the
   grey r lifted to off-white, the tan h untouched). The original two-tone file is
   `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
-  The browser favicon uses a dedicated square logo asset: `public/favicon.png` and `public/favicon.ico`.
+  The browser favicon uses dedicated square logo assets: `public/favicon.svg`, `public/favicon.png`, and `public/favicon.ico`. Keep their cache versions synchronized in the page head so Safari refreshes the mark.
 - Square zero-gap grids for button groups (social icons, hero play/mute).
 - Compact centered contact footer after About: “For inquiries email”, email, then square social buttons.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the
