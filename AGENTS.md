@@ -185,7 +185,7 @@ yourself on every change:
 - The header is Ryan's "rh" monogram only, no name text. `public/logo.png` is the dark-background version (the
   grey r lifted to off-white, the tan h untouched). The original two-tone file is
   `public/media/images/logo-source.png`; `logo-dark-text.png` is the trimmed original for light backgrounds.
-  The browser favicon uses `public/logo.png` as well.
+  The browser favicon uses a dedicated square logo asset: `public/favicon.png` and `public/favicon.ico`.
 - Square zero-gap grids for button groups (social icons, hero play/mute).
 - Compact centered contact footer after About: “For inquiries email”, email, then square social buttons.
 - No scroll-triggered entrance animations. Motion only where it shows something: the wipe, the timeline, the
@@ -318,7 +318,7 @@ Credits, year, description and notes remain blank pending Ryan’s details.
 
 Its category is Training video.
 
-Colorado Homeschool Enrichment is the third Work card title (formerly CHE Story), replacing Lumen.
+CHE Con '26 is the third Work card title (formerly CHE Story), replacing Lumen. The client remains Colorado Homeschool Enrichment.
 Ryan calls it a Story video. His September 28 screenshot is the thumbnail; the hover
 preview covers seconds 4–10. The 3:55 full film was already web-encoded at 1080p with
 Rec.709 tags, so it was remuxed for fast start without re-encoding. Three placeholder
@@ -362,7 +362,7 @@ director, editor, cinematographer, colorist, motion designer, and sound designer
 Radius Explainer has the same credits as the first project except cinematography (no
 filming). Obvious remains Editor only.
 Project years (2026-10-06): Making the Impossible Possible, Obvious — Mentions,
-Colorado Homeschool Enrichment, and Who Is Cypher? are 2026; Radius Explainer is 2025.
+CHE Con '26, and Who Is Cypher? are 2026; Radius Explainer is 2025.
 Ryan will replace Archway later. Next review item after credits is mobile navigation.
 Archway (2026-10-06) replaces Mercy as the final Work card. Its supplied blue-on-light logo is shown as a
 non-interactive placeholder until its social-media promo video is ready; do not show unrelated footage.

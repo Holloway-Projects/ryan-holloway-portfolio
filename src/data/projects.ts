@@ -43,7 +43,7 @@ export const projects: Project[] = [
     video: video.obvious, preview: video.obviousPreview, poster: images.obvious,
   },
   {
-    id: 'che-story', name: 'Colorado Homeschool Enrichment', kind: 'Story video',
+    id: 'che-story', name: "CHE Con '26", kind: 'Story video',
     client: 'Colorado Homeschool Enrichment', year: '2026', runtime: '3:55', dur: 235.369333,
     role: 'Interviewer, directing, editing, cinematography, color, motion graphics, sound', lede: '', notes: [
       { t: 26, text: 'With limited B-Roll and supporting assets, we used a slider on the B-Cam to introduce movement and visual interest.' },
