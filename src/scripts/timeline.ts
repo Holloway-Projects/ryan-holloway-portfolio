@@ -166,7 +166,7 @@ export function createTimeline(video: HTMLVideoElement, ruler: HTMLCanvasElement
 
   function draw() {
     requestAnimationFrame(draw);
-    if (!tracks.length) return;
+    if (!tracks.length || width <= 0 || rulerH <= 0) return;
     if (follow && !video.paused) { const px = L + video.currentTime * pps - scrollX; if (px > width - 24 || px < L) { scrollX = video.currentTime * pps - (width - L) * 0.12; clampScroll(); dirty = true; } }
     if (dirty || !layer) renderLayer();
     ctx.drawImage(layer!, 0, 0, layer!.width, layer!.height, 0, 0, width, layerH);
