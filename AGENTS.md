@@ -295,7 +295,7 @@ Decisions made in review that are not obvious from the code:
   channel list with waveforms and mute/solo on the left, the matching video on the right, one clock.
 - Sound labels (2026-10-02): the dialogue-focused view is named Dialogue Mix; the separate stems and SFX view
   is Sound Design.
-- Vercel Web Analytics (2026-10-22): enabled for the portfolio with anonymous page-view tracking. “Project opened” tracks work-card clicks by project title; the dashboard aggregates results anonymously and cannot identify individual visitors.
+- Vercel Web Analytics (2026-10-22): enabled for the portfolio with anonymous page-view tracking. Custom project-click tracking was considered but left out because it would add paid events on the Pro plan.
 
 Remaining sections to review in order: The Work (grid + case study), The Process (grading examples with Ryan's
 clips, sound design with real raw/mix files and a plugin capture), Photography (real stills), About (headshot,

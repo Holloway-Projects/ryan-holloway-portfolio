@@ -1,4 +1,3 @@
-import { track } from '@vercel/analytics';
 import { openCase } from './casestudy';
 
 /** Work grid: hover to preview the film (desktop only), click to open the case study. */
@@ -11,11 +10,6 @@ export function initWork() {
       b.addEventListener('mouseenter', () => { if (!v.src) { v.src = b.dataset.video!; v.addEventListener('playing', () => v.classList.add('ready'), { once: true }); } v.play().catch(() => {}); });
       b.addEventListener('mouseleave', () => v.pause());
     }
-    b.addEventListener('click', () => {
-      v.pause();
-      const project = b.dataset.project;
-      if (project) track('Project opened', { project });
-      openCase(i);
-    });
+    b.addEventListener('click', () => { v.pause(); openCase(i); });
   });
 }
