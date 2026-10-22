@@ -11,7 +11,7 @@ import { projects } from '../data/projects';
           <video muted loop playsinline preload="none"></video>
           {p.runtime && <span class="rt">{p.runtime}</span>}
         </div>
-        <div class="cap"><div><b>{p.name}</b><span>{p.client}, {p.kind}</span></div><em>{p.year}</em></div>
+        <div class="cap"><div><b>{p.name}</b><span>{p.client === p.name ? p.kind : `${p.client}, ${p.kind}`}</span></div><em>{p.year}</em></div>
       </button>
     ))}
   </div>

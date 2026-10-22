@@ -9,6 +9,7 @@ export const video = {
   cypherPreview: '/media/video/who-is-cypher-preview.mp4',
   impossible: '/media/video/making-the-impossible-possible.mp4',
   impossiblePreview: '/media/video/making-the-impossible-possible-preview.mp4',
+  archwayLogoAnimation: '/media/video/archway-logo-animation.mp4',
   hero: '/media/video/hero.mp4',
   hero720: '/media/video/hero-720.mp4',
   heroPoster: '/media/video/hero-poster.jpg',
@@ -37,5 +38,6 @@ export const images = {
   che: '/media/images/che-story.jpg',
   cypher: '/media/images/who-is-cypher.jpg',
   impossible: '/media/images/making-the-impossible-possible.jpg',
+  archwayLogoAnimation: '/media/images/archway-logo-animation.jpg',
   headshot: '/media/images/ryan-headshot.jpg',
 };

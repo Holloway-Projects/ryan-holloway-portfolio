@@ -18,7 +18,7 @@ export interface Project {
   notes: Note[];
 }
 
-/** The first five projects are Ryan’s completed work; the last entry is a placeholder pending its final film. */
+/** Ryan’s completed portfolio projects. */
 export const projects: Project[] = [
   {
     id: 'making-the-impossible-possible', name: 'Making the Impossible Possible', kind: 'Brand film',
@@ -71,7 +71,7 @@ export const projects: Project[] = [
     video: video.radiusExplainer, preview: video.radiusExplainerPreview, poster: images.radiusExplainer,
   },
   {
-    id: 'archway-social-promo', name: 'Archway', kind: 'Social media promo', client: 'Archway', year: '', runtime: '', dur: 0,
-    role: '', video: '', poster: '/media/images/archway-logo.svg', available: false, lede: '', notes: [],
+    id: 'archway-logo-animation', name: 'Archway', kind: 'Logo animation', client: 'Archway', year: '2026', runtime: '0:06', dur: 6.047708,
+    role: '', video: video.archwayLogoAnimation, poster: images.archwayLogoAnimation, lede: '', notes: [],
   },
 ];

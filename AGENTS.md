@@ -365,8 +365,9 @@ filming). Obvious remains Editor only.
 Project years (2026-10-06): Making the Impossible Possible, Obvious — Mentions,
 CHE Con '26, and Who Is Cypher? are 2026; Radius Explainer is 2025.
 Ryan will replace Archway later. Next review item after credits is mobile navigation.
-Archway (2026-10-06) replaces Mercy as the final Work card. Its supplied blue-on-light logo is shown as a
-non-interactive placeholder until its social-media promo video is ready; do not show unrelated footage.
+Archway (2026-10-22) is the final Work card. Its supplied six-second logo animation is playable in the card
+and case study, with “Logo animation” shown under the title. The 1080p web version is
+`archway-logo-animation.mp4`, with a matching poster frame.
 Video notes use the warm amber accent for both timecodes and comment text, including
 the active note. Refine Ryan's rough notes professionally while preserving his intent.
 The Process statement explains that the portfolio opens the edit up, showing the
